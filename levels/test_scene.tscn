@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqlr1kccppcuk"]
+
+[ext_resource type="PackedScene" uid="uid://dh1fqcsplodtv" path="res://entities/character/character.tscn" id="1_0ianl"]
+[ext_resource type="PackedScene" uid="uid://dpk80yptykiwr" path="res://entities/obstacles/obstacle_test.tscn" id="2_86fby"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_0ianl")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_86fby")]
+position = Vector2(360, 310)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_86fby")]
+position = Vector2(534, -305)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_86fby")]
+position = Vector2(-630, 390)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_86fby")]
+position = Vector2(-606, -387)
