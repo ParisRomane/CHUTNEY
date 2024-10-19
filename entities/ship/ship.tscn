@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d17c68wa5qg4"]
+
+[ext_resource type="Texture2D" uid="uid://mxg636xq6w4j" path="res://assets/images/icon.svg" id="1_d8wr4"]
+
+[node name="Ship" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -69)
+scale = Vector2(5.49219, 3.76172)
+texture = ExtResource("1_d8wr4")

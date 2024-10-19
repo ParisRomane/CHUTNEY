@@ -1,15 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqlr1kccppcuk"]
+[gd_scene load_steps=8 format=3 uid="uid://bqlr1kccppcuk"]
 
 [ext_resource type="PackedScene" uid="uid://dh1fqcsplodtv" path="res://entities/character/character.tscn" id="1_0ianl"]
+[ext_resource type="PackedScene" uid="uid://d17c68wa5qg4" path="res://entities/ship/ship.tscn" id="1_60x3n"]
 [ext_resource type="PackedScene" uid="uid://btrtrkv3kx40w" path="res://camera/cameraman.tscn" id="2_17d13"]
 [ext_resource type="PackedScene" uid="uid://dpk80yptykiwr" path="res://entities/obstacles/obstacle_test.tscn" id="2_86fby"]
+[ext_resource type="Script" path="res://entities/ship/ship.gd" id="2_vtqg2"]
+[ext_resource type="Script" path="res://levels/player_path_following.gd" id="9_ikqji"]
+
+[sub_resource type="Curve2D" id="Curve2D_lja3m"]
 
 [node name="TestScene" type="Node2D"]
 
-[node name="Cameraman" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_17d13")]
-target = NodePath("../Player")
+[node name="Path2D" type="Path2D" parent="." node_paths=PackedStringArray("player")]
+curve = SubResource("Curve2D_lja3m")
+script = ExtResource("9_ikqji")
+player = NodePath("Player")
 
-[node name="Player" parent="." instance=ExtResource("1_0ianl")]
+[node name="Line2D" type="Line2D" parent="Path2D"]
+
+[node name="Player" parent="Path2D" instance=ExtResource("1_0ianl")]
+
+[node name="Ship" parent="." instance=ExtResource("1_60x3n")]
+script = ExtResource("2_vtqg2")
+
+[node name="Cameraman" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_17d13")]
+target = NodePath("../Path2D/Player")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_86fby")]
 position = Vector2(360, 310)
