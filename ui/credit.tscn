@@ -1,0 +1,151 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5bimimdmen45"]
+
+[ext_resource type="Texture2D" uid="uid://bcpacqjv68jt8" path="res://assets/images/textures/Background_texture.tres" id="1_e7ltt"]
+[ext_resource type="Script" path="res://ui/credit.gd" id="1_r6tdn"]
+[ext_resource type="Texture2D" uid="uid://cshv5jb3rh0qh" path="res://assets/images/big_station.svg" id="2_8eus2"]
+[ext_resource type="Texture2D" uid="uid://c5w4tsjw0h418" path="res://assets/images/dbr_cactus.svg" id="3_anf78"]
+[ext_resource type="Texture2D" uid="uid://c5mvpcy2wt3w5" path="res://assets/images/dbr_can.svg" id="4_6xpan"]
+[ext_resource type="Texture2D" uid="uid://cbqyfpti17cn3" path="res://assets/images/dbr_nuclear.svg" id="5_uywdb"]
+[ext_resource type="Texture2D" uid="uid://ceb6gkxmwwlxb" path="res://assets/images/dbr_bottle.svg" id="6_jg7nk"]
+[ext_resource type="Texture2D" uid="uid://b3e0hmn0vptju" path="res://assets/images/dbr_bag.svg" id="7_muaib"]
+[ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="8_rjn1f"]
+[ext_resource type="StyleBox" uid="uid://sqof3qp8q2g7" path="res://assets/theme/StyleBoxFlat_Button_base.tres" id="9_bdnku"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8w2lu"]
+bg_color = Color(0.501961, 0.8, 0.866667, 0.0784314)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.501961, 0.8, 0.866667, 0.8)
+shadow_color = Color(0.501961, 0.8, 0.866667, 0.337255)
+shadow_size = 20
+
+[node name="credit" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r6tdn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1276.5, 735.5)
+scale = Vector2(3.26322, 2.37739)
+texture = ExtResource("1_e7ltt")
+
+[node name="BigStation" type="Sprite2D" parent="."]
+position = Vector2(-12, 983)
+scale = Vector2(0.481348, 0.472097)
+texture = ExtResource("2_8eus2")
+
+[node name="DbrCactus" type="Sprite2D" parent="."]
+position = Vector2(2154.5, 975.702)
+rotation = 0.356047
+texture = ExtResource("3_anf78")
+
+[node name="DbrCan" type="Sprite2D" parent="."]
+position = Vector2(1732.32, 1103.04)
+rotation = -0.785398
+scale = Vector2(1.39033, 1.39033)
+texture = ExtResource("4_6xpan")
+
+[node name="DbrNuclear" type="Sprite2D" parent="."]
+position = Vector2(2336.5, 268.702)
+rotation = 0.560251
+scale = Vector2(2.0959, 1.71951)
+texture = ExtResource("5_uywdb")
+
+[node name="DbrBottle" type="Sprite2D" parent="."]
+position = Vector2(1483.5, 612.702)
+rotation = 0.785398
+texture = ExtResource("6_jg7nk")
+
+[node name="DbrBag" type="Sprite2D" parent="."]
+position = Vector2(200, 1235)
+texture = ExtResource("7_muaib")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 139.0
+offset_right = 2314.0
+offset_bottom = 1378.0
+theme = ExtResource("8_rjn1f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8w2lu")
+theme_override_styles/normal = ExtResource("9_bdnku")
+disabled = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1006.0
+offset_top = 152.0
+offset_right = 1329.0
+offset_bottom = 289.0
+theme_override_colors/font_shadow_color = Color(0.0373385, 0.23625, 0.369624, 1)
+theme_override_colors/font_outline_color = Color(0.0103074, 0.141657, 0.236687, 1)
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 100
+text = "Crédit"
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 316.0
+offset_right = 2302.0
+offset_bottom = 1584.0
+pivot_offset = Vector2(10, 10)
+
+[node name="Label2" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0.482353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.8, 0.835294)
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 65
+text = "Game Design : 
+Yvan
+Brandon Hornbeck      
+Mathis
+Léo
+
+Son, mixage et doublage: 
+Brandon Hornbeck
+
+scénario et dialogues :
+Yv	an
+
+
+"
+
+[node name="ColorRect" type="ColorRect" parent="VFlowContainer"]
+custom_minimum_size = Vector2(150, 1000)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label3" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0.482353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.8, 0.835294)
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 65
+text = "Lead programmer :
+Quentin Dupré
+
+Programmation :
+Mathis
+Léo De Sa
+Romane Paris
+Quentin Dupré
+
+Graphismes : 
+Romane Paris
+"
+
+[node name="retour" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2046.0
+offset_top = 1295.0
+offset_right = 2290.0
+offset_bottom = 1353.0
+theme = ExtResource("8_rjn1f")
+theme_override_font_sizes/font_size = 70
+text = "RETOUR"
+
+[connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

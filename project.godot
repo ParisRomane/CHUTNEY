@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jam Jam"
-run/main_scene="res://levels/test_scene.tscn"
+run/main_scene="res://ui/MenuPrincipal.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/images/icon.svg"
 
@@ -36,7 +36,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ropesim/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 

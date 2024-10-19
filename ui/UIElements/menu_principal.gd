@@ -18,3 +18,9 @@ func _button_exit() -> void :
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta : float) -> void:
 	pass
+
+
+func _on_button_credit_pressed() -> void:
+	var credit : Node = load("res://ui/credit.tscn").instantiate()
+	self.get_parent().add_child(credit)
+	self.get_parent().remove_child(self)

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://p2wh0irjavap"]
 
-[ext_resource type="FontFile" uid="uid://bs5txqceyc5uj" path="res://assets/font/white-rabbit/whitrabt.ttf" id="1_hlc1l"]
+[ext_resource type="FontFile" uid="uid://ccmi38ok38wyx" path="res://assets/font/white-rabbit/whitrabt.ttf" id="1_hlc1l"]
 [ext_resource type="StyleBox" uid="uid://sqof3qp8q2g7" path="res://assets/theme/StyleBoxFlat_Button_base.tres" id="2_0u6tj"]
 [ext_resource type="StyleBox" uid="uid://v564yxv26h4x" path="res://assets/theme/StyleBoxFlat_Button_focus.tres" id="2_q1ln1"]
 
