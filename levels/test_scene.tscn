@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqlr1kccppcuk"]
+[gd_scene load_steps=9 format=3 uid="uid://bqlr1kccppcuk"]
 
 [ext_resource type="PackedScene" uid="uid://dh1fqcsplodtv" path="res://entities/character/character.tscn" id="1_0ianl"]
 [ext_resource type="PackedScene" uid="uid://d17c68wa5qg4" path="res://entities/ship/ship.tscn" id="1_60x3n"]
 [ext_resource type="PackedScene" uid="uid://btrtrkv3kx40w" path="res://camera/cameraman.tscn" id="2_17d13"]
 [ext_resource type="Script" path="res://entities/ship/ship.gd" id="2_vtqg2"]
+[ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="6_wq1c7"]
+[ext_resource type="Texture2D" uid="uid://6b60grm4kaxm" path="res://assets/images/dbr_can.svg" id="7_ta33h"]
 [ext_resource type="Script" path="res://levels/player_path_following.gd" id="9_ikqji"]
 
 [sub_resource type="Curve2D" id="Curve2D_lja3m"]
@@ -26,3 +28,8 @@ position = Vector2(-15, 619)
 
 [node name="Cameraman" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_17d13")]
 target = NodePath("../Path2D/Player")
+
+[node name="Debris" parent="." instance=ExtResource("6_wq1c7")]
+position = Vector2(-575, 1156)
+texture = ExtResource("7_ta33h")
+type = 2
