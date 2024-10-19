@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="35.04pt"
+    height="31.2pt"
+    viewBox="0 0 35.04 31.2">
+<defs>
+  <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1.4142135623731" y2="0" spreadMethod="pad">
+   <stop stop-color="#8899a2" offset="0.1769" stop-opacity="1"/>
+   <stop stop-color="#585982" offset="0.3385" stop-opacity="1"/>
+   <stop stop-color="#19173b" offset="0.407692307692308" stop-opacity="1"/>
+   <stop stop-color="#79849c" offset="0.469230769230769" stop-opacity="1"/>
+   <stop stop-color="#191a28" offset="0.530769230769231" stop-opacity="1"/>
+   <stop stop-color="#585982" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient1" gradientUnits="objectBoundingBox" x1="-0.131496697277268" y1="-0.137803138373752" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#585982" offset="0.0461538461538462" stop-opacity="1"/>
+   <stop stop-color="#16142f" offset="0.507692307692308" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#0a000d" offset="0" stop-opacity="1"/>
+   <stop stop-color="#ffff7d" offset="0.284615384615385" stop-opacity="1"/>
+   <stop stop-color="#b4b08f" offset="0.461538461538462" stop-opacity="1"/>
+   <stop stop-color="#65421a" offset="0.538461538461538" stop-opacity="1"/>
+   <stop stop-color="#beac46" offset="0.8077" stop-opacity="1"/>
+   <stop stop-color="#e3542d" offset="0.951673" stop-opacity="1"/>
+   <stop stop-color="#ffae50" offset="0.989777" stop-opacity="1"/>
+   <stop stop-color="#ffe87f" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient3" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#806253" offset="0.0769230769230769" stop-opacity="1"/>
+   <stop stop-color="#9e7a2c" offset="0.592307692307692" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+<path id="shape0" transform="translate(3.20078431782078, 2.01254902218282)" fill="url(#gradient0)" fill-rule="evenodd" stroke="url(#gradient1)" stroke-width="0.7752" stroke-linecap="square" stroke-linejoin="bevel" d="M0 0.486275L20.3333 0L20.851 13.3843L15.2784 14.5608L24.3412 19.5608L12.6039 27.4902L0.129412 25.1725L3.94118 10.5804L0 0.486275" sodipodi:nodetypes="ccccccccc"/><ellipse id="shape1" transform="translate(5.04, 3.36)" rx="0.96" ry="1.08" cx="0.96" cy="1.08" fill="#191a28" fill-rule="evenodd" stroke="none" stroke-width="0.7752" stroke-linecap="square" stroke-linejoin="bevel"/><ellipse id="shape0" transform="matrix(0.999999980449763 0 0 0.999999980449763 21.592941204098 13.0752941343764)" rx="1.14313727871318" ry="0.92549021535611" cx="1.14313727871318" cy="0.92549021535611" fill="#191a28" fill-rule="evenodd" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel"/><ellipse id="shape2" transform="translate(16.32, 15.12)" rx="6.72" ry="6.72" cx="6.72" cy="6.72" fill="url(#gradient2)" fill-rule="evenodd" stroke="url(#gradient3)" stroke-width="0.7752" stroke-linecap="square" stroke-linejoin="bevel"/>
+</svg>
