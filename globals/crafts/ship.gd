@@ -1,4 +1,5 @@
 class_name Ship
+extends Node
 
 var ressources: Ressource
 var player: Player
