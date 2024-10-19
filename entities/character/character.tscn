@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh1fqcsplodtv"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_2iyhu"]
-[ext_resource type="Texture2D" uid="uid://dedxqn356yk7h" path="res://assets/images/icon.svg" id="1_yp86a"]
+[ext_resource type="Texture2D" uid="uid://bn17lddt67n78" path="res://assets/images/icon.svg" id="1_yp86a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_avqnk"]
 radius = 63.7887
@@ -12,6 +12,9 @@ script = ExtResource("1_2iyhu")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("1_yp86a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_avqnk")
