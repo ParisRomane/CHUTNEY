@@ -78,6 +78,9 @@ func _increase_ship_res() -> void:
 	#todo anim
 	
 func _decrease_ship_res() -> void:
+	var nb_diff : int = nb_res - ship.ressources[type]
+	$Stock_ship_craft.text = _get_str_res(nb_diff)
 	nb_res = ship.ressources[type]
 	$Stock_ship.text = _get_str_res(nb_res)
-	#todo anim
+	last_change = .8
+	$Anim_Stock_ship.play("Decrease_ship")

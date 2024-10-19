@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnx2bogn73ocb"]
+[gd_scene load_steps=11 format=3 uid="uid://bnx2bogn73ocb"]
 
 [ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="1_ngiwr"]
 [ext_resource type="Script" path="res://ui/UIElements/menu_principal.gd" id="2_qpln2"]
 [ext_resource type="Texture2D" uid="uid://bcpacqjv68jt8" path="res://assets/images/textures/Background_texture.tres" id="3_j1bql"]
 [ext_resource type="PackedScene" uid="uid://cwyr5qfon472s" path="res://ui/UIElements/button_menu_base.tscn" id="4_pcffx"]
+[ext_resource type="Texture2D" uid="uid://bten8teeawq65" path="res://assets/images/spaceship.svg" id="5_c6cgc"]
+[ext_resource type="Texture2D" uid="uid://bdub64vkpwq8a" path="res://assets/images/astronaut_0.svg" id="6_loypc"]
+[ext_resource type="Texture2D" uid="uid://c5w4tsjw0h418" path="res://assets/images/dbr_cactus.svg" id="7_ql7u0"]
+[ext_resource type="Texture2D" uid="uid://c5mvpcy2wt3w5" path="res://assets/images/dbr_can.svg" id="8_bgsju"]
+[ext_resource type="Texture2D" uid="uid://cbqyfpti17cn3" path="res://assets/images/dbr_nuclear.svg" id="9_7e3wf"]
+[ext_resource type="Texture2D" uid="uid://ceb6gkxmwwlxb" path="res://assets/images/dbr_bottle.svg" id="10_dsd8n"]
 
 [node name="TestUi" type="Control"]
 layout_mode = 3
@@ -16,15 +22,14 @@ theme = ExtResource("1_ngiwr")
 script = ExtResource("2_qpln2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1248, 859)
-scale = Vector2(1.74179, 1.74179)
+position = Vector2(1276.5, 735.5)
+scale = Vector2(3.26322, 2.37739)
 texture = ExtResource("3_j1bql")
 
 [node name="ButtonLaunch" parent="." instance=ExtResource("4_pcffx")]
 layout_mode = 1
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchor_top = 0.486806
+anchor_bottom = 0.486806
 offset_left = -300.0
 offset_top = -80.0
 offset_right = 300.0
@@ -32,11 +37,68 @@ offset_bottom = -20.0
 
 [node name="ButtonQuitter" parent="." instance=ExtResource("4_pcffx")]
 layout_mode = 1
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchor_top = 0.506945
+anchor_bottom = 0.506945
 offset_left = -300.0
 offset_top = 20.0
 offset_right = 300.0
 offset_bottom = 80.0
 text = "Quitter"
+
+[node name="ButtonCredit" parent="." instance=ExtResource("4_pcffx")]
+layout_mode = 1
+anchor_top = 0.561806
+anchor_bottom = 0.561806
+offset_left = -300.0
+offset_top = 70.0
+offset_right = 300.0
+offset_bottom = 130.0
+text = "Crédit"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(80.298, 82.351)
+scale = Vector2(0.955587, 0.939314)
+points = PackedVector2Array(422, 988, 566, 1150, 984, 1291, 1356, 1347, 1605, 1309, 1798, 1190)
+
+[node name="1er_plan" type="Sprite2D" parent="."]
+position = Vector2(2069, 1013)
+rotation = 5.45415
+scale = Vector2(0.921444, 0.904352)
+texture = ExtResource("5_c6cgc")
+
+[node name="perso" type="Sprite2D" parent="."]
+position = Vector2(404, 1078)
+texture = ExtResource("6_loypc")
+
+[node name="DbrCactus" type="Sprite2D" parent="."]
+position = Vector2(401, 272)
+rotation = 0.356047
+texture = ExtResource("7_ql7u0")
+
+[node name="DbrCan" type="Sprite2D" parent="."]
+position = Vector2(828, 473)
+rotation = -0.785398
+texture = ExtResource("8_bgsju")
+
+[node name="DbrNuclear" type="Sprite2D" parent="."]
+position = Vector2(2150, 233)
+rotation = 0.560251
+scale = Vector2(2.0959, 1.71951)
+texture = ExtResource("9_7e3wf")
+
+[node name="DbrBottle" type="Sprite2D" parent="."]
+position = Vector2(1135, 268)
+rotation = 0.785398
+texture = ExtResource("10_dsd8n")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 829.0
+offset_top = 355.0
+offset_right = 2029.0
+offset_bottom = 470.0
+theme_override_colors/font_shadow_color = Color(1, 0, 0.482353, 1)
+theme_override_font_sizes/font_size = 120
+text = "Cosmic Dustman"
+
+[connection signal="pressed" from="ButtonCredit" to="." method="_on_button_credit_pressed"]

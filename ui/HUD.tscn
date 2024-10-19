@@ -1,104 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://clnmmtkirxbcn"]
+[gd_scene load_steps=4 format=3 uid="uid://clnmmtkirxbcn"]
 
-[ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="1_cjkb1"]
-[ext_resource type="Texture2D" uid="uid://bvehu226y8iti" path="res://assets/images/icon.svg" id="1_y5uxb"]
-[ext_resource type="Script" path="res://ui/HUD_Ressource.gd" id="2_ny3qv"]
-
-[sub_resource type="Animation" id="Animation_f8pa5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Stock_player:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Stock_player:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(269, 43.5)]
-}
-
-[sub_resource type="Animation" id="Animation_62f3p"]
-resource_name = "Increase_player"
-length = 0.333337
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Stock_player:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_ufey6"]
-resource_name = "Transfer_to_ship"
-length = 0.400003
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Stock_ship:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.233333, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Stock_player:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(269, 43.5), Vector2(246, 43.5), Vector2(269, 43.5)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_transfer_to_ship"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_8ggrf"]
-resource_name = "Decrease_ship"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufq2x"]
-_data = {
-"Decrease_ship": SubResource("Animation_8ggrf"),
-"Increase_player": SubResource("Animation_62f3p"),
-"RESET": SubResource("Animation_f8pa5"),
-"Transfer_to_ship": SubResource("Animation_ufey6")
-}
+[ext_resource type="PackedScene" uid="uid://bo8djmaypib5c" path="res://ui/UIElements/HUD_ressource.tscn" id="1_o1wp2"]
+[ext_resource type="Script" path="res://globals/crafts/player.gd" id="2_hs6mc"]
+[ext_resource type="Script" path="res://globals/crafts/ship.gd" id="3_ibm17"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -108,65 +12,53 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 627.0
-offset_bottom = 142.0
-theme = ExtResource("1_cjkb1")
-script = ExtResource("2_ny3qv")
-
-[node name="Icone_Res" type="TextureRect" parent="Control"]
+[node name="RessourcesPlacement" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -64.0
-offset_right = 128.0
-offset_bottom = 64.0
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 390.0
+offset_right = 1643.0
+offset_bottom = -50.0
 grow_vertical = 2
-texture = ExtResource("1_y5uxb")
 
-[node name="Stock_ship" type="Label" parent="Control"]
+[node name="Liquide" parent="RessourcesPlacement" node_paths=PackedStringArray("ship", "player") instance=ExtResource("1_o1wp2")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.330144
-anchor_top = 0.5
-anchor_right = 0.330144
-anchor_bottom = 0.5
-offset_left = -41.0
-offset_top = -27.5
-offset_right = 41.0
-offset_bottom = 27.5
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(41, 27)
-theme = ExtResource("1_cjkb1")
-theme_type_variation = &"Label_HUD"
-text = "00"
-metadata/_edit_use_anchors_ = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -502.0
+offset_bottom = -360.0
+grow_vertical = 0
+ship = NodePath("../../Ship")
+player = NodePath("../../Player")
+type = "\"organic\""
 
-[node name="Stock_player" type="Label" parent="Control"]
+[node name="Electronics" parent="RessourcesPlacement" node_paths=PackedStringArray("ship", "player") instance=ExtResource("1_o1wp2")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.457735
-anchor_top = 0.5
-anchor_right = 0.655502
-anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -27.5
-offset_right = 64.0
-offset_bottom = 27.5
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(103, 27)
-theme = ExtResource("1_cjkb1")
-theme_type_variation = &"Label_HUD"
-text = "(+00)"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -142.0
+offset_bottom = 0.0
+grow_vertical = 0
+ship = NodePath("../../Ship")
+player = NodePath("../../Player")
+type = "\"electronic\""
 
-[node name="Anim_Stock_ship" type="AnimationPlayer" parent="Control"]
-libraries = {
-"": SubResource("AnimationLibrary_ufq2x")
-}
+[node name="Scraps" parent="RessourcesPlacement" node_paths=PackedStringArray("ship", "player") instance=ExtResource("1_o1wp2")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -322.0
+offset_bottom = -180.0
+grow_vertical = 0
+ship = NodePath("../../Ship")
+player = NodePath("../../Player")
+type = "\"scraps\""
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("2_hs6mc")
+
+[node name="Ship" type="Node2D" parent="."]
+script = ExtResource("3_ibm17")
