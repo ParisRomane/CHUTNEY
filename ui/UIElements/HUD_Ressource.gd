@@ -1,8 +1,9 @@
 extends Control
 
-@export var ship: Ship
-@export var player: Player
-@export var type: String
+@export var hud: HUD
+var player: Player
+var ship : Ship
+@export_enum("organic", "scrap", "electronic") var type: String
 var nb_res: int
 var nb_inv: int
 var last_change: float
@@ -13,6 +14,8 @@ func _ready() -> void:
 	nb_res = 0
 	nb_inv = 0
 	transfering = false
+	ship = hud.ship
+	player = hud.player
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,20 +23,20 @@ func _process(delta: float) -> void:
 	last_change -= delta
 	if not transfering and last_change <= 0.:
 		last_change = 0.
-		if nb_inv > 0 and player.ressources[type] == 0:
+		if nb_inv > 0 and player.ressources.get(type) == 0:
 			_launch_transfer()
-		elif nb_inv < player.ressources[type] :
+		elif nb_inv < player.ressources.get(type) :
 			_increase_player_res()
-		elif nb_inv > player.ressources[type] :
+		elif nb_inv > player.ressources.get(type) :
 			_decrease_player_res()
-		elif nb_res < ship.ressources[type] :
-			_increase_player_res()
-		elif nb_res > ship.ressources[type] :
-			_decrease_player_res()
+		elif nb_res < ship.ressources.get(type) :
+			_increase_ship_res()
+		elif nb_res > ship.ressources.get(type) :
+			_decrease_ship_res()
 			
 	
 func _get_str_res(res:int) -> String:
-	return "0" + str(res) if res < 10 else res
+	return "0" + str(res) if res < 10 else str(res)
 
 func _get_player_text(res:int) -> String:
 	return "(+" + _get_str_res(res) + ")"

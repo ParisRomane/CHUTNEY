@@ -1,4 +1,4 @@
-class_name Ship
+class_name EXShip
 extends Node
 
 var ressources: Ressource = Ressource.new(0,0,0)
