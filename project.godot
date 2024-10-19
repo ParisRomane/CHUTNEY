@@ -22,6 +22,21 @@ gdscript/warnings/unsafe_property_access=1
 gdscript/warnings/unsafe_method_access=1
 gdscript/warnings/unsafe_cast=1
 gdscript/warnings/unsafe_call_argument=1
+"<<<<<<<Updatedupstream[display]window/size/viewport_width"=2560
+window/size/viewport_height=1440
+window/size/mode=2
+window/stretch/mode="viewport"
+
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=2
+window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ropesim/plugin.cfg")
 
 [file_customization]
 
@@ -92,5 +107,10 @@ interact={
 shoot={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(327, 14),"global_position":Vector2(336, 60),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+aim={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(265, 21),"global_position":Vector2(274, 67),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
