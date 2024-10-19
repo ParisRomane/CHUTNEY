@@ -7,5 +7,7 @@ func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
 
 func _on_collect_area_body_entered(body: Node2D) -> void:
-	inventory.add_with_multiplier(body.inventory, _multiplier)
-	body.inventory.reset()
+	
+	if body.has_method("collect"):
+		inventory.add_with_multiplier(body.inventory, _multiplier)
+		body.inventory.reset()

@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var thruster_power : float = 100.0
 # TEMPORARY!!! In future we probably want to use the bounce factor of the collider, not the character.
 @export var bounce_force : float = 0.5
+@export var ship : CharacterBody2D 
 
 var up : float = 0.0
 var down : float = 0.0
@@ -16,6 +17,7 @@ var can_move : bool = true
 var going_back : bool = false
 var next_pos := Vector2(0, 0)
 var inventory : Ressource
+
 func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
 
@@ -36,24 +38,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		can_move = false
 		going_back = true
+		next_pos = get_next_pos()
 	
 	if going_back:
-		var size : int = get_parent().get_size()
-		if size !=1:
-			next_pos = get_parent().curve.get_point_position(size-1)
 		
-					
-			if (next_pos - position).length_squared() < 100:
-				get_parent().curve.remove_point(size-1)
-				get_parent().get_child(0).remove_point(size-1)
+		if (next_pos - position).length_squared() < 100:
+			next_pos = get_next_pos()
 
-			velocity = (next_pos - position).normalized() * MAX_SPEED
-		
-		else:
-			position = Vector2(0,0)
-			velocity = Vector2(0,0)
-			going_back = false
-			can_move = true
+		velocity = (next_pos - position).normalized() * MAX_SPEED
 	
 	else:
 		# Fake friction (actually there is no air in space)
@@ -67,6 +59,23 @@ func _physics_process(delta: float) -> void:
 	var collision_info : KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal()) * bounce_force
+
+func get_next_pos() -> Vector2:
+	var size : int = get_parent().get_size()
+	var next : Vector2
+	
+	if size != 0:
+		next = get_parent().curve.get_point_position(size-1)
+		get_parent().curve.remove_point(size-1)
+		get_parent().get_child(0).remove_point(size-1)
+	
+	else:
+		going_back = false
+		can_move = true
+		# Center the player and reset the path origin
+		reset_path(ship.get_node("CollectArea").position)
+		
+	return next
 
 func animate() -> void:
 	if Input.is_action_pressed("shoot"):
@@ -84,8 +93,13 @@ func animate() -> void:
 		$BodyAnimationTree.set("parameters/conditions/rope_inactive", true)
 	
 func rope_end() -> void:
-	velocity -= velocity
+	velocity -= velocity * 1.01
 	can_move = false
 	
 func collect(ressource : Ressource) -> void:
 	print("COLLECTED !")
+
+func reset_path(pos: Vector2) -> void:
+	position = pos
+	get_parent().curve.add_point(pos)
+	get_parent().get_child(0).add_point(pos)

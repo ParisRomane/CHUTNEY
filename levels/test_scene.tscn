@@ -20,8 +20,9 @@ max_rope_len = 10000.0
 
 [node name="Line2D" type="Line2D" parent="Path2D"]
 
-[node name="Player" parent="Path2D" instance=ExtResource("1_0ianl")]
-position = Vector2(-15, 619)
+[node name="Player" parent="Path2D" node_paths=PackedStringArray("ship") instance=ExtResource("1_0ianl")]
+position = Vector2(-6, 615)
+ship = NodePath("../../Ship")
 
 [node name="Cameraman" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_17d13")]
 target = NodePath("../Path2D/Player")
