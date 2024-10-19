@@ -16,7 +16,6 @@ var can_move : bool = true
 var going_back : bool = false
 var next_pos := Vector2(0, 0)
 var inventory : Ressource
-
 func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
 
@@ -27,6 +26,7 @@ func gather_inputs() -> void:
 func _physics_process(delta: float) -> void:
 	
 	gather_inputs()
+	animate()
 	
 	# Turn and apply a force to the character
 	look_at(mouse_pos)
@@ -67,6 +67,21 @@ func _physics_process(delta: float) -> void:
 	var collision_info : KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal()) * bounce_force
+
+func animate() -> void:
+	if Input.is_action_pressed("shoot"):
+		$BodyAnimationTree.set("parameters/conditions/firing", true)
+		$AnimatedSpriteExtinguisher.visible = true
+	else:
+		$BodyAnimationTree.set("parameters/conditions/firing", false)
+		$AnimatedSpriteExtinguisher.visible = false
+	
+	if !can_move:
+		$BodyAnimationTree.set("parameters/conditions/rope_active", true)
+		$BodyAnimationTree.set("parameters/conditions/rope_inactive", false)
+	else:
+		$BodyAnimationTree.set("parameters/conditions/rope_active", false)
+		$BodyAnimationTree.set("parameters/conditions/rope_inactive", true)
 	
 func rope_end() -> void:
 	velocity -= velocity

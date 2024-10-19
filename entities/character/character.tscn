@@ -1,20 +1,253 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh1fqcsplodtv"]
+[gd_scene load_steps=32 format=3 uid="uid://dh1fqcsplodtv"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_2iyhu"]
-[ext_resource type="Texture2D" uid="uid://bn17lddt67n78" path="res://assets/images/icon.svg" id="1_yp86a"]
+[ext_resource type="Texture2D" uid="uid://bbvk6fvkruaf2" path="res://assets/images/astronaut_0.svg" id="3_6cnwe"]
+[ext_resource type="Texture2D" uid="uid://dred8vn41etu" path="res://assets/images/bubbles_0.svg" id="3_35srt"]
+[ext_resource type="Texture2D" uid="uid://cddyhjkgj2nrv" path="res://assets/images/astronaut_1.svg" id="4_kugxp"]
+[ext_resource type="Texture2D" uid="uid://cgcc2023ryg2g" path="res://assets/images/bubbles_1.svg" id="4_ntk5e"]
+[ext_resource type="Texture2D" uid="uid://co6kqa233rna3" path="res://assets/images/astronaut_2.svg" id="5_a2ysy"]
+[ext_resource type="Texture2D" uid="uid://c21g8l21w2mx1" path="res://assets/images/bubbles_2.svg" id="5_vipr1"]
+[ext_resource type="Texture2D" uid="uid://ddrv7yg0rumxy" path="res://assets/images/astronaut_3.svg" id="6_ut72f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qsiv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_35srt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ntk5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vipr1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jvbt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6cnwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kugxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a2ysy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ut72f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_avqnk"]
 radius = 63.7887
 
+[sub_resource type="Animation" id="Animation_xdv65"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteBody:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_tu8ec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteBody:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_intic"]
+resource_name = "fire"
+length = 0.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteBody:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_t2f6h"]
+resource_name = "drag_by_rope"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteBody:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crhqe"]
+_data = {
+"RESET": SubResource("Animation_tu8ec"),
+"drag_by_rope": SubResource("Animation_t2f6h"),
+"fire": SubResource("Animation_intic"),
+"idle": SubResource("Animation_xdv65")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_11erd"]
+animation = &"drag_by_rope"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0h6xs"]
+animation = &"fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jojkw"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pjdfl"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ufy8t"]
+advance_mode = 2
+advance_condition = &"firing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t1n24"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oaf3d"]
+advance_mode = 2
+advance_condition = &"rope_active"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r77v4"]
+advance_mode = 2
+advance_condition = &"rope_inactive"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_48iub"]
+advance_mode = 2
+advance_condition = &"rope_active"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ycppk"]
+states/drag_by_rope/node = SubResource("AnimationNodeAnimation_11erd")
+states/drag_by_rope/position = Vector2(646, 161)
+states/fire/node = SubResource("AnimationNodeAnimation_0h6xs")
+states/fire/position = Vector2(646, 23)
+states/idle/node = SubResource("AnimationNodeAnimation_jojkw")
+states/idle/position = Vector2(397, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_pjdfl"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_ufy8t"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_t1n24"), "idle", "drag_by_rope", SubResource("AnimationNodeStateMachineTransition_oaf3d"), "drag_by_rope", "idle", SubResource("AnimationNodeStateMachineTransition_r77v4"), "fire", "drag_by_rope", SubResource("AnimationNodeStateMachineTransition_48iub")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xih8a"]
+animation = &"bubbles"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_wa5pn"]
+graph_offset = Vector2(-418.272, -42.6342)
+nodes/Bubble/node = SubResource("AnimationNodeAnimation_xih8a")
+nodes/Bubble/position = Vector2(80, 140)
+node_connections = [&"output", 0, &"Bubble"]
+
+[sub_resource type="Animation" id="Animation_pe4sv"]
+resource_name = "bubbles"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteExtinguisher:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_hfjrh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteExtinguisher:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xc1vc"]
+_data = {
+"RESET": SubResource("Animation_hfjrh"),
+"bubbles": SubResource("Animation_pe4sv")
+}
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_2iyhu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-texture = ExtResource("1_yp86a")
+[node name="AnimatedSpriteExtinguisher" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(119, 13)
+rotation = -3.14159
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_qsiv6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = 1.5708
+[node name="AnimatedSpriteBody" type="AnimatedSprite2D" parent="."]
+position = Vector2(31, -31)
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_5jvbt")
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_avqnk")
+
+[node name="BodyAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_crhqe")
+}
+
+[node name="BodyAnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_ycppk")
+anim_player = NodePath("../BodyAnimationPlayer")
+parameters/conditions/firing = false
+parameters/conditions/rope_active = false
+parameters/conditions/rope_inactive = false
+
+[node name="BubblesAnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_wa5pn")
+anim_player = NodePath("../BubbleAnimationPlayer")
+
+[node name="BubbleAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xc1vc")
+}
