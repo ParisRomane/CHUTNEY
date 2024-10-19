@@ -32,7 +32,7 @@ window/stretch/mode="viewport"
 window/size/viewport_width=2560
 window/size/viewport_height=1440
 window/size/mode=2
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

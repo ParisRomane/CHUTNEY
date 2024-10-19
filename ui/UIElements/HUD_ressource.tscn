@@ -1,0 +1,222 @@
+[gd_scene load_steps=9 format=3 uid="uid://bo8djmaypib5c"]
+
+[ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="1_6gxnc"]
+[ext_resource type="Script" path="res://ui/UIElements/HUD_Ressource.gd" id="2_wucp7"]
+[ext_resource type="Texture2D" uid="uid://bvehu226y8iti" path="res://assets/images/icon.svg" id="3_trxnh"]
+
+[sub_resource type="Animation" id="Animation_8ggrf"]
+resource_name = "Decrease_ship"
+length = 0.600003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stock_ship_craft:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stock_ship_craft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.600003),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(166, 43.5), Vector2(166, -41)]
+}
+
+[sub_resource type="Animation" id="Animation_62f3p"]
+resource_name = "Increase_player"
+length = 0.333337
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stock_player:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f8pa5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stock_player:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stock_player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(269, 43.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Stock_ship_craft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(166, -14)]
+}
+
+[sub_resource type="Animation" id="Animation_ufey6"]
+resource_name = "Transfer_to_ship"
+length = 0.400003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stock_ship:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.233333, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Stock_player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(269, 43.5), Vector2(246, 43.5), Vector2(269, 43.5)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_transfer_to_ship"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufq2x"]
+_data = {
+"Decrease_ship": SubResource("Animation_8ggrf"),
+"Increase_player": SubResource("Animation_62f3p"),
+"RESET": SubResource("Animation_f8pa5"),
+"Transfer_to_ship": SubResource("Animation_ufey6")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 627.0
+offset_bottom = 142.0
+theme = ExtResource("1_6gxnc")
+script = ExtResource("2_wucp7")
+
+[node name="Icone_Res" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_vertical = 2
+texture = ExtResource("3_trxnh")
+
+[node name="Stock_ship" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.330144
+anchor_top = 0.5
+anchor_right = 0.330144
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -27.5
+offset_right = 41.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("1_6gxnc")
+theme_type_variation = &"Label_HUD"
+text = "00"
+metadata/_edit_use_anchors_ = true
+
+[node name="Stock_ship_craft" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.330144
+anchor_top = -1.9331
+anchor_right = 0.330144
+anchor_bottom = -1.9331
+offset_left = -41.0003
+offset_top = 260.5
+offset_right = 40.9997
+offset_bottom = 315.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("1_6gxnc")
+theme_type_variation = &"Label_HUD"
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+text = "00"
+metadata/_edit_use_anchors_ = true
+
+[node name="Stock_player" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.457735
+anchor_top = 0.5
+anchor_right = 0.655502
+anchor_bottom = 0.5
+offset_left = -17.9998
+offset_top = -27.5
+offset_right = 64.0002
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(103, 27)
+theme = ExtResource("1_6gxnc")
+theme_type_variation = &"Label_HUD"
+text = "(+00)"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Anim_Stock_ship" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ufq2x")
+}
