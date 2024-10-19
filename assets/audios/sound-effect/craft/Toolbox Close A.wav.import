@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://q7fudhpinqes"
+path="res://.godot/imported/Toolbox Close A.wav-5d7af35cfd8e358467a4332f0578e3c8.sample"
+
+[deps]
+
+source_file="res://assets/audios/sound-effect/craft/Toolbox Close A.wav"
+dest_files=["res://.godot/imported/Toolbox Close A.wav-5d7af35cfd8e358467a4332f0578e3c8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
