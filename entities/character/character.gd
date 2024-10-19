@@ -10,18 +10,21 @@ var up : float = 0.0
 var down : float = 0.0
 var left : float = 0.0
 var right : float = 0.0
+var mouse_pos := Vector2()
+var shoot_line := Vector2()
 
 func gather_inputs() -> void:
-	up = Input.get_action_raw_strength("ui_up") * thruster_power
-	down = Input.get_action_raw_strength("ui_down") * thruster_power
-	left = Input.get_action_raw_strength("ui_left") * thruster_power
-	right = Input.get_action_raw_strength("ui_right") * thruster_power
+	mouse_pos = get_global_mouse_position()
+	shoot_line = mouse_pos - global_position
 
 func _physics_process(delta: float) -> void:
 	
 	gather_inputs()
-	velocity.y += down-up
-	velocity.x += right-left
+	
+	# Turn and apply a force to the character
+	look_at(mouse_pos)
+	if Input.is_action_pressed("shoot"):
+		velocity -= shoot_line * thruster_power
 	
 	# Fake friction (actually there is no air in space)
 	velocity.x = lerpf(velocity.x, 0, 0.01)
