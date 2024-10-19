@@ -1,10 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://d17c68wa5qg4"]
 
-[ext_resource type="Texture2D" uid="uid://mxg636xq6w4j" path="res://assets/images/icon.svg" id="1_d8wr4"]
+[ext_resource type="Texture2D" uid="uid://cp7kxqjuywu2a" path="res://assets/images/spaceship.svg" id="1_oc4ul"]
 
 [node name="Ship" type="CharacterBody2D"]
+scale = Vector2(10, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3, -69)
-scale = Vector2(5.49219, 3.76172)
-texture = ExtResource("1_d8wr4")
+texture = ExtResource("1_oc4ul")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-80.8, -25.6)
+polygon = PackedVector2Array(21.6, -84, 77.6, -176.8, 130.4, -81.6, 146.4, -91.2, 167.2, -82.4, 275.2, 74.4, 216.8, 75.2, 178.4, 37.6, 170.4, 37.6, 171.2, 88.8, 137.6, 89.6, 133.6, 64.8, 92.8, 80.8, 65.6, 81.6, 20, 66.4, 16.8, 89.6, -18.4, 89.6, -16, 35.2, -24, 36.8, -60.8, 74.4, -122.4, 74.4, -9.60001, -84, 9.59999, -92.8)
