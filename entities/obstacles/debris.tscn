@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgtuye4ibnfyu"]
+
+[ext_resource type="Script" path="res://entities/obstacles/debris.gd" id="1_1vosw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_caxtr"]
+radius = 87.9659
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8q283"]
+radius = 57.8705
+
+[node name="Debris" type="StaticBody2D"]
+script = ExtResource("1_1vosw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="DMGArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DMGArea"]
+shape = SubResource("CircleShape2D_caxtr")
+debug_color = Color(0.975525, 0, 0.418754, 0.42)
+
+[node name="CollectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("CircleShape2D_8q283")
+
+[connection signal="body_entered" from="DMGArea" to="." method="_on_dmg_area_body_entered"]
+[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

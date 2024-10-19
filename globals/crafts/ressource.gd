@@ -28,3 +28,8 @@ func remove(other: Ressource) -> void:
 	organic -= other.organic
 	scrap -= other.scrap
 	electronic -= other.electronic
+
+func reset() -> void:
+	organic = 0
+	scrap = 0
+	electronic = 0

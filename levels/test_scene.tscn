@@ -3,45 +3,33 @@
 [ext_resource type="PackedScene" uid="uid://dh1fqcsplodtv" path="res://entities/character/character.tscn" id="1_0ianl"]
 [ext_resource type="PackedScene" uid="uid://d17c68wa5qg4" path="res://entities/ship/ship.tscn" id="1_60x3n"]
 [ext_resource type="PackedScene" uid="uid://btrtrkv3kx40w" path="res://camera/cameraman.tscn" id="2_17d13"]
-[ext_resource type="PackedScene" uid="uid://dpk80yptykiwr" path="res://entities/obstacles/obstacle_test.tscn" id="2_86fby"]
 [ext_resource type="Script" path="res://entities/ship/ship.gd" id="2_vtqg2"]
-[ext_resource type="Texture2D" uid="uid://edipfbnaghuc" path="res://assets/images/background.svg" id="7_osibx"]
+[ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="6_wq1c7"]
+[ext_resource type="Texture2D" uid="uid://6b60grm4kaxm" path="res://assets/images/dbr_can.svg" id="7_ta33h"]
 [ext_resource type="Script" path="res://levels/player_path_following.gd" id="9_ikqji"]
 
 [sub_resource type="Curve2D" id="Curve2D_lja3m"]
 
 [node name="TestScene" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -3084.0
-offset_top = -2032.0
-offset_right = 3007.0
-offset_bottom = 1778.0
-texture = ExtResource("7_osibx")
+[node name="Ship" parent="." instance=ExtResource("1_60x3n")]
+script = ExtResource("2_vtqg2")
 
 [node name="Path2D" type="Path2D" parent="." node_paths=PackedStringArray("player")]
 curve = SubResource("Curve2D_lja3m")
 script = ExtResource("9_ikqji")
 player = NodePath("Player")
+max_rope_len = 10000.0
 
 [node name="Line2D" type="Line2D" parent="Path2D"]
 
 [node name="Player" parent="Path2D" instance=ExtResource("1_0ianl")]
-
-[node name="Ship" parent="." instance=ExtResource("1_60x3n")]
-script = ExtResource("2_vtqg2")
+position = Vector2(-15, 619)
 
 [node name="Cameraman" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_17d13")]
 target = NodePath("../Path2D/Player")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_86fby")]
-position = Vector2(360, 310)
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("2_86fby")]
-position = Vector2(534, -305)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("2_86fby")]
-position = Vector2(-630, 390)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_86fby")]
-position = Vector2(-606, -387)
+[node name="Debris" parent="." instance=ExtResource("6_wq1c7")]
+position = Vector2(-575, 1156)
+texture = ExtResource("7_ta33h")
+type = 2

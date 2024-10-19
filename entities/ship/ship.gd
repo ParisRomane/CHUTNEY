@@ -1,5 +1,11 @@
 extends CharacterBody2D
 
-func _physics_process(delta: float) -> void:
-	
-	position = Vector2(0,0)
+var inventory : Ressource
+var _multiplier : int = 0
+
+func _ready() -> void:
+	inventory = Ressource.new(0,0,0)
+
+func _on_collect_area_body_entered(body: Node2D) -> void:
+	inventory.add_with_multiplier(body.inventory, _multiplier)
+	body.inventory.reset()

@@ -14,9 +14,11 @@ var mouse_pos := Vector2()
 var shoot_line := Vector2()
 var can_move : bool = true
 var going_back : bool = false
-
 var next_pos := Vector2(0, 0)
-var back_vel := Vector2(0, 0)
+var inventory : Ressource
+
+func _ready() -> void:
+	inventory = Ressource.new(0,0,0)
 
 func gather_inputs() -> void:
 	mouse_pos = get_global_mouse_position()
@@ -69,3 +71,6 @@ func _physics_process(delta: float) -> void:
 func rope_end() -> void:
 	velocity -= velocity
 	can_move = false
+	
+func collect(ressource : Ressource) -> void:
+	print("COLLECTED !")

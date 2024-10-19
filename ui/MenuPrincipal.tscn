@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnx2bogn73ocb"]
+
+[ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="1_ngiwr"]
+[ext_resource type="Script" path="res://ui/UIElements/menu_principal.gd" id="2_qpln2"]
+[ext_resource type="Texture2D" uid="uid://bcpacqjv68jt8" path="res://assets/images/textures/Background_texture.tres" id="3_j1bql"]
+[ext_resource type="PackedScene" uid="uid://cwyr5qfon472s" path="res://ui/UIElements/button_menu_base.tscn" id="4_pcffx"]
+
+[node name="TestUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ngiwr")
+script = ExtResource("2_qpln2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1248, 859)
+scale = Vector2(1.74179, 1.74179)
+texture = ExtResource("3_j1bql")
+
+[node name="ButtonLaunch" parent="." instance=ExtResource("4_pcffx")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -80.0
+offset_right = 300.0
+offset_bottom = -20.0
+
+[node name="ButtonQuitter" parent="." instance=ExtResource("4_pcffx")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 80.0
+text = "Quitter"

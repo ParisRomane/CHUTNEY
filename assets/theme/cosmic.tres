@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://p2wh0irjavap"]
+
+[ext_resource type="FontFile" uid="uid://bs5txqceyc5uj" path="res://assets/font/white-rabbit/whitrabt.ttf" id="1_hlc1l"]
+[ext_resource type="StyleBox" uid="uid://sqof3qp8q2g7" path="res://assets/theme/StyleBoxFlat_Button_base.tres" id="2_0u6tj"]
+[ext_resource type="StyleBox" uid="uid://v564yxv26h4x" path="res://assets/theme/StyleBoxFlat_Button_focus.tres" id="2_q1ln1"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 28
+Button/fonts/font = ExtResource("1_hlc1l")
+Button/styles/disabled = null
+Button/styles/focus = ExtResource("2_q1ln1")
+Button/styles/hover = ExtResource("2_q1ln1")
+Button/styles/normal = ExtResource("2_0u6tj")
+Button/styles/pressed = null
+Label/font_sizes/font_size = 42
+Label/fonts/font = ExtResource("1_hlc1l")
+Label_HUD/base_type = &"Label"
+Label_HUD/font_sizes/font_size = 72
