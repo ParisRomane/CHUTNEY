@@ -1,0 +1,83 @@
+extends Control
+
+@export var ship: Ship
+@export var player: Player
+@export var type: String
+var nb_res: int
+var nb_inv: int
+var last_change: float
+var transfering: bool
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	nb_res = 0
+	nb_inv = 0
+	transfering = false
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	last_change -= delta
+	if not transfering and last_change <= 0.:
+		last_change = 0.
+		if nb_inv > 0 and player.ressources[type] == 0:
+			_launch_transfer()
+		elif nb_inv < player.ressources[type] :
+			_increase_player_res()
+		elif nb_inv > player.ressources[type] :
+			_decrease_player_res()
+		elif nb_res < ship.ressources[type] :
+			_increase_player_res()
+		elif nb_res > ship.ressources[type] :
+			_decrease_player_res()
+			
+	
+func _get_str_res(res:int) -> String:
+	return "0" + str(res) if res < 10 else res
+
+func _get_player_text(res:int) -> String:
+	return "(+" + _get_str_res(res) + ")"
+	
+
+func _launch_transfer() -> void:
+	if not transfering:
+		transfering = true
+		_transfer_to_ship()
+	
+func _transfer_to_ship() -> void:
+	if nb_inv <= 0:
+		transfering = false
+		$Stock_player.hide()
+		return
+	nb_inv -= 1
+	nb_res += 1
+	$Stock_player.text = _get_player_text(nb_inv)
+	$Stock_ship.text = _get_str_res(nb_res)
+	$Anim_Stock_ship.play("Transfer_to_ship")
+	
+func _increase_player_res() -> void:
+	$Stock_player.show()
+	nb_inv = player.ressources[type]
+	$Stock_player.text = _get_player_text(nb_inv)
+	last_change = .4
+	$Anim_Stock_ship.play("Increase_player")
+	
+	
+func _decrease_player_res() -> void:
+	nb_inv -= 1
+	$Stock_player.text = _get_player_text(nb_inv)
+	if nb_inv <= 0:
+		$Stock_player.hide()
+	else:
+		pass
+		#todo anim
+	
+func _increase_ship_res() -> void:
+	nb_res += 1
+	$Stock_ship.text = _get_str_res(nb_res)
+	#todo anim
+	
+func _decrease_ship_res() -> void:
+	nb_res = ship.ressources[type]
+	$Stock_ship.text = _get_str_res(nb_res)
+	#todo anim
