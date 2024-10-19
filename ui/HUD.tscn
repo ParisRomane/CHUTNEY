@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://clnmmtkirxbcn"]
+[gd_scene load_steps=4 format=3 uid="uid://clnmmtkirxbcn"]
 
 [ext_resource type="PackedScene" uid="uid://bo8djmaypib5c" path="res://ui/UIElements/HUD_ressource.tscn" id="1_o1wp2"]
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_vdy44"]
-[ext_resource type="Script" path="res://globals/crafts/player.gd" id="2_hs6mc"]
-[ext_resource type="Script" path="res://globals/crafts/ship.gd" id="3_ibm17"]
+[ext_resource type="PackedScene" uid="uid://bqlr1kccppcuk" path="res://levels/test_scene.tscn" id="3_flco3"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("player", "ship")]
+[node name="Node" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("player", "ship")]
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,10 +17,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vdy44")
-player = NodePath("Player")
-ship = NodePath("Ship")
+player = NodePath("../../TestScene/Path2D/Player")
+ship = NodePath("../../TestScene/Ship")
 
-[node name="RessourcesPlacement" type="Control" parent="."]
+[node name="RessourcesPlacement" type="Control" parent="CanvasLayer/Hud"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -26,7 +30,7 @@ offset_right = 1683.0
 offset_bottom = -40.0
 grow_vertical = 2
 
-[node name="Liquide" parent="RessourcesPlacement" instance=ExtResource("1_o1wp2")]
+[node name="Liquide" parent="CanvasLayer/Hud/RessourcesPlacement" node_paths=PackedStringArray("hud") instance=ExtResource("1_o1wp2")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -34,9 +38,10 @@ anchor_bottom = 1.0
 offset_top = -502.0
 offset_bottom = -360.0
 grow_vertical = 0
+hud = NodePath("../..")
 type = "organic"
 
-[node name="Electronics" parent="RessourcesPlacement" instance=ExtResource("1_o1wp2")]
+[node name="Electronics" parent="CanvasLayer/Hud/RessourcesPlacement" node_paths=PackedStringArray("hud") instance=ExtResource("1_o1wp2")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -44,9 +49,10 @@ anchor_bottom = 1.0
 offset_top = -142.0
 offset_bottom = 0.0
 grow_vertical = 0
+hud = NodePath("../..")
 type = "electronic"
 
-[node name="Scraps" parent="RessourcesPlacement" instance=ExtResource("1_o1wp2")]
+[node name="Scraps" parent="CanvasLayer/Hud/RessourcesPlacement" node_paths=PackedStringArray("hud") instance=ExtResource("1_o1wp2")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -54,10 +60,10 @@ anchor_bottom = 1.0
 offset_top = -322.0
 offset_bottom = -180.0
 grow_vertical = 0
+hud = NodePath("../..")
 type = "scrap"
 
-[node name="Player" type="Node2D" parent="."]
-script = ExtResource("2_hs6mc")
+[node name="TestScene" parent="." instance=ExtResource("3_flco3")]
 
-[node name="Ship" type="Node2D" parent="."]
-script = ExtResource("3_ibm17")
+[editable path="TestScene"]
+[editable path="TestScene/Cameraman"]

@@ -1,7 +1,7 @@
 extends Control
 
 @export var hud: HUD
-var player: Player
+var player: Character
 var ship : Ship
 @export_enum("organic", "scrap", "electronic") var type: String
 var nb_res: int
@@ -23,15 +23,15 @@ func _process(delta: float) -> void:
 	last_change -= delta
 	if not transfering and last_change <= 0.:
 		last_change = 0.
-		if nb_inv > 0 and player.ressources.get(type) == 0:
+		if nb_inv > 0 and player.inventory.get(type) == 0:
 			_launch_transfer()
-		elif nb_inv < player.ressources.get(type) :
+		elif nb_inv < player.inventory.get(type) :
 			_increase_player_res()
-		elif nb_inv > player.ressources.get(type) :
+		elif nb_inv > player.inventory.get(type) :
 			_decrease_player_res()
-		elif nb_res < ship.ressources.get(type) :
+		elif nb_res < ship.inventory.get(type) :
 			_increase_ship_res()
-		elif nb_res > ship.ressources.get(type) :
+		elif nb_res > ship.inventory.get(type) :
 			_decrease_ship_res()
 			
 	
@@ -60,7 +60,7 @@ func _transfer_to_ship() -> void:
 	
 func _increase_player_res() -> void:
 	$Stock_player.show()
-	nb_inv = player.ressources[type]
+	nb_inv = player.inventory[type]
 	$Stock_player.text = _get_player_text(nb_inv)
 	last_change = .4
 	$Anim_Stock_ship.play("Increase_player")
@@ -81,9 +81,9 @@ func _increase_ship_res() -> void:
 	#todo anim
 	
 func _decrease_ship_res() -> void:
-	var nb_diff : int = nb_res - ship.ressources[type]
+	var nb_diff : int = nb_res - ship.inventory[type]
 	$Stock_ship_craft.text = _get_str_res(nb_diff)
-	nb_res = ship.ressources[type]
+	nb_res = ship.inventory[type]
 	$Stock_ship.text = _get_str_res(nb_res)
 	last_change = .8
 	$Anim_Stock_ship.play("Decrease_ship")
