@@ -69,3 +69,6 @@ func _physics_process(delta: float) -> void:
 func rope_end() -> void:
 	velocity -= velocity
 	can_move = false
+	
+func collect(ressource : Ressource) -> void:
+	print("COLLECTED !")

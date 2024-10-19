@@ -7,7 +7,7 @@ extends StaticBody2D
 var _multiplier : int = 1
 
 func _ready() -> void:
-	Sprite2D.texture = texture
+	$Sprite2D.texture = texture
 	
 	if is_hazardous:
 		_multiplier = 2
@@ -24,3 +24,4 @@ func get_resources() -> Ressource:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("collect"):
 		body.collect(get_resources())
+		self.queue_free()
