@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="OvaniSong" load_steps=3 format=3 uid="uid://ddsletqjtocts"]
+
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniSong.gd" id="1_3obhl"]
+[ext_resource type="AudioStream" uid="uid://6va87dmihf3e" path="res://assets/audios/music/intro/Ambient Vol6 Back Home Main.wav" id="1_nv8lf"]
+
+[resource]
+script = ExtResource("1_3obhl")
+Intensity1 = ExtResource("1_nv8lf")
+ReverbTail = 7.0
+SongMode = 0
