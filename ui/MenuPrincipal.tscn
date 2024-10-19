@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="1_ngiwr"]
 [ext_resource type="Script" path="res://ui/UIElements/menu_principal.gd" id="2_qpln2"]
-[ext_resource type="Texture2D" uid="uid://ru1uq12ysbmg" path="res://assets/images/background.svg" id="3_yfau0"]
+[ext_resource type="Texture2D" uid="uid://bcpacqjv68jt8" path="res://assets/images/textures/Background_texture.tres" id="3_j1bql"]
 [ext_resource type="PackedScene" uid="uid://cwyr5qfon472s" path="res://ui/UIElements/button_menu_base.tscn" id="4_pcffx"]
 
 [node name="TestUi" type="Control"]
@@ -18,7 +18,7 @@ script = ExtResource("2_qpln2")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1248, 859)
 scale = Vector2(1.74179, 1.74179)
-texture = ExtResource("3_yfau0")
+texture = ExtResource("3_j1bql")
 
 [node name="ButtonLaunch" parent="." instance=ExtResource("4_pcffx")]
 layout_mode = 1
