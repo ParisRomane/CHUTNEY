@@ -1,15 +1,15 @@
 extends StaticBody2D
 
 @export var texture : Texture2D
-@export var type : int = 0
-@export var is_hazardous : bool = false
+@export var type : enums.dbr_type
+@export var hazard_type : enums.hazard
 
 var _multiplier : int = 1
 
 func _ready() -> void:
 	$Sprite2D.texture = texture
 	
-	if is_hazardous:
+	if !hazard_type == enums.hazard.NONE :
 		_multiplier = 2
 	
 func get_resources() -> Ressource:
@@ -21,7 +21,12 @@ func get_resources() -> Ressource:
 	return rsc[type]
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_dmg_area_body_entered(body: Node2D) -> void:
+	if body.has_method("hit"):
+		body.hit(1)
+
+
+func _on_collect_area_body_entered(body: Node2D) -> void:
 	if body.has_method("collect"):
 		body.collect(get_resources())
 		self.queue_free()
