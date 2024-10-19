@@ -7,8 +7,8 @@
 			"scrap": 5,
 			"electronic": 5
 		},
-		"description_short": "Permet de fabriquer des choses utilisable a partir de ce que vous collectez.",
-		"description": "L'assembleur de votre vaisseau, il a connu des jours meilleur.",
+		"description_short": "Permet de fabriquer des choses utilisables à partir de ce que vous collectez.",
+		"description": "L'assembleur de votre vaisseau, il a connu des jours meilleurs.",
 		"effect": "cc_set_craft_multiplier",
 		"arg": 1
 	},
@@ -21,8 +21,8 @@
 			"scrap": 15,
 			"electronic": 5
 		},
-		"description_short": "Double les ressources récupéré lors du recyclage",
-		"description": "L'utilisation des micro fluctuation quantique relative permettent bla bla bla... bref, Nano machines son!",
+		"description_short": "Double les ressources récupérées lors du recyclage",
+		"description": "L'utilisation des micro fluctuations quantiques relative permettent bla bla bla... bref, Nano machines son!",
 		"effect": "cc_set_craft_multiplier",
 		"arg": 2
 	},
@@ -35,8 +35,8 @@
 			"scrap": 50,
 			"electronic": 10
 		},
-		"description_short": "Triple les ressources récupéré lors du recyclage",
-		"description": "Vous avez finalement démontré la théorie des corde et prouvé sa superiorité sur le modèle quantique... quoi que cela veuille dire il semblerais qu'on puisse utiliser tout ca pour augmenter le rendement du recycleur. Esperons que vous pourrez rentrer sain et sauf pour raconter vos decouvertes.",
+		"description_short": "Triple les ressources récupérées lors du recyclage",
+		"description": "Vous avez finalement démontré la théorie des cordes et prouvé sa superiorité sur le modèle quantique... quoi que cela veuille dire. Il semblerait qu'on puisse utiliser tout cela pour augmenter le rendement du recycleur. Esperons que vous pourrez rentrer sain et sauf pour raconter vos decouvertes.",
 		"effect": "cc_set_craft_multiplier",
 		"arg": 3
 	},
@@ -78,7 +78,7 @@
 			"electronic": 1
 		},
 		"description_short": "Augmente la longueur de la ligne de vie",
-		"description": "Une corde en fibre de carbone, la longueur ne devrais plus poser probleme mais était-ce bien la peine de se donner autant de mal... vous comptez bien rentrer?",
+		"description": "Une corde en fibre de carbone, la longueur ne devrait plus poser problème. Mais était-ce bien la peine de se donner autant de mal... vous comptez bien rentrer?",
 		"effect": "cc_set_zipline_length",
 		"arg": 600
 	},
@@ -92,7 +92,7 @@
 			"electronic": 1
 		},
 		"description_short": "Augmente votre capacité en carburant",
-		"description": "Double la capacité en carburant pour les SEV, double aussi le poid mais on a rien sans rien.",
+		"description": "Double la capacité en carburant pour les SEV, double aussi le poids mais on a rien sans rien.",
 		"effect": "cc_set_fuel_capacity",
 		"arg": 1000
 	},
@@ -106,7 +106,7 @@
 			"electronic": 1
 		},
 		"description_short": "Augmente votre capacité en carburant",
-		"description": "En augmentant l'epaisseur d'acier de vos reserve de carburant on peux en comprimer plus a l'interieur sans risque d'explosion!",
+		"description": "En augmentant l'épaisseur d'acier de vos réserves de carburant, on peux en comprimer plus à l'intérieur sans risque d'explosion!",
 		"effect": "cc_set_fuel_capacity",
 		"arg": 2000
 	},
@@ -120,7 +120,7 @@
 			"electronic": 2
 		},
 		"description_short": "Augmente votre capacité en carburant",
-		"description": "Si un noyau d'atome faisais la taille d'une balle de tenis, ses electrons serais a 3Km de lui... on a encore de la marge pour compresser!",
+		"description": "Si un noyau d'atome faisait la taille d'une balle de tenis, ses électrons seraient à 3km de lui... on a encore de la marge pour compresser!",
 		"effect": "cc_set_fuel_capacity",
 		"arg": 3000
 	},
@@ -133,8 +133,8 @@
 			"scrap": 5,
 			"electronic": 0
 		},
-		"description_short": "Augmente votre vitesse de deplacement",
-		"description": "Ouvrage de reference pour les eboueur perdu dans l'espace en attente d'être secouru par l'ISS et qui n'on qu'un extincteur pour se deplacer (vendu a 2 exemplaire).",
+		"description_short": "Augmente votre vitesse de déplacement",
+		"description": "Ouvrage de référence pour les éboueurs perdus dans l'espace, en attente d'être secourus par l'ISS, et qui n'ont qu'un extincteur pour se deplacer (vendu a 2 exemplaire).",
 		"effect": "cc_set_player_friction",
 		"arg": 50
 	},
@@ -147,8 +147,8 @@
 			"scrap": 8,
 			"electronic": 0
 		},
-		"description_short": "Augmente votre vitesse de deplacement",
-		"description": "En augmentant le diametre de l'ouverture de l'extincteur on va beaucoup plus vite! (et sans coup supplementaire en carburant etrangement).",
+		"description_short": "Augmente votre vitesse de déplacement",
+		"description": "En augmentant le diamètre de l'ouverture de l'extincteur, on va beaucoup plus vite! (et sans coût supplémentaire en carburant étrangement).",
 		"effect": "cc_set_player_friction",
 		"arg": 40
 	},
@@ -161,8 +161,8 @@
 			"scrap": 20,
 			"electronic": 2
 		},
-		"description_short": "Augmente votre vitesse de deplacement",
-		"description": "A force de modifier votre fidele extincteur vous avez fini par maitriser les arcanes des lanceur anti incendis pour en faire le moyen de locomotion ultime!",
+		"description_short": "Augmente votre vitesse de déplacement",
+		"description": "A force de modifier votre fidèle extincteur, vous avez fini par maîtriser les arcanes des lanceurs anti-incendis pour en faire le moyen de locomotion ultime!",
 		"effect": "cc_set_player_friction",
 		"arg": 30
 	},
@@ -176,7 +176,7 @@
 			"electronic": 0
 		},
 		"description_short": "Augmente votre champ de vision",
-		"description": "Une lampe de poche de camping a manivelle, qui aurais cru que vous en auriez réellement l'usage un jour?",
+		"description": "Une lampe de poche de camping à manivelle, qui aurais cru que vous en auriez réellement l'usage un jour?",
 		"effect": "cc_set_player_view",
 		"arg": 40
 	},
@@ -190,7 +190,7 @@
 			"electronic": 1
 		},
 		"description_short": "Augmente votre champ de vision",
-		"description": "Remplace l'empoule a incandescence de votre lampe torche par une Diode Electro-Luminescente! c'est vraiment le futur!",
+		"description": "Remplace l'ampoule à incandescence de votre lampe torche par une Diode Electro-Luminescente! C'est vraiment le futur!",
 		"effect": "cc_set_player_view",
 		"arg": 50
 	},
@@ -204,7 +204,7 @@
 			"electronic": 0
 		},
 		"description_short": "Augmente votre champ de vision",
-		"description": "Après avoir longuement observé la chauve-souris qui devais servir a l'une des experience de votre navette vous parvenez enfin a maitriser l'echolocalisation, heureusement dans le vide de l'espace personne ne vous entendra crier.",
+		"description": "Après avoir longuement observé la chauve-souris qui devait servir a l'une des experience de votre navette, vous parvenez enfin à maitriser l'echolocalisation, heureusement dans le vide de l'espace personne ne vous entendra crier.",
 		"effect": "cc_set_player_view",
 		"arg": 60
 	},
@@ -218,7 +218,7 @@
 			"electronic": 1
 		},
 		"description_short": "Augmente la portée du radar du vaisseau",
-		"description": "Des phares de remplacement pour le vaisseau, on devrais y voir plus clair.",
+		"description": "Des phares de remplacement pour le vaisseau, on devrait y voir plus clair.",
 		"effect": "cc_set_ship_view",
 		"arg": 400
 	},
@@ -232,7 +232,7 @@
 			"electronic": 1
 		},
 		"description_short": "Augmente la portée du radar du vaisseau",
-		"description": "Ajoute de puissant spot autour du vaisseaux ce qui augmente drastiquement la visibilité ainsi que la secheresse occulaire.",
+		"description": "Ajoute de puissants spots autour du vaisseaux, ce qui augmente drastiquement la visibilité ainsi que la sécheresse occulaire.",
 		"effect": "cc_set_ship_view",
 		"arg": 500
 	},
@@ -246,7 +246,7 @@
 			"electronic": 1
 		},
 		"description_short": "Augmente la portée du radar du vaisseau",
-		"description": "L'utilisation de materiaux plus resistant dans la conception des LED permet d'augmenter leur intensité jusqu'a 5000 Lumens, suffisent pour rendre le soleil jalou.",
+		"description": "L'utilisation de matériaux plus resistants dans la conception des LED permet d'augmenter leur intensité jusqu'a 5000 Lumens, suffisant pour rendre le soleil jalou.",
 		"effect": "cc_set_ship_view",
 		"arg": 600
 	},
@@ -260,7 +260,7 @@
 			"electronic": 0
 		},
 		"description_short": "Imunise aux dégats de radiation",
-		"description": "Combinaison a base de plomb qui absorbe les rayonnement radioactif qui vous tuerais en 2 mois en echange d'un empoisonement au plomb qui vous tuera dans 20 ans, une affaire!",
+		"description": "Combinaison à base de plomb qui absorbe les rayonnements radioactifs qui vous tueraient en 2 mois en échange d'un empoisonement au plomb qui vous tuera dans 20 ans, une affaire!",
 		"effect": "cc_set_hazard_protection",
 		"arg": 0
 	},
@@ -273,8 +273,8 @@
 			"scrap": 10,
 			"electronic": 2
 		},
-		"description_short": "Imunise aux dégats électrique",
-		"description": "Ajoute un cable le long de votre ligne de vie qui redirige les haute tensions vers votre vaisseau.",
+		"description_short": "Immunise aux dégats électrique",
+		"description": "Ajoute un câble le long de votre ligne de vie qui redirige les hautes tensions vers votre vaisseau.",
 		"effect": "cc_set_hazard_protection",
 		"arg": 1
 	},
@@ -287,8 +287,8 @@
 			"scrap": 10,
 			"electronic": 2
 		},
-		"description_short": "Imunise aux dégats des objets tranchants",
-		"description": "Nous y somme, le pinnacle de la technologie humaine! la Combinaison C.A.C.T.U.S. (Combinaison Anti Cactus Tactique Ultra Sécurisé) qui permet de se premunire des petite coupure superficielles!",
+		"description_short": "Imunise aux dégâts des objets tranchants",
+		"description": "Nous y sommes, le pinacle de la technologie humaine! la Combinaison C.A.C.T.U.S. (Combinaison Anti Cactus Tactique Ultra Sécurisé) qui permet de se prémunire des petites coupures superficielles!",
 		"effect": "cc_set_hazard_protection",
 		"arg": 2
 	}
