@@ -22,15 +22,16 @@ func _init(name_: String, tier_: int, cost_: Ressource, description_short_: Stri
 	
 static func from_json(path: String) -> Array[Craft]:
 	var json_as_text: String = FileAccess.get_file_as_string(path)
-	var json: Array[Dictionary] = JSON.parse_string(json_as_text)
+	var json: Array[Variant] = JSON.parse_string(json_as_text)
 	var result: Array[Craft] = []
-	for craft in json:
+	for craft: Variant in json:
 		var _name: String = craft["name"]
 		var _tier: int = craft["tier"]
+		var _ressource: Dictionary = craft["ressource"]
 		var _cost: Ressource = Ressource.new(
-			craft["ressource"]["organic"],
-			craft["ressource"]["scrap"],
-			craft["ressource"]["electronic"]
+			_ressource["organic"],
+			_ressource["scrap"],
+			_ressource["electronic"]
 		)
 		var _description_short: String = craft["description_short"]
 		var _description: String = craft["description"]
