@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://btrtrkv3kx40w"]
+
+[ext_resource type="Script" path="res://camera/PlayerCamera.gd" id="1_glfp0"]
+
+[node name="Cameraman" type="CharacterBody2D"]
+script = ExtResource("1_glfp0")
+MAX_DIST = 500
+CAMERA_SPEED = 1000
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
