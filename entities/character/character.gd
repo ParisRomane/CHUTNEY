@@ -11,6 +11,10 @@ extends CharacterBody2D
 
 var longueur_corde : int = 4500
 
+var bounce_force_store : float = 0.5
+
+var can_shoot: bool = true
+
 var up : float = 0.0
 var down : float = 0.0
 var left : float = 0.0
@@ -31,11 +35,18 @@ func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
 	current_fuel = max_fuel
 	reset_path(ship.get_node("CollectArea").position)
+	bounce_force_store = bounce_force
 
 func gather_inputs() -> void:
 	mouse_pos = get_global_mouse_position()
 	shoot_line = mouse_pos - global_position
 
+func _can_shoot() -> void:
+	can_shoot = true
+
+func _cannot_shoot() -> void:
+	can_shoot = false
+	
 func _physics_process(delta: float) -> void:
 	
 	gather_inputs()
@@ -43,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Turn and apply a force to the character
 	look_at(mouse_pos)
-	if Input.is_action_pressed("shoot") and can_move and current_fuel >= 0.0:
+	if can_shoot and Input.is_action_pressed("shoot") and can_move and current_fuel >= 0.0:
 		velocity -= shoot_line * thruster_power
 		current_fuel -= 5
 	
@@ -94,7 +105,7 @@ func get_next_pos() -> Vector2:
 	return next
 
 func animate() -> void:
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and can_shoot:
 		$BodyAnimationTree.set("parameters/conditions/firing", true)
 		$AnimatedSpriteExtinguisher.visible = true
 	else:
@@ -122,3 +133,9 @@ func reset_path(pos: Vector2) -> void:
 
 func hit(value : bool) -> void:
 	is_hit = value
+
+func enter_ship() -> void:
+	bounce_force = 0.1
+
+func exit_ship() -> void:
+	bounce_force = bounce_force_store

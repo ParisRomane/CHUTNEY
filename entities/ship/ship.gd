@@ -32,11 +32,18 @@ func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
 
 func _on_collect_area_body_entered(body: Node2D) -> void:
-	
 	if body.has_method("collect"):
 		inventory.add_with_multiplier(body.inventory, _multiplier)
 		body.inventory.reset()
 		body.current_fuel = body.max_fuel
+		body.enter_ship()
+		if craft_button.flag:
+			craft_button.show()
+
+func _on_collect_area_body_exited(body: Node2D) -> void:
+	if body.has_method("collect"):
+		craft_button.hide()
+		body.exit_ship()
 
 func _load_crafts() -> void:
 	var crafts: Array[Craft] = Craft.from_json("./globals/crafts/craft_definition.json")
