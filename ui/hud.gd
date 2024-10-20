@@ -24,4 +24,7 @@ func _ready() -> void:
 func _process(delta: float) -> void: 
 	plein.size.y = player.current_fuel * .5
 	vide.size.y = player.max_fuel * .5
-	pass
+	if Input.is_action_just_pressed('ui_cancel'):
+		var fin : Node = load("res://fin.tscn").instantiate()
+		self.get_parent().add_child(fin)
+		self.get_parent().remove_child(self)
