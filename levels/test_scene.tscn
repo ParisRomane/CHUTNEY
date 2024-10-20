@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqlr1kccppcuk"]
+[gd_scene load_steps=8 format=3 uid="uid://bqlr1kccppcuk"]
 
 [ext_resource type="PackedScene" uid="uid://dh1fqcsplodtv" path="res://entities/character/character.tscn" id="1_0ianl"]
 [ext_resource type="PackedScene" uid="uid://d17c68wa5qg4" path="res://entities/ship/ship.tscn" id="1_60x3n"]
 [ext_resource type="PackedScene" uid="uid://btrtrkv3kx40w" path="res://camera/cameraman.tscn" id="2_17d13"]
-[ext_resource type="PackedScene" path="res://entities/obstacles/debris.tscn" id="6_wq1c7"]
+[ext_resource type="PackedScene" path="res://entities/obstacles/dbr_nuclear.tscn" id="6_dt4m7"]
+[ext_resource type="PackedScene" uid="uid://bp0h7db0kwtdh" path="res://entities/obstacles/debris.tscn" id="6_wq1c7"]
 [ext_resource type="Script" path="res://levels/player_path_following.gd" id="9_ikqji"]
 
 [sub_resource type="Curve2D" id="Curve2D_lja3m"]
@@ -23,6 +24,7 @@ max_rope_len = 10000.0
 [node name="Player" parent="Path2D" node_paths=PackedStringArray("ship") instance=ExtResource("1_0ianl")]
 position = Vector2(-6, 615)
 ship = NodePath("../../Ship")
+max_fuel = 50.0
 
 [node name="Cameraman" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_17d13")]
 target = NodePath("../Path2D/Player")
@@ -30,3 +32,6 @@ target = NodePath("../Path2D/Player")
 [node name="Debris" parent="." instance=ExtResource("6_wq1c7")]
 position = Vector2(-575, 1156)
 type = 2
+
+[node name="Nuclear" parent="." instance=ExtResource("6_dt4m7")]
+position = Vector2(633, 1169)

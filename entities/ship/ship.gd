@@ -12,3 +12,4 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 	if body.has_method("collect"):
 		inventory.add_with_multiplier(body.inventory, _multiplier)
 		body.inventory.reset()
+		body.current_fuel = body.max_fuel
