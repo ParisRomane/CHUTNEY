@@ -1,6 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnjc3so4cr141"]
+[gd_scene load_steps=18 format=3 uid="uid://cnjc3so4cr141"]
 
+[ext_resource type="Texture2D" uid="uid://ru1uq12ysbmg" path="res://assets/images/background.svg" id="1_6efur"]
 [ext_resource type="PackedScene" uid="uid://dh1fqcsplodtv" path="res://entities/character/character.tscn" id="1_h48b7"]
+[ext_resource type="Script" path="res://levels/level_1.gd" id="1_hohy3"]
 [ext_resource type="PackedScene" uid="uid://d17c68wa5qg4" path="res://entities/ship/ship.tscn" id="2_iqdum"]
 [ext_resource type="PackedScene" uid="uid://j3rip3s3bacu" path="res://entities/obstacles/Asteroid.tscn" id="3_pklyj"]
 [ext_resource type="PackedScene" uid="uid://up8n2kkat7b8" path="res://entities/obstacles/dbr_bag.tscn" id="4_qss3u"]
@@ -18,8 +20,14 @@
 [sub_resource type="Curve2D" id="Curve2D_yvr1u"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_hohy3")
 metadata/_edit_vertical_guides_ = [4484.0, -4496.0, 8979.0, -8981.0]
 metadata/_edit_horizontal_guides_ = [4500.0, -3789.0, -6979.0, 9037.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(70, 116)
+scale = Vector2(2.76354, 2.46575)
+texture = ExtResource("1_6efur")
 
 [node name="Ship" parent="." instance=ExtResource("2_iqdum")]
 position = Vector2(21, -791)
@@ -610,7 +618,6 @@ max_rope_len = 4500.0
 [node name="Player" parent="Path2D" node_paths=PackedStringArray("ship") instance=ExtResource("1_h48b7")]
 position = Vector2(-2, -1)
 ship = NodePath("../../Ship")
-max_fuel = 50.0
 
 [node name="SmallStation" type="Sprite2D" parent="."]
 position = Vector2(9109, 533)

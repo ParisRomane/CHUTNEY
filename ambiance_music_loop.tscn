@@ -1,0 +1,43 @@
+[gd_scene load_steps=13 format=3 uid="uid://dkvt60srvy5k8"]
+
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniPlayer.gd" id="1_q6hgq"]
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniSong.gd" id="2_ai1xe"]
+[ext_resource type="AudioStream" uid="uid://cwwxcck0ttchc" path="res://assets/audios/music/ambient/loops/Ethereal Ether Main.wav" id="3_44yf7"]
+[ext_resource type="AudioStream" uid="uid://b7arxxrdqfs53" path="res://assets/audios/music/ambient/loops/Ethereal Golden Clouds Main.wav" id="4_uqqi5"]
+[ext_resource type="AudioStream" uid="uid://doemwwquso26a" path="res://assets/audios/music/ambient/loops/Ethereal Heartbeat Main.wav" id="5_n2mae"]
+[ext_resource type="AudioStream" uid="uid://bqgmdtqg4w6qj" path="res://assets/audios/music/ambient/loops/Ethereal Luminesce Main.wav" id="6_7llyw"]
+[ext_resource type="AudioStream" uid="uid://4cqpy6fjoa7r" path="res://assets/audios/music/ambient/loops/Ethereal Stairway Main.wav" id="7_bt0nq"]
+
+[sub_resource type="Resource" id="Resource_h7yr0"]
+script = ExtResource("2_ai1xe")
+Intensity1 = ExtResource("3_44yf7")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_jhipm"]
+script = ExtResource("2_ai1xe")
+Intensity1 = ExtResource("4_uqqi5")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_v3qh5"]
+script = ExtResource("2_ai1xe")
+Intensity1 = ExtResource("5_n2mae")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_2dfno"]
+script = ExtResource("2_ai1xe")
+Intensity1 = ExtResource("6_7llyw")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_uc1nl"]
+script = ExtResource("2_ai1xe")
+Intensity1 = ExtResource("7_bt0nq")
+ReverbTail = 0.0
+SongMode = 0
+
+[node name="ambiance_music_loop" type="Node"]
+script = ExtResource("1_q6hgq")
+QueuedSongs = Array[ExtResource("2_ai1xe")]([SubResource("Resource_h7yr0"), SubResource("Resource_jhipm"), SubResource("Resource_v3qh5"), SubResource("Resource_2dfno"), SubResource("Resource_uc1nl")])
