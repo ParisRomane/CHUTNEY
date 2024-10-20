@@ -1,0 +1,13 @@
+[style name="truc_style"]
+join vladimir center
+[voice path="res://assets/audios/doublage/robotified_files/sc2/sc2ph1.wav" volume="0.0"]
+vladimir: Intégrité de la navette égale à… 18.2%. Le retour à la station Estragon engendrerait des risques supérieurs aux paramètres acceptables. 
+[voice path="res://assets/audios/doublage/robotified_files/sc2/sc2ph2.wav" volume="0.0"]
+vladimir: Signal de détresse… hors service. La prochaine navette prévue arrivera dans… 6,8 ans. Veuillez patienter.
+[voice path="res://assets/audios/doublage/robotified_files/sc2/sc2ph3.wav" volume="0.0"]
+vladimir: Recherche de solution alternative. Synthétiseur intégré fonctionnel. Accès à système de propulsion d’urgence individuel autorisé.
+[voice path="res://assets/audios/doublage/robotified_files/sc2/sc2ph4.wav" volume="0.0"]
+vladimir: Veuillez récupérer des matériaux à l’extérieur de la navette pour augmenter la portée du câble de sécurité pour un retour manuel à la station. \
+
+[voice path="res://assets/audios/doublage/robotified_files/sc2/sc2ph5.wav" volume="0.0"]
+vladimir: La société ne sera pas responsable pour tout dommage occasionné lors de l’utilisation de l’équipement en dehors des paramètres classiques de mission.
