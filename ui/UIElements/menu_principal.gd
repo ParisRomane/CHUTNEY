@@ -9,7 +9,9 @@ func _ready() -> void:
 	$ButtonQuitter.pressed.connect(self._button_exit)
 	
 func _button_start() -> void :
-	get_tree().change_scene_to_file("res://levels/test_scene.tscn")
+	var credit : Node = load("res://levels/test_scene.tscn").instantiate()
+	self.get_parent().add_child(credit)
+	self.get_parent().remove_child(self)
 	
 func _button_exit() -> void :
 	get_tree().quit(0)
