@@ -4,15 +4,15 @@
 [ext_resource type="Script" path="res://ui/UIElements/menu_principal.gd" id="2_qpln2"]
 [ext_resource type="Texture2D" uid="uid://bcpacqjv68jt8" path="res://assets/images/textures/Background_texture.tres" id="3_j1bql"]
 [ext_resource type="PackedScene" uid="uid://cwyr5qfon472s" path="res://ui/UIElements/button_menu_base.tscn" id="4_pcffx"]
-[ext_resource type="Texture2D" uid="uid://bten8teeawq65" path="res://assets/images/spaceship.svg" id="5_c6cgc"]
-[ext_resource type="Texture2D" uid="uid://bdub64vkpwq8a" path="res://assets/images/astronaut_0.svg" id="6_loypc"]
-[ext_resource type="Texture2D" uid="uid://c5w4tsjw0h418" path="res://assets/images/dbr_cactus.svg" id="7_ql7u0"]
-[ext_resource type="Texture2D" uid="uid://c5mvpcy2wt3w5" path="res://assets/images/dbr_can.svg" id="8_bgsju"]
-[ext_resource type="Texture2D" uid="uid://cbqyfpti17cn3" path="res://assets/images/dbr_nuclear.svg" id="9_7e3wf"]
-[ext_resource type="Texture2D" uid="uid://ceb6gkxmwwlxb" path="res://assets/images/dbr_bottle.svg" id="10_dsd8n"]
+[ext_resource type="Texture2D" uid="uid://b1vws582dsof2" path="res://assets/images/spaceship.svg" id="5_c6cgc"]
+[ext_resource type="Texture2D" uid="uid://cbsuh4vbna5ld" path="res://assets/images/textures/astronaute_pull.tres" id="6_b37tf"]
+[ext_resource type="Texture2D" uid="uid://x5iyfuiljde1" path="res://assets/images/textures/dbr_cactus.tres" id="7_rwxu5"]
+[ext_resource type="Texture2D" uid="uid://bv385cl7olhkw" path="res://assets/images/textures/dbr_can.tres" id="8_ulju5"]
+[ext_resource type="Texture2D" uid="uid://bq72je0qeitgp" path="res://assets/images/textures/dbr_nuclear.tres" id="9_6n6m1"]
+[ext_resource type="Texture2D" uid="uid://twxk18pf7lq6" path="res://assets/images/textures/dbr_bottle.tres" id="10_1bv2n"]
 [ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniPlayer.gd" id="11_pabr7"]
 [ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniSong.gd" id="12_j5nbd"]
-[ext_resource type="Resource" uid="uid://ddsletqjtocts" path="res://assets/audios/music/intro/ovani_intro.tres" id="13_50w3l"]
+[ext_resource type="Resource" path="res://assets/audios/music/intro/ovani_intro.tres" id="13_50w3l"]
 
 [node name="TestUi" type="Control"]
 layout_mode = 3
@@ -71,28 +71,28 @@ texture = ExtResource("5_c6cgc")
 
 [node name="perso" type="Sprite2D" parent="."]
 position = Vector2(404, 1078)
-texture = ExtResource("6_loypc")
+texture = ExtResource("6_b37tf")
 
 [node name="DbrCactus" type="Sprite2D" parent="."]
 position = Vector2(401, 272)
 rotation = 0.356047
-texture = ExtResource("7_ql7u0")
+texture = ExtResource("7_rwxu5")
 
 [node name="DbrCan" type="Sprite2D" parent="."]
 position = Vector2(828, 473)
 rotation = -0.785398
-texture = ExtResource("8_bgsju")
+texture = ExtResource("8_ulju5")
 
 [node name="DbrNuclear" type="Sprite2D" parent="."]
 position = Vector2(2150, 233)
 rotation = 0.560251
 scale = Vector2(2.0959, 1.71951)
-texture = ExtResource("9_7e3wf")
+texture = ExtResource("9_6n6m1")
 
 [node name="DbrBottle" type="Sprite2D" parent="."]
 position = Vector2(1135, 268)
 rotation = 0.785398
-texture = ExtResource("10_dsd8n")
+texture = ExtResource("10_1bv2n")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
