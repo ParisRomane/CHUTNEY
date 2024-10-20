@@ -1,8 +1,7 @@
 [style name="truc_style"]
 join vladimir center
-[voice path="res://assets/audios/doublage/robotified_files/sc7/sc7ph1.wav" volume="0.0"]
+[voice path="res://assets/audios/doublage/robotified_files/sc7/sc7ph1.wav" volume="6.0"]
 vladimir: Navette en état de fonctionnement. La trajectoire de retour vers la Terre passe par un champ de débris minuscules. Les risques de dégâts structurels sur la navette sont estimés à 56,78%. Le cas échéant, ceux-ci seraient estimés à plus de 5 milliards de dollars. L’autorisation d’un administrateur est nécessaire.\
-
 [voice path="res://assets/audios/doublage/robotified_files/sc7/sc7ph2.wav" volume="0.0"]
 vladimir: Contre mesure possible au champ de débris détectée. Le générateur de champ gravitationnel Traptou’ situé de l’autre côté du champ de débris pourrait dégager un chemin de retour.
 [voice path="res://assets/audios/doublage/robotified_files/sc7/sc7ph3.wav" volume="0.0"]
