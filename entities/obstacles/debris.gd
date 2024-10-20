@@ -31,6 +31,6 @@ func _on_dmg_area_body_exited(body: Node2D) -> void:
 
 
 func _on_collect_area_body_entered(body: Node2D) -> void:
-	if body.has_method("collect"):
+	if body.has_method("collect") and body.resist_hazard[hazard_type]:
 		body.collect(get_resources())
 		self.queue_free()
