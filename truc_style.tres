@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=15 format=3 uid="uid://cbym71on6h5xw"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_qtvwh"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_kghne"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_iiynt"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_h7xyn"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_ufemu"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_mppa7"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="9_vhl0p"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_newyk"]
+
+[sub_resource type="Resource" id="Resource_5f12v"]
+script = ExtResource("1_qtvwh")
+scene = ExtResource("4_kghne")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_waahg"]
+script = ExtResource("1_qtvwh")
+scene = ExtResource("5_iiynt")
+overrides = {
+"bold_font": "\"res://assets/font/white-rabbit/whitrabt.ttf\"",
+"bold_italics_font": "\"res://assets/font/white-rabbit/whitrabt.ttf\"",
+"box_color_custom": "Color(0, 0.929412, 1, 0.403922)",
+"box_color_use_global": "false",
+"box_margin_bottom": "29.0",
+"box_size": "Vector2(1550, 300)",
+"italics_font": "\"res://assets/font/white-rabbit/whitrabt.ttf\"",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_offset": "Vector2(-50, -20)",
+"name_label_custom_font_size": "70.0",
+"name_label_font": "\"res://assets/font/white-rabbit/whitrabt.ttf\"",
+"name_label_use_global_font_size": "false",
+"normal_font": "\"res://assets/font/white-rabbit/whitrabt.ttf\"",
+"text_size": "50.0",
+"text_use_global_size": "false"
+}
+
+[sub_resource type="Resource" id="Resource_mbiik"]
+script = ExtResource("1_qtvwh")
+scene = ExtResource("6_h7xyn")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_fulvy"]
+script = ExtResource("1_qtvwh")
+scene = ExtResource("7_ufemu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_wd3m6"]
+script = ExtResource("1_qtvwh")
+scene = ExtResource("8_mppa7")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_qhjav"]
+script = ExtResource("1_qtvwh")
+scene = ExtResource("9_vhl0p")
+overrides = {}
+
+[resource]
+script = ExtResource("10_newyk")
+name = "truc_style"
+base_overrides = {}
+layers = Array[ExtResource("1_qtvwh")]([SubResource("Resource_5f12v"), SubResource("Resource_waahg"), SubResource("Resource_mbiik"), SubResource("Resource_fulvy"), SubResource("Resource_wd3m6"), SubResource("Resource_qhjav")])
+metadata/_latest_layer = 1
