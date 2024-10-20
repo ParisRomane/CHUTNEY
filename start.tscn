@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1hd34mrds37s"]
+
+[ext_resource type="PackedScene" uid="uid://bnx2bogn73ocb" path="res://ui/MenuPrincipal.tscn" id="1_42vgc"]
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniPlayer.gd" id="2_ahrsm"]
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniSong.gd" id="3_bk233"]
+[ext_resource type="Resource" uid="uid://ddsletqjtocts" path="res://assets/audios/music/intro/ovani_intro.tres" id="4_4csd3"]
+
+[node name="Start" type="Node2D"]
+
+[node name="TestUi" parent="." instance=ExtResource("1_42vgc")]
+
+[node name="OvaniPlayer" type="Node" parent="."]
+script = ExtResource("2_ahrsm")
+QueuedSongs = Array[ExtResource("3_bk233")]([ExtResource("4_4csd3")])
+LoopQueue = true
