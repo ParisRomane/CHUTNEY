@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d17c68wa5qg4" path="res://entities/ship/ship.tscn" id="2_iqdum"]
 [ext_resource type="PackedScene" uid="uid://j3rip3s3bacu" path="res://entities/obstacles/Asteroid.tscn" id="3_pklyj"]
 [ext_resource type="PackedScene" uid="uid://up8n2kkat7b8" path="res://entities/obstacles/dbr_bag.tscn" id="4_qss3u"]
-[ext_resource type="PackedScene" uid="uid://baombnwrs37di" path="res://entities/obstacles/dbr_cactus.tscn" id="5_dayfh"]
+[ext_resource type="PackedScene" uid="uid://k38jyrpdhpav" path="res://entities/obstacles/dbr_cactus.tscn" id="5_dayfh"]
 [ext_resource type="PackedScene" uid="uid://cd8qoybimdxo4" path="res://entities/obstacles/dbr_bottle.tscn" id="6_c2rs8"]
 [ext_resource type="PackedScene" uid="uid://0xwdfpw0ex55" path="res://entities/obstacles/dbr_can.tscn" id="7_66a6q"]
 [ext_resource type="PackedScene" uid="uid://bwmxepbrqs264" path="res://entities/obstacles/dbr_electric.tscn" id="8_yhxh8"]
@@ -608,7 +608,7 @@ max_rope_len = 4500.0
 [node name="Line2D" type="Line2D" parent="Path2D"]
 
 [node name="Player" parent="Path2D" node_paths=PackedStringArray("ship") instance=ExtResource("1_h48b7")]
-position = Vector2(-6, 615)
+position = Vector2(-2, -1)
 ship = NodePath("../../Ship")
 max_fuel = 50.0
 
