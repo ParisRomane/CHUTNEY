@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var ship : CharacterBody2D 
 @export var max_fuel : float
 
+var longueur_corde : int
+
 var up : float = 0.0
 var down : float = 0.0
 var left : float = 0.0
