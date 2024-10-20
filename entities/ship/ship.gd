@@ -64,5 +64,9 @@ func _craft(nom_craft: Label, desc_craft:Label, short_craft:Label, button:Button
 
 func _launch_craft()-> void:
 	if craft.make():
+		craft_button.get_node("AnimationCraft").play("craft_successful")
 		craft_button.flag = false
 		craft_button.hide()
+	else:
+		craft_button.get_node("AnimationCraft").play("craft_not_succesful")
+		

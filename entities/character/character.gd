@@ -101,6 +101,7 @@ func get_next_pos() -> Vector2:
 		can_move = true
 		# Center the player and reset the path origin
 		reset_path(ship.get_node("CollectArea").position)
+		next = ship.get_node("CollectArea").position
 		
 	return next
 

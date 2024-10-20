@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cigcvsf8xy5rd"]
+[gd_scene load_steps=20 format=3 uid="uid://vsj3bl56mdwp"]
 
 [ext_resource type="AudioStream" uid="uid://c6l6m0r2kc3xk" path="res://assets/audios/sound-effect/astronaute/click-corde.wav" id="1_31qi0"]
 [ext_resource type="AudioStream" uid="uid://dheex74vnumxu" path="res://assets/audios/sound-effect/astronaute/fire-extinguisher.wav" id="2_ojutm"]

@@ -13,10 +13,10 @@ var short_craft: Label
 func _ready() -> void:
 	vide = $RessourcesPlacement/Fuel/Vide
 	plein = $RessourcesPlacement/Fuel/Plein
-	nom_craft = $Craft/Nom
-	desc_craft = $Craft/LongDesc
-	short_craft = $Craft/Shortdesc
-	ship._craft.call_deferred(nom_craft, desc_craft, short_craft, $Craft/ButtonCraft, $Craft)
+	nom_craft = $Craft/Button/Nom
+	desc_craft = $Craft/Button/LongDesc
+	short_craft = $Craft/Button/Shortdesc
+	ship._craft.call_deferred(nom_craft, desc_craft, short_craft, $Craft/Button/ButtonCraft, $Craft)
 
 
 

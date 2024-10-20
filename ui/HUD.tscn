@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://clnmmtkirxbcn"]
+[gd_scene load_steps=19 format=3 uid="uid://clnmmtkirxbcn"]
 
 [ext_resource type="PackedScene" uid="uid://bo8djmaypib5c" path="res://ui/UIElements/HUD_ressource.tscn" id="1_o1wp2"]
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_vdy44"]
@@ -9,11 +9,70 @@
 [ext_resource type="PackedScene" uid="uid://cnjc3so4cr141" path="res://levels/level_1.tscn" id="7_53vku"]
 [ext_resource type="Script" path="res://ui/craft.gd" id="7_ddf3n"]
 [ext_resource type="PackedScene" uid="uid://cwyr5qfon472s" path="res://ui/UIElements/button_menu_base.tscn" id="7_y2rm6"]
+[ext_resource type="AudioStream" uid="uid://bue44hibhwk5n" path="res://assets/audios/sound-effect/craft/deny-craft.wav" id="9_3lndk"]
+[ext_resource type="AudioStream" uid="uid://bnw87jy8atphi" path="res://assets/audios/sound-effect/craft/successful_craft.wav" id="10_rp6fr"]
+[ext_resource type="AudioStream" uid="uid://q7fudhpinqes" path="res://assets/audios/sound-effect/craft/Toolbox Close A.wav" id="11_0r61p"]
+[ext_resource type="AudioStream" uid="uid://b0qt0lmen77jh" path="res://assets/audios/sound-effect/craft/Toolbox Open A.wav" id="12_6xcpg"]
+
+[sub_resource type="Animation" id="Animation_w7ol3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("deny-craft:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_u4uae"]
+resource_name = "craft_successful"
+length = 2.33334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("successful-craft:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bmt7x"]
+resource_name = "craft_not_succesful"
+length = 0.46667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("deny-craft:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_072ge"]
+_data = {
+"RESET": SubResource("Animation_w7ol3"),
+"craft_not_succesful": SubResource("Animation_bmt7x"),
+"craft_successful": SubResource("Animation_u4uae")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_linyi"]
 radius = 521.697
 
 [node name="Node" type="Node"]
+metadata/_edit_vertical_guides_ = [626.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -52,8 +111,8 @@ offset_top = -402.0
 offset_right = 737.0
 offset_bottom = -260.0
 grow_vertical = 0
-type = "organic"
 hud = NodePath("../..")
+type = "organic"
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Liquide" index="0"]
 texture = ExtResource("3_d84xg")
@@ -68,8 +127,8 @@ offset_top = -142.0
 offset_right = 737.0
 offset_bottom = 0.0
 grow_vertical = 0
-type = "electronic"
 hud = NodePath("../..")
+type = "electronic"
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Electronics" index="0"]
 texture = ExtResource("4_e6c3x")
@@ -84,8 +143,8 @@ offset_top = -272.0
 offset_right = 737.0
 offset_bottom = -130.0
 grow_vertical = 0
-type = "scrap"
 hud = NodePath("../..")
+type = "scrap"
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Scraps" index="0"]
 texture = ExtResource("5_5jkpl")
@@ -148,26 +207,44 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_ddf3n")
 
-[node name="ButtonCraft" parent="CanvasLayer/Hud/Craft" instance=ExtResource("7_y2rm6")]
+[node name="Button" type="Control" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Fond" type="ColorRect" parent="CanvasLayer/Hud/Craft/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 561.0
+offset_right = -552.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.423529, 0.423529, 0.423529, 0.52549)
+
+[node name="ButtonCraft" parent="CanvasLayer/Hud/Craft/Button" instance=ExtResource("7_y2rm6")]
 layout_mode = 1
 anchors_preset = 5
 anchor_top = 0.0
 anchor_bottom = 0.0
-offset_left = -1044.5
+offset_left = -1040.5
 offset_top = 0.0
-offset_right = 1044.5
+offset_right = 1048.5
 offset_bottom = 297.0
 grow_vertical = 1
 text = ""
 
-[node name="Nom" type="Label" parent="CanvasLayer/Hud/Craft"]
+[node name="Nom" type="Label" parent="CanvasLayer/Hud/Craft/Button"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -1041.5
+offset_left = -1037.5
 offset_top = 24.0
-offset_right = 1034.5
+offset_right = 1038.5
 offset_bottom = 96.0
 grow_horizontal = 2
 pivot_offset = Vector2(41, 27)
@@ -177,140 +254,152 @@ theme_override_font_sizes/font_size = 64
 text = "Nom"
 horizontal_alignment = 1
 
-[node name="Shortdesc" type="Label" parent="CanvasLayer/Hud/Craft"]
+[node name="Shortdesc" type="Label" parent="CanvasLayer/Hud/Craft/Button"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -1017.5
+offset_left = -1013.5
 offset_top = 87.0
-offset_right = 1025.5
+offset_right = 1029.5
 offset_bottom = 159.0
 grow_horizontal = 2
 pivot_offset = Vector2(41, 27)
 theme = ExtResource("6_v857h")
 theme_type_variation = &"Label_HUD"
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 52
 text = "Short   uyuey riug "
 horizontal_alignment = 1
 
-[node name="LongDesc" type="Label" parent="CanvasLayer/Hud/Craft"]
+[node name="LongDesc" type="Label" parent="CanvasLayer/Hud/Craft/Button"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -296.5
+offset_left = -695.5
 offset_top = 155.0
-offset_right = 1016.5
+offset_right = 1020.5
 offset_bottom = 274.0
 grow_horizontal = 2
 pivot_offset = Vector2(41, 27)
 theme = ExtResource("6_v857h")
 theme_type_variation = &"Label_HUD"
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
 text = "Long iyi ui egruyzrjgz yhr"
 autowrap_mode = 2
 
-[node name="Icone_Res" type="TextureRect" parent="CanvasLayer/Hud/Craft"]
+[node name="Icone_Res" type="TextureRect" parent="CanvasLayer/Hud/Craft/Button"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 561.9
-offset_top = -810.6
-offset_right = 689.9
-offset_bottom = -682.6
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1043.0
+offset_top = -5.0
+offset_right = -915.0
+offset_bottom = 123.0
+grow_horizontal = 2
 scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(64, 64)
 texture = ExtResource("3_d84xg")
 
-[node name="Stock_ship" type="Label" parent="CanvasLayer/Hud/Craft"]
+[node name="Stock_ship" type="Label" parent="CanvasLayer/Hud/Craft/Button"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.23149
-anchor_top = 0.0582822
-anchor_right = 0.23149
-anchor_bottom = 0.0582822
-offset_left = -42.25
-offset_top = -52.5001
-offset_right = 39.75
-offset_bottom = 2.49995
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -900.5
+offset_top = 33.75
+offset_right = -818.5
+offset_bottom = 88.75
 grow_horizontal = 2
-grow_vertical = 2
 pivot_offset = Vector2(41, 27)
 theme = ExtResource("6_v857h")
 theme_type_variation = &"Label_HUD"
 text = "00"
 
-[node name="Icone_Res2" type="TextureRect" parent="CanvasLayer/Hud/Craft"]
+[node name="Icone_Res2" type="TextureRect" parent="CanvasLayer/Hud/Craft/Button"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 570.65
-offset_top = -640.6
-offset_right = 698.65
-offset_bottom = -512.6
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1040.5
+offset_top = 172.5
+offset_right = -912.5
+offset_bottom = 300.5
+grow_horizontal = 2
 scale = Vector2(0.6, 0.6)
 pivot_offset = Vector2(64, 64)
 texture = ExtResource("4_e6c3x")
 
-[node name="Stock_ship2" type="Label" parent="CanvasLayer/Hud/Craft"]
+[node name="Stock_ship3" type="Label" parent="CanvasLayer/Hud/Craft/Button"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0516558
-anchor_top = 0.494847
-anchor_right = 0.0516558
-anchor_bottom = 0.494847
-offset_left = 529.65
-offset_top = -604.1
-offset_right = 611.65
-offset_bottom = -549.1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -900.5
+offset_top = 120.0
+offset_right = -818.5
+offset_bottom = 175.0
 grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(41, 27)
-theme = ExtResource("6_v857h")
-theme_type_variation = &"Label_HUD"
-text = "00"
-
-[node name="Icone_Res3" type="TextureRect" parent="CanvasLayer/Hud/Craft"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 564.4
-offset_top = -724.35
-offset_right = 692.4
-offset_bottom = -596.35
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-pivot_offset = Vector2(64, 64)
-texture = ExtResource("5_5jkpl")
-
-[node name="Stock_ship3" type="Label" parent="CanvasLayer/Hud/Craft"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0539988
-anchor_top = 0.5
-anchor_right = 0.0539988
-anchor_bottom = 0.5
-offset_left = 523.4
-offset_top = -687.85
-offset_right = 605.4
-offset_bottom = -632.85
-grow_horizontal = 2
-grow_vertical = 2
 pivot_offset = Vector2(41, 27)
 theme = ExtResource("6_v857h")
 theme_type_variation = &"Label_HUD"
 text = "03"
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Hud/Craft"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Stock_ship2" type="Label" parent="CanvasLayer/Hud/Craft/Button"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -901.75
+offset_top = 200.0
+offset_right = -819.75
+offset_bottom = 255.0
+grow_horizontal = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("6_v857h")
+theme_type_variation = &"Label_HUD"
+text = "00"
+
+[node name="Icone_Res3" type="TextureRect" parent="CanvasLayer/Hud/Craft/Button"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1039.25
+offset_top = 83.75
+offset_right = -911.25
+offset_bottom = 211.75
+grow_horizontal = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("5_5jkpl")
+
+[node name="deny-craft" type="AudioStreamPlayer2D" parent="CanvasLayer/Hud/Craft"]
+position = Vector2(0, -170)
+scale = Vector2(1.25, 1.25)
+stream = ExtResource("9_3lndk")
+
+[node name="successful-craft" type="AudioStreamPlayer2D" parent="CanvasLayer/Hud/Craft"]
+position = Vector2(0, -170)
+scale = Vector2(1.25, 1.25)
+stream = ExtResource("10_rp6fr")
+
+[node name="toolbox-close" type="AudioStreamPlayer2D" parent="CanvasLayer/Hud/Craft"]
+position = Vector2(0, -170)
+scale = Vector2(1.25, 1.25)
+stream = ExtResource("11_0r61p")
+
+[node name="toolbox-open" type="AudioStreamPlayer2D" parent="CanvasLayer/Hud/Craft"]
+position = Vector2(0, -170)
+scale = Vector2(1.25, 1.25)
+stream = ExtResource("12_6xcpg")
+
+[node name="AnimationCraft" type="AnimationPlayer" parent="CanvasLayer/Hud/Craft"]
+libraries = {
+"": SubResource("AnimationLibrary_072ge")
+}
 
 [node name="Level1" parent="." instance=ExtResource("7_53vku")]
 
@@ -324,8 +413,8 @@ position = Vector2(7064, -2688)
 position = Vector2(-23979, -1792)
 shape = SubResource("CircleShape2D_linyi")
 
-[connection signal="mouse_entered" from="CanvasLayer/Hud/Craft/ButtonCraft" to="Level1/Path2D/Player" method="_cannot_shoot"]
-[connection signal="mouse_exited" from="CanvasLayer/Hud/Craft/ButtonCraft" to="Level1/Path2D/Player" method="_can_shoot"]
+[connection signal="mouse_entered" from="CanvasLayer/Hud/Craft/Button/ButtonCraft" to="Level1/Path2D/Player" method="_cannot_shoot"]
+[connection signal="mouse_exited" from="CanvasLayer/Hud/Craft/Button/ButtonCraft" to="Level1/Path2D/Player" method="_can_shoot"]
 [connection signal="body_entered" from="Level1/BigStation/Area2D" to="CanvasLayer/Hud" method="_on_area_2d_body_entered"]
 
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Liquide"]

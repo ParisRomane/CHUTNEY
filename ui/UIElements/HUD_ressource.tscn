@@ -168,7 +168,6 @@ text = "00"
 metadata/_edit_use_anchors_ = true
 
 [node name="Stock_ship_craft" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.330144
@@ -176,15 +175,15 @@ anchor_top = -1.9331
 anchor_right = 0.330144
 anchor_bottom = -1.9331
 offset_left = -41.0003
-offset_top = 318.0
+offset_top = 233.5
 offset_right = 40.9997
-offset_bottom = 373.0
+offset_bottom = 288.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(41, 27)
 theme = ExtResource("1_6gxnc")
 theme_type_variation = &"Label_HUD"
-theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_colors/font_color = Color(1, 1, 1, 0)
 text = "00"
 metadata/_edit_use_anchors_ = true
 
