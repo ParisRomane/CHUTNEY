@@ -7,6 +7,7 @@ extends CharacterBody2D
 # TEMPORARY!!! In future we probably want to use the bounce factor of the collider, not the character.
 @export var bounce_force : float = 0.5
 @export var ship : CharacterBody2D 
+@export var max_fuel : float
 
 var up : float = 0.0
 var down : float = 0.0
@@ -18,9 +19,12 @@ var can_move : bool = true
 var going_back : bool = false
 var next_pos := Vector2(0, 0)
 var inventory : Ressource
+var current_fuel : float
+var is_hit : bool = false
 
 func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
+	current_fuel = max_fuel
 
 func gather_inputs() -> void:
 	mouse_pos = get_global_mouse_position()
@@ -33,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Turn and apply a force to the character
 	look_at(mouse_pos)
-	if Input.is_action_pressed("shoot") and can_move:
+	if Input.is_action_pressed("shoot") and can_move and current_fuel >= 0.0:
 		velocity -= shoot_line * thruster_power
 	
 	if Input.is_action_just_pressed("ui_accept"):
@@ -60,6 +64,10 @@ func _physics_process(delta: float) -> void:
 	var collision_info : KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal()) * bounce_force
+		
+	# Damage handling
+	if is_hit:
+		current_fuel -= 1.0
 
 func get_next_pos() -> Vector2:
 	var size : int = get_parent().get_size()
@@ -98,9 +106,12 @@ func rope_end() -> void:
 	can_move = false
 	
 func collect(ressource : Ressource) -> void:
-	print("COLLECTED !")
+	inventory.add(ressource)
 
 func reset_path(pos: Vector2) -> void:
 	position = pos
 	get_parent().curve.add_point(pos)
 	get_parent().get_child(0).add_point(pos)
+
+func hit(value : bool) -> void:
+	is_hit = value

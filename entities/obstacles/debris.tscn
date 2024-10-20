@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgtuye4ibnfyu"]
+[gd_scene load_steps=4 format=3 uid="uid://bp0h7db0kwtdh"]
 
 [ext_resource type="Script" path="res://entities/obstacles/debris.gd" id="1_1vosw"]
 
@@ -25,4 +25,5 @@ debug_color = Color(0.975525, 0, 0.418754, 0.42)
 shape = SubResource("CircleShape2D_8q283")
 
 [connection signal="body_entered" from="DMGArea" to="." method="_on_dmg_area_body_entered"]
+[connection signal="body_exited" from="DMGArea" to="." method="_on_dmg_area_body_exited"]
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
