@@ -22,9 +22,8 @@ func get_resources() -> Ressource:
 
 
 func _on_dmg_area_body_entered(body: Node2D) -> void:
-	if body.has_method("hit"):
+	if body.has_method("hit") and !body.resist_hazard[hazard_type]:
 		body.hit(true)
-		hazard_behaviour(body)
 		
 func _on_dmg_area_body_exited(body: Node2D) -> void:
 	if body.has_method("hit"):
@@ -35,6 +34,3 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 	if body.has_method("collect"):
 		body.collect(get_resources())
 		self.queue_free()
-
-func hazard_behaviour(body: Node2D) -> void:
-	pass

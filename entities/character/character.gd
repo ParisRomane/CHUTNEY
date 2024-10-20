@@ -21,6 +21,9 @@ var next_pos := Vector2(0, 0)
 var inventory : Ressource
 var current_fuel : float
 var is_hit : bool = false
+var resist_hazard: Array[bool] = [
+	false, false, false
+]
 
 func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
