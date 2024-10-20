@@ -12,4 +12,6 @@ func _ready() -> void:
 
 func craft_to_item(craft : Craft) -> Node:
 	var i : Control = item.instantiate()
-	return Node.new()
+	i.title = craft.description_short
+	i.update()
+	return i
