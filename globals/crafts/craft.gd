@@ -21,6 +21,7 @@ func _init(name_: String, tier_: int, cost_: Ressource, description_short_: Stri
 	self.effect_name = effect_
 	self.arg = arg_
 	
+	
 static func make_objective(name_: String, cost_: Ressource) -> Craft:
 	return Craft.new(
 		name_, # name
@@ -55,8 +56,8 @@ static func from_json(path: String) -> Array[Craft]:
 	return result
 	
 func make() -> bool: # replace object with ship class
-	if ship.ressources.have_at_least(cost):
-		ship.ressources.remove(cost)
+	if ship.inventory.have_at_least(cost):
+		ship.inventory.remove(cost)
 		var effect: Callable = Callable(self, effect_name)
 		effect.call(arg)
 		return true

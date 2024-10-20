@@ -304,6 +304,9 @@ text = "03"
 
 [node name="Level1" parent="." instance=ExtResource("7_53vku")]
 
+[node name="Ship" parent="Level1" index="1" node_paths=PackedStringArray("player")]
+player = NodePath("../Path2D/Player")
+
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Liquide"]
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Electronics"]
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Scraps"]

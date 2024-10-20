@@ -2,8 +2,10 @@ class_name Ship
 extends CharacterBody2D
 
 var craft : Craft
+@export var player : Player
+var craft_button: Button
 var inventory : Ressource
-var _multiplier : int = 0
+var _multiplier : int = 1
 var _craft_tier: Dictionary = {
 	"cc_set_craft_multiplier": 0,
 	"cc_set_zipline_length": 0,
@@ -25,7 +27,7 @@ var _crafts: Dictionary = {
 
 func _ready() -> void:
 	Craft.ship = self
-	Craft.player = null # caracter
+	Craft.player = player # caracter
 	_load_crafts()
 	inventory = Ressource.new(0,0,0)
 
@@ -51,6 +53,8 @@ func _craft(nom_craft: Label, desc_craft:Label, short_craft:Label, button:Button
 	desc_craft.text = craft.description
 	short_craft.text = craft.description_short
 	button.pressed.connect(_launch_craft)
+	craft_button = button
 
 func _launch_craft()-> void:
-	craft.make()
+	if craft.make():
+		craft_button.hide()
