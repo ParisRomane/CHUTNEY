@@ -45,8 +45,8 @@
 		"name": "Ligne de vie en chanvre",
 		"tier": 0,
 		"cost": {
-			"organic": 3,
-			"scrap": 1,
+			"organic": 0,
+			"scrap": 3,
 			"electronic": 0
 		},
 		"description_short": "Augmente la longueur de la ligne de vie",
@@ -59,8 +59,8 @@
 		"name": "Ligne de vie en acier",
 		"tier": 1,
 		"cost": {
-			"organic": 4,
-			"scrap": 8,
+			"organic": 0,
+			"scrap": 5,
 			"electronic": 0
 		},
 		"description_short": "Augmente la longueur de la ligne de vie",
@@ -73,8 +73,8 @@
 		"name": "Ligne de vie en carbone",
 		"tier": 2,
 		"cost": {
-			"organic": 5,
-			"scrap": 10,
+			"organic": 1,
+			"scrap": 6,
 			"electronic": 1
 		},
 		"description_short": "Augmente la longueur de la ligne de vie",
@@ -87,9 +87,9 @@
 		"name": "Compresseur",
 		"tier": 0,
 		"cost": {
-			"organic": 5,
-			"scrap": 5,
-			"electronic": 1
+			"organic": 1,
+			"scrap": 1,
+			"electronic": 0
 		},
 		"description_short": "Augmente votre capacité en carburant",
 		"description": "Double la capacité en carburant pour les SEV, double aussi le poids mais on a rien sans rien.",
@@ -101,9 +101,9 @@
 		"name": "Surcompresseur",
 		"tier": 1,
 		"cost": {
-			"organic": 5,
-			"scrap": 5,
-			"electronic": 1
+			"organic": 2,
+			"scrap": 2,
+			"electronic": 0
 		},
 		"description_short": "Augmente votre capacité en carburant",
 		"description": "En augmentant l'épaisseur d'acier de vos réserves de carburant, on peux en comprimer plus à l'intérieur sans risque d'explosion!",
@@ -115,9 +115,9 @@
 		"name": "Hyper Compresseur",
 		"tier": 2,
 		"cost": {
-			"organic": 10,
-			"scrap": 20,
-			"electronic": 2
+			"organic": 4,
+			"scrap": 3,
+			"electronic": 0
 		},
 		"description_short": "Augmente votre capacité en carburant",
 		"description": "Si un noyau d'atome faisait la taille d'une balle de tenis, ses électrons seraient à 3km de lui... on a encore de la marge pour compresser!",
@@ -129,8 +129,8 @@
 		"name": "L'Art du surf sur extincteur",
 		"tier": 0,
 		"cost": {
-			"organic": 3,
-			"scrap": 5,
+			"organic": 2,
+			"scrap": 3,
 			"electronic": 0
 		},
 		"description_short": "Augmente votre vitesse de déplacement",
@@ -143,8 +143,8 @@
 		"name": "Extincteur trafi... Amelioré",
 		"tier": 1,
 		"cost": {
-			"organic": 4,
-			"scrap": 8,
+			"organic": 0,
+			"scrap": 6,
 			"electronic": 0
 		},
 		"description_short": "Augmente votre vitesse de déplacement",
@@ -157,9 +157,9 @@
 		"name": "Super Extincto 3000",
 		"tier": 2,
 		"cost": {
-			"organic": 10,
-			"scrap": 20,
-			"electronic": 2
+			"organic": 0,
+			"scrap": 8,
+			"electronic": 1
 		},
 		"description_short": "Augmente votre vitesse de déplacement",
 		"description": "A force de modifier votre fidèle extincteur, vous avez fini par maîtriser les arcanes des lanceurs anti-incendis pour en faire le moyen de locomotion ultime!",
@@ -255,7 +255,7 @@
 		"name": "Combinaison Hazmat",
 		"tier": 0,
 		"cost": {
-			"organic": 10,
+			"organic": 1,
 			"scrap": 2,
 			"electronic": 0
 		},
@@ -269,9 +269,9 @@
 		"name": "Fil de terre",
 		"tier": 1,
 		"cost": {
-			"organic": 2,
-			"scrap": 10,
-			"electronic": 2
+			"organic": 1,
+			"scrap": 4,
+			"electronic": 1
 		},
 		"description_short": "Immunise aux dégats électrique",
 		"description": "Ajoute un câble le long de votre ligne de vie qui redirige les hautes tensions vers votre vaisseau.",
@@ -283,9 +283,9 @@
 		"name": "C.A.C.T.U.S.",
 		"tier": 2,
 		"cost": {
-			"organic": 2,
-			"scrap": 10,
-			"electronic": 2
+			"organic": 0,
+			"scrap": 5,
+			"electronic": 0
 		},
 		"description_short": "Imunise aux dégâts des objets tranchants",
 		"description": "Nous y sommes, le pinacle de la technologie humaine! la Combinaison C.A.C.T.U.S. (Combinaison Anti Cactus Tactique Ultra Sécurisé) qui permet de se prémunire des petites coupures superficielles!",
