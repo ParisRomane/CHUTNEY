@@ -1,0 +1,96 @@
+[gd_scene load_steps=20 format=3 uid="uid://c13uae7ojjovn"]
+
+[ext_resource type="AudioStream" uid="uid://c6l6m0r2kc3xk" path="res://assets/audios/sound-effect/astronaute/click-corde.wav" id="1_31qi0"]
+[ext_resource type="AudioStream" uid="uid://dheex74vnumxu" path="res://assets/audios/sound-effect/astronaute/fire-extinguisher.wav" id="2_ojutm"]
+[ext_resource type="AudioStream" uid="uid://canecmpp04j3e" path="res://assets/audios/sound-effect/astronaute/retrofusee.wav" id="3_dg4s5"]
+[ext_resource type="AudioStream" uid="uid://oggrvvcvqa70" path="res://assets/audios/sound-effect/astronaute/rope-slide.wav" id="4_bopo4"]
+[ext_resource type="AudioStream" uid="uid://dsqb8747f5epe" path="res://assets/audios/sound-effect/collision/collision.wav" id="5_pt1ue"]
+[ext_resource type="AudioStream" uid="uid://bue44hibhwk5n" path="res://assets/audios/sound-effect/craft/deny-craft.wav" id="6_v37c3"]
+[ext_resource type="AudioStream" uid="uid://bnw87jy8atphi" path="res://assets/audios/sound-effect/craft/successful_craft.wav" id="7_rujcf"]
+[ext_resource type="AudioStream" uid="uid://q7fudhpinqes" path="res://assets/audios/sound-effect/craft/Toolbox Close A.wav" id="8_43ybg"]
+[ext_resource type="AudioStream" uid="uid://b0qt0lmen77jh" path="res://assets/audios/sound-effect/craft/Toolbox Open A.wav" id="9_lp872"]
+[ext_resource type="AudioStream" uid="uid://532n48dh2qxt" path="res://assets/audios/sound-effect/explosion/explosion.wav" id="10_exkvw"]
+[ext_resource type="AudioStream" uid="uid://c3yklpdsjyea8" path="res://assets/audios/sound-effect/ia/alert_1.wav" id="11_vjb7b"]
+[ext_resource type="AudioStream" uid="uid://dp7on6l0wtcaf" path="res://assets/audios/sound-effect/ia/Buzzing.wav" id="12_qwyh2"]
+[ext_resource type="AudioStream" uid="uid://dyn54iusqalwa" path="res://assets/audios/sound-effect/ressources/drop-in-ship.wav" id="13_y2kll"]
+[ext_resource type="AudioStream" uid="uid://biyu35bav0ctu" path="res://assets/audios/sound-effect/ressources/get-resource.wav" id="14_6ut3c"]
+[ext_resource type="AudioStream" uid="uid://cfgr1pblkn6sv" path="res://assets/audios/sound-effect/ressources/refill-tank.wav" id="15_v1qne"]
+[ext_resource type="AudioStream" uid="uid://dbtdn83ayhgx" path="res://assets/audios/sound-effect/ship/retrofusee.wav" id="16_n13vg"]
+[ext_resource type="AudioStream" uid="uid://duw7k2eyxsmic" path="res://assets/audios/sound-effect/ship/ship-start.wav" id="17_ggd5h"]
+[ext_resource type="AudioStream" uid="uid://d0ynfb0npqvhe" path="res://assets/audios/sound-effect/boop/pop-1.wav" id="18_3w4wy"]
+[ext_resource type="AudioStream" uid="uid://c76hqnc12jw21" path="res://assets/audios/sound-effect/boop/pop-2.wav" id="19_1s8rd"]
+
+[node name="SoundEffect" type="Node2D"]
+
+[node name="astronaute" type="Node" parent="."]
+
+[node name="click-corde" type="AudioStreamPlayer2D" parent="astronaute"]
+stream = ExtResource("1_31qi0")
+
+[node name="fire-extinguisher" type="AudioStreamPlayer2D" parent="astronaute"]
+stream = ExtResource("2_ojutm")
+
+[node name="retrofusee" type="AudioStreamPlayer2D" parent="astronaute"]
+stream = ExtResource("3_dg4s5")
+
+[node name="rope-slide" type="AudioStreamPlayer2D" parent="astronaute"]
+stream = ExtResource("4_bopo4")
+
+[node name="collision" type="Node" parent="."]
+
+[node name="collision" type="AudioStreamPlayer2D" parent="collision"]
+stream = ExtResource("5_pt1ue")
+
+[node name="craft" type="Node" parent="."]
+
+[node name="deny-craft" type="AudioStreamPlayer2D" parent="craft"]
+stream = ExtResource("6_v37c3")
+
+[node name="successful-craft" type="AudioStreamPlayer2D" parent="craft"]
+stream = ExtResource("7_rujcf")
+
+[node name="toolbox-close" type="AudioStreamPlayer2D" parent="craft"]
+stream = ExtResource("8_43ybg")
+
+[node name="toolbox-open" type="AudioStreamPlayer2D" parent="craft"]
+stream = ExtResource("9_lp872")
+
+[node name="explosion" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="explosion"]
+stream = ExtResource("10_exkvw")
+
+[node name="ia" type="Node" parent="."]
+
+[node name="alert" type="AudioStreamPlayer2D" parent="ia"]
+stream = ExtResource("11_vjb7b")
+
+[node name="buzz" type="AudioStreamPlayer2D" parent="ia"]
+stream = ExtResource("12_qwyh2")
+
+[node name="ressource" type="Node" parent="."]
+
+[node name="drop-in-ship" type="AudioStreamPlayer2D" parent="ressource"]
+stream = ExtResource("13_y2kll")
+
+[node name="get-resource" type="AudioStreamPlayer2D" parent="ressource"]
+stream = ExtResource("14_6ut3c")
+
+[node name="refill-tank" type="AudioStreamPlayer2D" parent="ressource"]
+stream = ExtResource("15_v1qne")
+
+[node name="ship" type="Node" parent="."]
+
+[node name="retrofusée" type="AudioStreamPlayer2D" parent="ship"]
+stream = ExtResource("16_n13vg")
+
+[node name="ship-start" type="AudioStreamPlayer2D" parent="ship"]
+stream = ExtResource("17_ggd5h")
+
+[node name="interface" type="Node" parent="."]
+
+[node name="pop-1" type="AudioStreamPlayer2D" parent="interface"]
+stream = ExtResource("18_3w4wy")
+
+[node name="pop-2" type="AudioStreamPlayer2D" parent="interface"]
+stream = ExtResource("19_1s8rd")
