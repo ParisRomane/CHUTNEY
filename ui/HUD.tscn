@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://clnmmtkirxbcn"]
+[gd_scene load_steps=11 format=3 uid="uid://clnmmtkirxbcn"]
 
 [ext_resource type="PackedScene" uid="uid://bo8djmaypib5c" path="res://ui/UIElements/HUD_ressource.tscn" id="1_o1wp2"]
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_vdy44"]
@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bqfv13bm5x81b" path="res://assets/images/textures/scraps_icon.tres" id="5_5jkpl"]
 [ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="6_v857h"]
 [ext_resource type="PackedScene" uid="uid://cnjc3so4cr141" path="res://levels/level_1.tscn" id="7_53vku"]
+[ext_resource type="Script" path="res://ui/craft.gd" id="7_ddf3n"]
 [ext_resource type="PackedScene" uid="uid://cwyr5qfon472s" path="res://ui/UIElements/button_menu_base.tscn" id="7_y2rm6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_linyi"]
+radius = 521.697
 
 [node name="Node" type="Node"]
 
@@ -48,8 +52,8 @@ offset_top = -402.0
 offset_right = 737.0
 offset_bottom = -260.0
 grow_vertical = 0
-hud = NodePath("../..")
 type = "organic"
+hud = NodePath("../..")
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Liquide" index="0"]
 texture = ExtResource("3_d84xg")
@@ -64,8 +68,8 @@ offset_top = -142.0
 offset_right = 737.0
 offset_bottom = 0.0
 grow_vertical = 0
-hud = NodePath("../..")
 type = "electronic"
+hud = NodePath("../..")
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Electronics" index="0"]
 texture = ExtResource("4_e6c3x")
@@ -80,8 +84,8 @@ offset_top = -272.0
 offset_right = 737.0
 offset_bottom = -130.0
 grow_vertical = 0
-hud = NodePath("../..")
 type = "scrap"
+hud = NodePath("../..")
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Scraps" index="0"]
 texture = ExtResource("5_5jkpl")
@@ -142,6 +146,7 @@ offset_top = -190.0
 offset_right = 641.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_ddf3n")
 
 [node name="Nom" type="Label" parent="CanvasLayer/Hud/Craft"]
 layout_mode = 1
@@ -306,6 +311,15 @@ text = "03"
 
 [node name="Ship" parent="Level1" index="1" node_paths=PackedStringArray("player")]
 player = NodePath("../Path2D/Player")
+
+[node name="Area2D" type="Area2D" parent="Level1/BigStation" index="0"]
+position = Vector2(7064, -2688)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/BigStation/Area2D"]
+position = Vector2(-23979, -1792)
+shape = SubResource("CircleShape2D_linyi")
+
+[connection signal="body_entered" from="Level1/BigStation/Area2D" to="CanvasLayer/Hud" method="_on_area_2d_body_entered"]
 
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Liquide"]
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Electronics"]

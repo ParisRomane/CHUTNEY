@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var craft : Craft
 @export var player : Player
-var craft_button: Button
+var craft_button: Control
 var inventory : Ressource
 var _multiplier : int = 1
 var _craft_tier: Dictionary = {
@@ -44,7 +44,7 @@ func _load_crafts() -> void:
 		_crafts[craft.effect_name][craft.tier] = craft
 		
 
-func _craft(nom_craft: Label, desc_craft:Label, short_craft:Label, button:Button) -> void:
+func _craft(nom_craft: Label, desc_craft:Label, short_craft:Label, button:Button, control:Control) -> void:
 	var key : String = "cc_set_zipline_length"
 	
 	craft = _crafts[key][_craft_tier[key]]
@@ -53,8 +53,9 @@ func _craft(nom_craft: Label, desc_craft:Label, short_craft:Label, button:Button
 	desc_craft.text = craft.description
 	short_craft.text = craft.description_short
 	button.pressed.connect(_launch_craft)
-	craft_button = button
+	craft_button = control
 
 func _launch_craft()-> void:
 	if craft.make():
+		craft_button.flag = false
 		craft_button.hide()

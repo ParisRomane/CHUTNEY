@@ -16,7 +16,7 @@ func _ready() -> void:
 	nom_craft = $Craft/Nom
 	desc_craft = $Craft/LongDesc
 	short_craft = $Craft/Shortdesc
-	ship._craft.call_deferred(nom_craft, desc_craft, short_craft, $Craft/ButtonCraft)
+	ship._craft.call_deferred(nom_craft, desc_craft, short_craft, $Craft/ButtonCraft, $Craft)
 
 
 
@@ -28,3 +28,11 @@ func _process(delta: float) -> void:
 		var fin : Node = load("res://fin.tscn").instantiate()
 		self.get_parent().add_child(fin)
 		self.get_parent().remove_child(self)
+
+
+func _on_area_2d_body_entered(area: Node) -> void:
+	if (area.has_method("collect")):
+		var fin : Node = load("res://fin.tscn").instantiate()
+		self.get_parent().add_child(fin)
+		self.get_parent().remove_child(self)
+	

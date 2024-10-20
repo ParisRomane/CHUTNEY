@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var ship : CharacterBody2D 
 @export var max_fuel : float
 
-var longueur_corde : int
+var longueur_corde : int = 4500
 
 var up : float = 0.0
 var down : float = 0.0
@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 	look_at(mouse_pos)
 	if Input.is_action_pressed("shoot") and can_move and current_fuel >= 0.0:
 		velocity -= shoot_line * thruster_power
-		current_fuel -= 20
+		current_fuel -= 5
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		can_move = false

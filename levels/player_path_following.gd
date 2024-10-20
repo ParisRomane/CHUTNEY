@@ -1,6 +1,6 @@
 extends Path2D
 
-@export var player : CharacterBody2D
+@export var player : Player
 @export var max_rope_len : float = 3000.0
 
 # Called when the node enters the scene tree for the first time.
@@ -8,6 +8,7 @@ func _ready() -> void:
 	update()
 
 func _process(delta: float) -> void:
+	max_rope_len = player.longueur_corde
 	if player.can_move:
 		$Line2D.set_point_position(get_size()-1, player.global_position)
 		curve.set_point_position(get_size()-1, player.global_position)
