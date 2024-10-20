@@ -1,0 +1,182 @@
+[gd_scene load_steps=45 format=3 uid="uid://7jw6t0ic8u2g"]
+
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniPlayer.gd" id="1_sqnve"]
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniSong.gd" id="2_bhrs3"]
+[ext_resource type="AudioStream" uid="uid://bn7ld4kjecbix" path="res://assets/audios/music/intro/Ambient Vol6 Back Home Main.wav" id="3_xpiha"]
+[ext_resource type="AudioStream" uid="uid://bt535iedwng8e" path="res://assets/audios/music/outro/Ambient Vol6 Into The Sun Main.wav" id="4_kbb5g"]
+[ext_resource type="AudioStream" uid="uid://cwwxcck0ttchc" path="res://assets/audios/music/ambient/loops/Ethereal Ether Main.wav" id="5_ph04w"]
+[ext_resource type="AudioStream" uid="uid://b7arxxrdqfs53" path="res://assets/audios/music/ambient/loops/Ethereal Golden Clouds Main.wav" id="6_b64au"]
+[ext_resource type="AudioStream" uid="uid://doemwwquso26a" path="res://assets/audios/music/ambient/loops/Ethereal Heartbeat Main.wav" id="7_swidn"]
+[ext_resource type="AudioStream" uid="uid://bqgmdtqg4w6qj" path="res://assets/audios/music/ambient/loops/Ethereal Luminesce Main.wav" id="8_4iqbp"]
+[ext_resource type="AudioStream" uid="uid://4cqpy6fjoa7r" path="res://assets/audios/music/ambient/loops/Ethereal Stairway Main.wav" id="9_esbsg"]
+[ext_resource type="AudioStream" uid="uid://yr3fwmcvthvb" path="res://assets/audios/music/ambient/first music/Ambient Vol6 Never Alone Main.wav" id="10_lrkby"]
+[ext_resource type="AudioStream" uid="uid://qitwo56v52j5" path="res://assets/audios/doublage/robotified_files/sc1/sc1ph1.wav" id="11_34yi6"]
+[ext_resource type="AudioStream" uid="uid://qk5helshsdm7" path="res://assets/audios/doublage/robotified_files/sc2/sc2ph1.wav" id="12_u4d1a"]
+[ext_resource type="AudioStream" uid="uid://xycxp72782gn" path="res://assets/audios/doublage/robotified_files/sc2/sc2ph2.wav" id="13_lvto4"]
+[ext_resource type="AudioStream" uid="uid://bd3io5qnfq32e" path="res://assets/audios/doublage/robotified_files/sc2/sc2ph3.wav" id="14_alsg6"]
+[ext_resource type="AudioStream" uid="uid://ddope3ybxctnn" path="res://assets/audios/doublage/robotified_files/sc2/sc2ph4.wav" id="15_xrvq7"]
+[ext_resource type="AudioStream" uid="uid://br0nfe8k4yth0" path="res://assets/audios/doublage/robotified_files/sc2/sc2ph5.wav" id="16_8l4nk"]
+[ext_resource type="AudioStream" uid="uid://dl083wbif8g5k" path="res://assets/audios/doublage/robotified_files/sc3/sc3ph1.wav" id="17_5aebw"]
+[ext_resource type="AudioStream" uid="uid://b6d06kumohhef" path="res://assets/audios/doublage/robotified_files/sc3/sc3ph2.wav" id="18_bljda"]
+[ext_resource type="AudioStream" uid="uid://dw6umkq0qdey1" path="res://assets/audios/doublage/robotified_files/sc3/sc3ph3.wav" id="19_knw3f"]
+[ext_resource type="AudioStream" uid="uid://cbidyjhri8kkv" path="res://assets/audios/doublage/robotified_files/sc4/sc4ph1.wav" id="20_sq0cl"]
+[ext_resource type="AudioStream" uid="uid://buw37sxiku2ti" path="res://assets/audios/doublage/robotified_files/sc4/sc4ph2.wav" id="21_0uqr6"]
+[ext_resource type="AudioStream" uid="uid://8seockc7u6m3" path="res://assets/audios/doublage/robotified_files/sc4/sc4ph3.wav" id="22_7dypu"]
+[ext_resource type="AudioStream" uid="uid://cikmmnfas77mr" path="res://assets/audios/doublage/robotified_files/sc4/sc4ph4.wav" id="23_3nldh"]
+[ext_resource type="AudioStream" uid="uid://bljj8bylcnsm5" path="res://assets/audios/doublage/robotified_files/sc4/sc4ph5.wav" id="24_41arr"]
+[ext_resource type="AudioStream" uid="uid://csgo4e2fpyrcx" path="res://assets/audios/doublage/robotified_files/sc4/sc4ph6.wav" id="25_557kv"]
+[ext_resource type="AudioStream" uid="uid://dhcv4hyu3n866" path="res://assets/audios/doublage/robotified_files/sc5/sc5ph1.wav" id="26_btni1"]
+[ext_resource type="AudioStream" uid="uid://d0eohj6jgi10w" path="res://assets/audios/doublage/robotified_files/sc5/sc5ph2.wav" id="27_4nomw"]
+[ext_resource type="AudioStream" uid="uid://ckay3rhde3ptm" path="res://assets/audios/doublage/robotified_files/sc5/sc5ph3.wav" id="28_6eodk"]
+[ext_resource type="AudioStream" uid="uid://btlxmaebnx6ku" path="res://assets/audios/doublage/robotified_files/sc6/sc6ph1.wav" id="29_li11v"]
+[ext_resource type="AudioStream" uid="uid://dqcoys5vx2fah" path="res://assets/audios/doublage/robotified_files/sc6/sc6ph2.wav" id="30_ry0vj"]
+[ext_resource type="AudioStream" uid="uid://cbehloxltfeko" path="res://assets/audios/doublage/robotified_files/sc6/sc6ph3.wav" id="31_7g2kq"]
+[ext_resource type="AudioStream" uid="uid://bdr3qkcfmgxpx" path="res://assets/audios/doublage/robotified_files/sc7/sc7ph1.wav" id="32_boxvm"]
+[ext_resource type="AudioStream" uid="uid://c10qx8y8wr5sm" path="res://assets/audios/doublage/robotified_files/sc7/sc7ph2.wav" id="33_sw6lt"]
+[ext_resource type="AudioStream" uid="uid://dmhufij1c1tj2" path="res://assets/audios/doublage/robotified_files/sc7/sc7ph3.wav" id="34_b4emv"]
+[ext_resource type="AudioStream" uid="uid://s2is40t03l4b" path="res://assets/audios/doublage/robotified_files/sc7/sc7ph4.wav" id="35_xy6vf"]
+[ext_resource type="AudioStream" uid="uid://cpi62dm23mp26" path="res://assets/audios/doublage/robotified_files/sc7/sc7ph5.wav" id="36_qrflv"]
+
+[sub_resource type="Resource" id="Resource_x57jg"]
+script = ExtResource("2_bhrs3")
+Intensity1 = ExtResource("3_xpiha")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_sdhv6"]
+script = ExtResource("2_bhrs3")
+Intensity1 = ExtResource("4_kbb5g")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_h7yr0"]
+script = ExtResource("2_bhrs3")
+Intensity1 = ExtResource("5_ph04w")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_jhipm"]
+script = ExtResource("2_bhrs3")
+Intensity1 = ExtResource("6_b64au")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_v3qh5"]
+script = ExtResource("2_bhrs3")
+Intensity1 = ExtResource("7_swidn")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_2dfno"]
+script = ExtResource("2_bhrs3")
+Intensity1 = ExtResource("8_4iqbp")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_uc1nl"]
+script = ExtResource("2_bhrs3")
+Intensity1 = ExtResource("9_esbsg")
+ReverbTail = 0.0
+SongMode = 0
+
+[sub_resource type="Resource" id="Resource_vx50v"]
+script = ExtResource("2_bhrs3")
+Intensity1 = ExtResource("10_lrkby")
+ReverbTail = 0.0
+SongMode = 0
+
+[node name="music_and_voice" type="Node2D"]
+
+[node name="intro" type="Node" parent="."]
+script = ExtResource("1_sqnve")
+QueuedSongs = Array[ExtResource("2_bhrs3")]([SubResource("Resource_x57jg")])
+
+[node name="outro" type="Node" parent="."]
+script = ExtResource("1_sqnve")
+QueuedSongs = Array[ExtResource("2_bhrs3")]([SubResource("Resource_sdhv6")])
+
+[node name="ambiance_music_loop" type="Node" parent="."]
+script = ExtResource("1_sqnve")
+QueuedSongs = Array[ExtResource("2_bhrs3")]([SubResource("Resource_h7yr0"), SubResource("Resource_jhipm"), SubResource("Resource_v3qh5"), SubResource("Resource_2dfno"), SubResource("Resource_uc1nl")])
+
+[node name="ai_encounter" type="Node" parent="."]
+script = ExtResource("1_sqnve")
+QueuedSongs = Array[ExtResource("2_bhrs3")]([SubResource("Resource_vx50v")])
+
+[node name="sc1ph1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_34yi6")
+
+[node name="sc2ph1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_u4d1a")
+
+[node name="sc2ph2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_lvto4")
+
+[node name="sc2ph3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_alsg6")
+
+[node name="sc2ph4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_xrvq7")
+
+[node name="sc2ph5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_8l4nk")
+
+[node name="sc3ph1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_5aebw")
+
+[node name="sc3ph2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_bljda")
+
+[node name="sc3ph3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_knw3f")
+
+[node name="sc4ph1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_sq0cl")
+
+[node name="sc4ph2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_0uqr6")
+
+[node name="sc4ph3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_7dypu")
+
+[node name="sc4ph4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_3nldh")
+
+[node name="sc4ph5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_41arr")
+
+[node name="sc4ph6" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_557kv")
+
+[node name="sc5ph1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_btni1")
+
+[node name="sc5ph2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_4nomw")
+
+[node name="sc5ph3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("28_6eodk")
+
+[node name="sc6ph1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_li11v")
+
+[node name="sc6ph2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_ry0vj")
+
+[node name="sc6ph3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_7g2kq")
+
+[node name="sc7ph1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_boxvm")
+
+[node name="sc7ph2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_sw6lt")
+
+[node name="sc7ph3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_b4emv")
+
+[node name="sc7ph4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("35_xy6vf")
+
+[node name="sc7ph5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("36_qrflv")
