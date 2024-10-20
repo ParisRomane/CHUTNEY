@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=3 format=3 uid="uid://bd5fyoll1wsd0"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_gf387"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_7nbpr"]
+
+[resource]
+script = ExtResource("2_7nbpr")
+name = "our_style"
+base_overrides = {
+"global_bg_color": "Color(0, 0.905882, 1, 0.423529)",
+"global_font": "\"res://assets/font/white-rabbit/whitrabt.ttf\"",
+"global_font_size": "50.0"
+}
+layers = Array[ExtResource("1_gf387")]([])
+metadata/_latest_layer = -1

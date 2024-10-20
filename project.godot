@@ -33,8 +33,15 @@ window/stretch/mode="viewport"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"vladimir": "res://entities/character/vladimir.dch"
+}
+directories/dtl_directory={
+"debut_jeu": "res://entities/character/debut_jeu.dtl"
+}
+layout/style_list=["res://truc_style.tres"]
+layout/default_style=""
+glossary/default_case_sensitive=true
 
 [display]
 
