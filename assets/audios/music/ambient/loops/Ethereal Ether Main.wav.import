@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwwxcck0ttchc"
+path="res://.godot/imported/Ethereal Ether Main.wav-7723f67fb8b2dbbf4a5242f14328ad70.sample"
+
+[deps]
+
+source_file="res://assets/audios/music/ambient/loops/Ethereal Ether Main.wav"
+dest_files=["res://.godot/imported/Ethereal Ether Main.wav-7723f67fb8b2dbbf4a5242f14328ad70.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

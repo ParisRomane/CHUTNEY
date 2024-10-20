@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://yr3fwmcvthvb"
+path="res://.godot/imported/Ambient Vol6 Never Alone Main.wav-d467a58c5d6a86988d8d7f10e9579844.sample"
+
+[deps]
+
+source_file="res://assets/audios/music/ambient/first music/Ambient Vol6 Never Alone Main.wav"
+dest_files=["res://.godot/imported/Ambient Vol6 Never Alone Main.wav-d467a58c5d6a86988d8d7f10e9579844.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

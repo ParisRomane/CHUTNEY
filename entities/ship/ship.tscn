@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d17c68wa5qg4"]
 
-[ext_resource type="Texture2D" uid="uid://6p7mc6l2xr1x" path="res://assets/images/spaceship.svg" id="1_oc4ul"]
+[ext_resource type="Texture2D" uid="uid://bten8teeawq65" path="res://assets/images/spaceship.svg" id="1_oc4ul"]
 [ext_resource type="Script" path="res://entities/ship/ship.gd" id="1_oouaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d726h"]
@@ -12,6 +12,7 @@ script = ExtResource("1_oouaf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3, -69)
+scale = Vector2(0.165979, 0.165979)
 texture = ExtResource("1_oc4ul")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

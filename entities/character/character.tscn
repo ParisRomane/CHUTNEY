@@ -1,13 +1,13 @@
 [gd_scene load_steps=32 format=3 uid="uid://dh1fqcsplodtv"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_2iyhu"]
-[ext_resource type="Texture2D" uid="uid://bbvk6fvkruaf2" path="res://assets/images/astronaut_0.svg" id="3_6cnwe"]
-[ext_resource type="Texture2D" uid="uid://dred8vn41etu" path="res://assets/images/bubbles_0.svg" id="3_35srt"]
-[ext_resource type="Texture2D" uid="uid://cddyhjkgj2nrv" path="res://assets/images/astronaut_1.svg" id="4_kugxp"]
-[ext_resource type="Texture2D" uid="uid://cgcc2023ryg2g" path="res://assets/images/bubbles_1.svg" id="4_ntk5e"]
-[ext_resource type="Texture2D" uid="uid://co6kqa233rna3" path="res://assets/images/astronaut_2.svg" id="5_a2ysy"]
-[ext_resource type="Texture2D" uid="uid://c21g8l21w2mx1" path="res://assets/images/bubbles_2.svg" id="5_vipr1"]
-[ext_resource type="Texture2D" uid="uid://ddrv7yg0rumxy" path="res://assets/images/astronaut_3.svg" id="6_ut72f"]
+[ext_resource type="Texture2D" uid="uid://bmhxsltldvmoo" path="res://assets/images/astronaut_0.svg" id="3_6cnwe"]
+[ext_resource type="Texture2D" uid="uid://bouhctvwnull0" path="res://assets/images/bubbles_0.svg" id="3_35srt"]
+[ext_resource type="Texture2D" uid="uid://1sbbr4y6y25n" path="res://assets/images/astronaut_1.svg" id="4_kugxp"]
+[ext_resource type="Texture2D" uid="uid://df8ld0lysioew" path="res://assets/images/bubbles_1.svg" id="4_ntk5e"]
+[ext_resource type="Texture2D" uid="uid://b3qrcx11qutvg" path="res://assets/images/astronaut_2.svg" id="5_a2ysy"]
+[ext_resource type="Texture2D" uid="uid://dk4pxs1bs0nv0" path="res://assets/images/bubbles_2.svg" id="5_vipr1"]
+[ext_resource type="Texture2D" uid="uid://by5xa0wdmcuob" path="res://assets/images/astronaut_3.svg" id="6_ut72f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qsiv6"]
 animations = [{
@@ -49,23 +49,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_avqnk"]
 radius = 63.7887
 
-[sub_resource type="Animation" id="Animation_xdv65"]
-resource_name = "idle"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSpriteBody:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-
 [sub_resource type="Animation" id="Animation_tu8ec"]
 length = 0.001
 tracks/0/type = "value"
@@ -79,6 +62,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_t2f6h"]
+resource_name = "drag_by_rope"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteBody:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_intic"]
@@ -98,8 +98,8 @@ tracks/0/keys = {
 "values": [2, 1]
 }
 
-[sub_resource type="Animation" id="Animation_t2f6h"]
-resource_name = "drag_by_rope"
+[sub_resource type="Animation" id="Animation_xdv65"]
+resource_name = "idle"
 length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
@@ -112,7 +112,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_crhqe"]
@@ -173,6 +173,21 @@ nodes/Bubble/node = SubResource("AnimationNodeAnimation_xih8a")
 nodes/Bubble/position = Vector2(80, 140)
 node_connections = [&"output", 0, &"Bubble"]
 
+[sub_resource type="Animation" id="Animation_hfjrh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteExtinguisher:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_pe4sv"]
 resource_name = "bubbles"
 length = 0.2
@@ -188,21 +203,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
-}
-
-[sub_resource type="Animation" id="Animation_hfjrh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSpriteExtinguisher:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xc1vc"]
@@ -222,9 +222,9 @@ scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_qsiv6")
 
 [node name="AnimatedSpriteBody" type="AnimatedSprite2D" parent="."]
-position = Vector2(31, -31)
+position = Vector2(16, -18)
 rotation = 3.14159
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.704415, 0.704415)
 sprite_frames = SubResource("SpriteFrames_5jvbt")
 frame = 3
 
