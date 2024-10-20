@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 			player.rope_end()
 
 func _input(event: InputEvent) -> void :
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and player.can_move:
 		update()
 
 func update() -> void:

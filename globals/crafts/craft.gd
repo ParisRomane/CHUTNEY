@@ -68,7 +68,7 @@ func cc_set_craft_multiplier(amount: int) -> void:
 	
 # extend_zip_line
 func cc_set_zipline_length(length: int) -> void:
-	ship.zipline_length = length
+	player.longueur_corde = length
 
 # extend_fuel_capacity
 func cc_set_fuel_capacity(max_capacity: int) -> void:
@@ -76,7 +76,7 @@ func cc_set_fuel_capacity(max_capacity: int) -> void:
 	
 # extend_speed
 func cc_set_player_friction(friction: int) -> void:
-	player.friction = friction
+	player.MAX_SPEED = friction
 	
 # extend_view
 func cc_set_player_view(radius: int) -> void:

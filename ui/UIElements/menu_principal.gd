@@ -1,9 +1,9 @@
 extends Node
 
-
+var ovani : Node = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var ovani : Node = load("res://intro_music.tscn").instantiate()
+	ovani = load("res://intro_music.tscn").instantiate()
 	self.get_parent().add_child.call_deferred(ovani)
 	$ButtonLaunch.grab_focus()
 	$ButtonLaunch.pressed.connect(self._button_start)
@@ -11,8 +11,9 @@ func _ready() -> void:
 	$ButtonQuitter.pressed.connect(self._button_exit)
 	
 func _button_start() -> void :
-	var credit : Node = load("res://ui/intro.tscn").instantiate()
-	self.get_parent().add_child(credit)
+	var intro : Node = load("res://ui/intro.tscn").instantiate()
+	intro.ovani = self.ovani
+	self.get_parent().add_child(intro)
 	self.get_parent().remove_child(self)
 	
 func _button_exit() -> void :

@@ -1,14 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://7jw6t0ic8u2g"]
+[gd_scene load_steps=36 format=3 uid="uid://7jw6t0ic8u2g"]
 
 [ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniPlayer.gd" id="1_sqnve"]
 [ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniSong.gd" id="2_bhrs3"]
 [ext_resource type="AudioStream" uid="uid://bn7ld4kjecbix" path="res://assets/audios/music/intro/Ambient Vol6 Back Home Main.wav" id="3_xpiha"]
 [ext_resource type="AudioStream" uid="uid://bt535iedwng8e" path="res://assets/audios/music/outro/Ambient Vol6 Into The Sun Main.wav" id="4_kbb5g"]
-[ext_resource type="AudioStream" uid="uid://cwwxcck0ttchc" path="res://assets/audios/music/ambient/loops/Ethereal Ether Main.wav" id="5_ph04w"]
-[ext_resource type="AudioStream" uid="uid://b7arxxrdqfs53" path="res://assets/audios/music/ambient/loops/Ethereal Golden Clouds Main.wav" id="6_b64au"]
-[ext_resource type="AudioStream" uid="uid://doemwwquso26a" path="res://assets/audios/music/ambient/loops/Ethereal Heartbeat Main.wav" id="7_swidn"]
-[ext_resource type="AudioStream" uid="uid://bqgmdtqg4w6qj" path="res://assets/audios/music/ambient/loops/Ethereal Luminesce Main.wav" id="8_4iqbp"]
-[ext_resource type="AudioStream" uid="uid://4cqpy6fjoa7r" path="res://assets/audios/music/ambient/loops/Ethereal Stairway Main.wav" id="9_esbsg"]
+[ext_resource type="PackedScene" uid="uid://dkvt60srvy5k8" path="res://ambiance_music_loop.tscn" id="5_ytv71"]
 [ext_resource type="AudioStream" uid="uid://yr3fwmcvthvb" path="res://assets/audios/music/ambient/first music/Ambient Vol6 Never Alone Main.wav" id="10_lrkby"]
 [ext_resource type="AudioStream" uid="uid://qitwo56v52j5" path="res://assets/audios/doublage/robotified_files/sc1/sc1ph1.wav" id="11_34yi6"]
 [ext_resource type="AudioStream" uid="uid://qk5helshsdm7" path="res://assets/audios/doublage/robotified_files/sc2/sc2ph1.wav" id="12_u4d1a"]
@@ -49,36 +45,6 @@ Intensity1 = ExtResource("4_kbb5g")
 ReverbTail = 0.0
 SongMode = 0
 
-[sub_resource type="Resource" id="Resource_h7yr0"]
-script = ExtResource("2_bhrs3")
-Intensity1 = ExtResource("5_ph04w")
-ReverbTail = 0.0
-SongMode = 0
-
-[sub_resource type="Resource" id="Resource_jhipm"]
-script = ExtResource("2_bhrs3")
-Intensity1 = ExtResource("6_b64au")
-ReverbTail = 0.0
-SongMode = 0
-
-[sub_resource type="Resource" id="Resource_v3qh5"]
-script = ExtResource("2_bhrs3")
-Intensity1 = ExtResource("7_swidn")
-ReverbTail = 0.0
-SongMode = 0
-
-[sub_resource type="Resource" id="Resource_2dfno"]
-script = ExtResource("2_bhrs3")
-Intensity1 = ExtResource("8_4iqbp")
-ReverbTail = 0.0
-SongMode = 0
-
-[sub_resource type="Resource" id="Resource_uc1nl"]
-script = ExtResource("2_bhrs3")
-Intensity1 = ExtResource("9_esbsg")
-ReverbTail = 0.0
-SongMode = 0
-
 [sub_resource type="Resource" id="Resource_vx50v"]
 script = ExtResource("2_bhrs3")
 Intensity1 = ExtResource("10_lrkby")
@@ -95,9 +61,7 @@ QueuedSongs = Array[ExtResource("2_bhrs3")]([SubResource("Resource_x57jg")])
 script = ExtResource("1_sqnve")
 QueuedSongs = Array[ExtResource("2_bhrs3")]([SubResource("Resource_sdhv6")])
 
-[node name="ambiance_music_loop" type="Node" parent="."]
-script = ExtResource("1_sqnve")
-QueuedSongs = Array[ExtResource("2_bhrs3")]([SubResource("Resource_h7yr0"), SubResource("Resource_jhipm"), SubResource("Resource_v3qh5"), SubResource("Resource_2dfno"), SubResource("Resource_uc1nl")])
+[node name="ambiance_music_loop" parent="." instance=ExtResource("5_ytv71")]
 
 [node name="ai_encounter" type="Node" parent="."]
 script = ExtResource("1_sqnve")
