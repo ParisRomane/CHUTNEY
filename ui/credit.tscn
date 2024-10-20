@@ -75,10 +75,10 @@ disabled = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1006.0
-offset_top = 152.0
-offset_right = 1329.0
-offset_bottom = 289.0
+offset_left = 1088.0
+offset_top = 166.0
+offset_right = 1411.0
+offset_bottom = 303.0
 theme_override_colors/font_shadow_color = Color(0.0373385, 0.23625, 0.369624, 1)
 theme_override_colors/font_outline_color = Color(0.0103074, 0.141657, 0.236687, 1)
 theme_override_constants/outline_size = 19
@@ -98,24 +98,24 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.482353, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.8, 0.835294)
 theme_override_constants/shadow_outline_size = 16
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 50
 text = "Game Design : 
-Yvan
+Yvan Le Bihan
 Brandon Hornbeck      
-Mathis
-Léo
+Mathis Saillot
+Léo De Sa
 
 Son, mixage et doublage: 
 Brandon Hornbeck
 
 scénario et dialogues :
-Yv	an
+Yvan Le Bihan
 
 
 "
 
 [node name="ColorRect" type="ColorRect" parent="VFlowContainer"]
-custom_minimum_size = Vector2(150, 1000)
+custom_minimum_size = Vector2(100, 1000)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
@@ -124,12 +124,12 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.482353, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.8, 0.835294)
 theme_override_constants/shadow_outline_size = 16
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 50
 text = "Lead programmer :
 Quentin Dupré
 
 Programmation :
-Mathis
+Mathis Saillot
 Léo De Sa
 Romane Paris
 Quentin Dupré
@@ -137,6 +137,23 @@ Quentin Dupré
 Graphismes : 
 Romane Paris
 "
+
+[node name="ColorRect2" type="ColorRect" parent="VFlowContainer"]
+custom_minimum_size = Vector2(100, 1000)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label4" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0.482353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.8, 0.835294)
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 50
+text = "Sources sonores :
+Estintor : 
+u_g0akwz8ml1 from Pixabay
+Ovani
+Bouche de Léo"
 
 [node name="retour" type="Button" parent="."]
 layout_mode = 0
