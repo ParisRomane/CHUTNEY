@@ -4,6 +4,7 @@ extends CharacterBody2D
 var inventory : Ressource
 var _multiplier : int = 0
 var _craft_tier: Dictionary = {
+	"cc_set_craft_multiplier": 0,
 	"cc_set_zipline_length": 0,
 	"cc_set_fuel_capacity": 0,
 	"cc_set_player_friction": 0,
@@ -12,6 +13,7 @@ var _craft_tier: Dictionary = {
 	"cc_set_hazard_protection": 0
 }
 var _crafts: Dictionary = {
+	"cc_set_craft_multiplier": [null, null, null],
 	"cc_set_zipline_length": [null, null, null],
 	"cc_set_fuel_capacity": [null, null, null],
 	"cc_set_player_friction": [null, null, null],
@@ -31,10 +33,10 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 	if body.has_method("collect"):
 		inventory.add_with_multiplier(body.inventory, _multiplier)
 		body.inventory.reset()
-        body.current_fuel = body.max_fuel
+		body.current_fuel = body.max_fuel
 
 func _load_crafts() -> void:
-	var crafts: Array[Craft] = Craft.from_json("./globals/craft/craft_definition.json")
+	var crafts: Array[Craft] = Craft.from_json("./globals/crafts/craft_definition.json")
 	for craft in crafts:
 		_crafts[craft.effect_name][craft.tier] = craft
-        
+		
