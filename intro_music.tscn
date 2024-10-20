@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://beqfiw0druyut"]
+
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniPlayer.gd" id="1_qcbve"]
+[ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniSong.gd" id="2_jcixb"]
+[ext_resource type="AudioStream" uid="uid://bn7ld4kjecbix" path="res://assets/audios/music/intro/Ambient Vol6 Back Home Main.wav" id="3_lyaj4"]
+
+[sub_resource type="Resource" id="Resource_x57jg"]
+script = ExtResource("2_jcixb")
+Intensity1 = ExtResource("3_lyaj4")
+ReverbTail = 0.0
+SongMode = 0
+
+[node name="intro" type="Node"]
+script = ExtResource("1_qcbve")
+QueuedSongs = Array[ExtResource("2_jcixb")]([SubResource("Resource_x57jg")])

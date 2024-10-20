@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnx2bogn73ocb"]
+[gd_scene load_steps=15 format=3 uid="uid://bnx2bogn73ocb"]
 
 [ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="1_ngiwr"]
 [ext_resource type="Script" path="res://ui/UIElements/menu_principal.gd" id="2_qpln2"]
@@ -12,7 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://twxk18pf7lq6" path="res://assets/images/textures/dbr_bottle.tres" id="10_1bv2n"]
 [ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniPlayer.gd" id="11_pabr7"]
 [ext_resource type="Script" path="res://addons/GodotMusicPlayer0.0.9/OvaniSong.gd" id="12_j5nbd"]
-[ext_resource type="Resource" uid="uid://ddsletqjtocts" path="res://assets/audios/music/intro/ovani_intro.tres" id="13_50w3l"]
+[ext_resource type="AudioStream" uid="uid://bn7ld4kjecbix" path="res://assets/audios/music/intro/Ambient Vol6 Back Home Main.wav" id="13_66t8n"]
+
+[sub_resource type="Resource" id="Resource_x57jg"]
+script = ExtResource("12_j5nbd")
+Intensity1 = ExtResource("13_66t8n")
+ReverbTail = 0.0
+SongMode = 0
 
 [node name="TestUi" type="Control"]
 layout_mode = 3
@@ -104,9 +110,8 @@ theme_override_colors/font_shadow_color = Color(1, 0, 0.482353, 1)
 theme_override_font_sizes/font_size = 120
 text = "Cosmic Dustman"
 
-[node name="OvaniPlayer" type="Node" parent="."]
+[node name="intro" type="Node" parent="."]
 script = ExtResource("11_pabr7")
-QueuedSongs = Array[ExtResource("12_j5nbd")]([ExtResource("13_50w3l")])
-LoopQueue = true
+QueuedSongs = Array[ExtResource("12_j5nbd")]([SubResource("Resource_x57jg")])
 
 [connection signal="pressed" from="ButtonCredit" to="." method="_on_button_credit_pressed"]

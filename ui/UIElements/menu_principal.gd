@@ -3,6 +3,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var ovani : Node = load("res://intro_music.tscn").instantiate()
+	self.get_parent().add_child.call_deferred(ovani)
 	$ButtonLaunch.grab_focus()
 	$ButtonLaunch.pressed.connect(self._button_start)
 	
