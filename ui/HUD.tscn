@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://clnmmtkirxbcn"]
+[gd_scene load_steps=9 format=3 uid="uid://clnmmtkirxbcn"]
 
 [ext_resource type="PackedScene" uid="uid://bo8djmaypib5c" path="res://ui/UIElements/HUD_ressource.tscn" id="1_o1wp2"]
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_vdy44"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bqfv13bm5x81b" path="res://assets/images/textures/scraps_icon.tres" id="5_5jkpl"]
 [ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="6_v857h"]
 [ext_resource type="PackedScene" uid="uid://cnjc3so4cr141" path="res://levels/level_1.tscn" id="7_53vku"]
+[ext_resource type="PackedScene" uid="uid://cwyr5qfon472s" path="res://ui/UIElements/button_menu_base.tscn" id="7_y2rm6"]
 
 [node name="Node" type="Node"]
 
@@ -131,6 +132,175 @@ theme_type_variation = &"Label_HUD"
 theme_override_font_sizes/font_size = 46
 text = "Fuel"
 autowrap_mode = 2
+
+[node name="Craft" type="Control" parent="CanvasLayer/Hud"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -190.0
+offset_right = 641.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nom" type="Label" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1041.5
+offset_top = 24.0
+offset_right = 1034.5
+offset_bottom = 96.0
+grow_horizontal = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("6_v857h")
+theme_type_variation = &"Label_HUD"
+theme_override_font_sizes/font_size = 64
+text = "Nom"
+horizontal_alignment = 1
+
+[node name="Shortdesc" type="Label" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1017.5
+offset_top = 87.0
+offset_right = 1025.5
+offset_bottom = 159.0
+grow_horizontal = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("6_v857h")
+theme_type_variation = &"Label_HUD"
+theme_override_font_sizes/font_size = 48
+text = "Short   uyuey riug "
+horizontal_alignment = 1
+
+[node name="LongDesc" type="Label" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.5
+offset_top = 155.0
+offset_right = 1016.5
+offset_bottom = 274.0
+grow_horizontal = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("6_v857h")
+theme_type_variation = &"Label_HUD"
+theme_override_font_sizes/font_size = 48
+text = "Long iyi ui egruyzrjgz yhr"
+autowrap_mode = 2
+
+[node name="ButtonCraft" parent="CanvasLayer/Hud/Craft" instance=ExtResource("7_y2rm6")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -1044.5
+offset_top = 0.0
+offset_right = 1044.5
+offset_bottom = 297.0
+grow_vertical = 1
+text = ""
+
+[node name="Icone_Res" type="TextureRect" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 561.9
+offset_top = -810.6
+offset_right = 689.9
+offset_bottom = -682.6
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("3_d84xg")
+
+[node name="Stock_ship" type="Label" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23149
+anchor_top = 0.0582822
+anchor_right = 0.23149
+anchor_bottom = 0.0582822
+offset_left = -42.25
+offset_top = -52.5001
+offset_right = 39.75
+offset_bottom = 2.49995
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("6_v857h")
+theme_type_variation = &"Label_HUD"
+text = "00"
+
+[node name="Icone_Res2" type="TextureRect" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 570.65
+offset_top = -640.6
+offset_right = 698.65
+offset_bottom = -512.6
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("4_e6c3x")
+
+[node name="Stock_ship2" type="Label" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0516558
+anchor_top = 0.494847
+anchor_right = 0.0516558
+anchor_bottom = 0.494847
+offset_left = 529.65
+offset_top = -604.1
+offset_right = 611.65
+offset_bottom = -549.1
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("6_v857h")
+theme_type_variation = &"Label_HUD"
+text = "00"
+
+[node name="Icone_Res3" type="TextureRect" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 564.4
+offset_top = -724.35
+offset_right = 692.4
+offset_bottom = -596.35
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("5_5jkpl")
+
+[node name="Stock_ship3" type="Label" parent="CanvasLayer/Hud/Craft"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0539988
+anchor_top = 0.5
+anchor_right = 0.0539988
+anchor_bottom = 0.5
+offset_left = 523.4
+offset_top = -687.85
+offset_right = 605.4
+offset_bottom = -632.85
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(41, 27)
+theme = ExtResource("6_v857h")
+theme_type_variation = &"Label_HUD"
+text = "03"
 
 [node name="Level1" parent="." instance=ExtResource("7_53vku")]
 
