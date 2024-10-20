@@ -1,9 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3u4pmlrhet6w"]
 
 [ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="1_1jt4k"]
-[ext_resource type="Texture2D" uid="uid://bv385cl7olhkw" path="res://assets/images/textures/dbr_can.tres" id="2_y1ppq"]
+[ext_resource type="Texture2D" uid="uid://bn2cwlia5c3qo" path="res://assets/images/textures/dbr_phone.tres" id="2_8otb1"]
 
-[node name="Can" type="Node2D"]
+[node name="Phone" type="Node2D"]
 
 [node name="Debris" parent="." instance=ExtResource("1_1jt4k")]
-texture = ExtResource("2_y1ppq")
+texture = ExtResource("2_8otb1")
+
+[node name="Sprite2D" parent="Debris" index="0"]
+texture = ExtResource("2_8otb1")
+
+[editable path="Debris"]

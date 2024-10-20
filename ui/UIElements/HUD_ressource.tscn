@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="1_6gxnc"]
 [ext_resource type="Script" path="res://ui/UIElements/HUD_Ressource.gd" id="2_wucp7"]
-[ext_resource type="Texture2D" uid="uid://bvehu226y8iti" path="res://assets/images/icon.svg" id="3_trxnh"]
+[ext_resource type="Texture2D" uid="uid://b08y8xrltjotj" path="res://assets/images/icon.svg" id="3_trxnh"]
 
 [sub_resource type="Animation" id="Animation_8ggrf"]
 resource_name = "Decrease_ship"
@@ -118,6 +118,8 @@ offset_top = -64.0
 offset_right = 128.0
 offset_bottom = 64.0
 grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(64, 64)
 texture = ExtResource("3_trxnh")
 
 [node name="Stock_ship" type="Label" parent="."]

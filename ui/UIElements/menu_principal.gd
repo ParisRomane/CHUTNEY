@@ -9,7 +9,7 @@ func _ready() -> void:
 	$ButtonQuitter.pressed.connect(self._button_exit)
 	
 func _button_start() -> void :
-	var credit : Node = load("res://levels/test_scene.tscn").instantiate()
+	var credit : Node = load("res://ui/intro.tscn").instantiate()
 	self.get_parent().add_child(credit)
 	self.get_parent().remove_child(self)
 	

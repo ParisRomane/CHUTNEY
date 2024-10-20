@@ -8,3 +8,8 @@
 [node name="Debris" parent="." instance=ExtResource("1_vu17q")]
 texture = ExtResource("2_sjkvd")
 hazard_type = 3
+
+[node name="Sprite2D" parent="Debris" index="0"]
+texture = ExtResource("2_sjkvd")
+
+[editable path="Debris"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3mwed7n4lrkw"]
+[gd_scene load_steps=12 format=3 uid="uid://d3mwed7n4lrkw"]
 
 [ext_resource type="Texture2D" uid="uid://ru1uq12ysbmg" path="res://assets/images/background.svg" id="1_h5tn1"]
+[ext_resource type="Script" path="res://ui/intro.gd" id="1_yrgmf"]
 [ext_resource type="Texture2D" uid="uid://c3w7wd40q430c" path="res://assets/images/cockpit.svg" id="2_hc1wr"]
 [ext_resource type="Texture2D" uid="uid://digihya76rhp7" path="res://assets/images/chair.svg" id="3_ntdlx"]
 [ext_resource type="Texture2D" uid="uid://diauxnnfcjoo0" path="res://assets/images/dbr_can.svg" id="4_uvok0"]
@@ -105,9 +106,109 @@ tracks/7/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Cockpit:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_8strp"]
 resource_name = "shake"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cockpit:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.14333, 2.24333, 2.34333, 2.43333, 2.53333, 2.63333, 2.74333, 2.84333, 2.94333, 3.03333, 3.13333, 3.23333, 3.33333, 3.43333, 3.53333, 3.62333, 3.72333, 3.82333, 3.9, 4.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, -15), Vector2(70, 20), Vector2(0, -15), Vector2(-15, 0), Vector2(-30, 20), Vector2(0, 0), Vector2(20, -70), Vector2(25, 20), Vector2(0, -15), Vector2(-15, 0), Vector2(-30, 80), Vector2(0, 0), Vector2(20, 70), Vector2(25, 20), Vector2(0, -100), Vector2(-15, 0), Vector2(0, 20), Vector2(-15, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cockpit:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.06667, 2.83333, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0174533, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Chair:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.13333, 2.3, 2.46667, 2.73333, 3, 3.26667, 3.53333, 3.83333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 0), Vector2(-20, -5), Vector2(20, 0), Vector2(-10, 5), Vector2(-4, 3), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("objets/DbrCan:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.666667, 1.3, 1.9, 2.66667, 4.1, 5.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(10, 0), Vector2(0, -10), Vector2(-15, 0), Vector2(0, 20), Vector2(-300, 200), Vector2(-700, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("objets/DbrCan:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 6.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("objets/DbrCan:scale")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333333, 3.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(4, 4)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("objets/DbrCan:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.33333, 4.7, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -2.37714, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kgqrg"]
+resource_name = "shake_end"
 length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -148,7 +249,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("objets/DbrCan:offset")
+tracks/3/path = NodePath("objets/DbrNuclear:offset")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -160,7 +261,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("objets/DbrCan:visible")
+tracks/4/path = NodePath("objets/DbrNuclear:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -172,19 +273,19 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("objets/DbrCan:scale")
+tracks/5/path = NodePath("objets/DbrNuclear:scale")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0.0333333, 3.03333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(2, 2)]
+"values": [Vector2(0, 0), Vector2(4, 4)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("objets/DbrCan:rotation")
+tracks/6/path = NodePath("objets/DbrNuclear:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -197,10 +298,12 @@ tracks/6/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pg3y0"]
 _data = {
 "RESET": SubResource("Animation_b5xfb"),
-"shake": SubResource("Animation_8strp")
+"shake": SubResource("Animation_8strp"),
+"shake_end": SubResource("Animation_kgqrg")
 }
 
 [node name="intro" type="Node2D"]
+script = ExtResource("1_yrgmf")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1462.5, 732.25)
@@ -216,7 +319,7 @@ texture = ExtResource("4_uvok0")
 [node name="DbrNuclear" type="Sprite2D" parent="objets"]
 visible = false
 position = Vector2(849, 628)
-scale = Vector2(1.80556, 1.26897)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("5_sod0o")
 
 [node name="Cockpit" type="Sprite2D" parent="."]
@@ -237,3 +340,5 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1170, 545)
 stream = ExtResource("6_g5bos")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

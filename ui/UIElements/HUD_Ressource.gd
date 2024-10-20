@@ -6,6 +6,8 @@ var ship : Ship
 @export_enum("organic", "scrap", "electronic") var type: String
 var nb_res: int
 var nb_inv: int
+var nb_transfer: int = 0
+var transfer_rate: int = 1
 var last_change: float
 var transfering: bool
 
@@ -45,15 +47,22 @@ func _get_player_text(res:int) -> String:
 func _launch_transfer() -> void:
 	if not transfering:
 		transfering = true
+		transfer_rate = 1
 		_transfer_to_ship()
+		
 	
 func _transfer_to_ship() -> void:
+	nb_transfer += 1
 	if nb_inv <= 0:
 		transfering = false
+		nb_transfer = 0
 		$Stock_player.hide()
 		return
-	nb_inv -= 1
-	nb_res += 1
+	if nb_transfer > 2 and nb_inv % (2* transfer_rate) == 0:
+		transfer_rate *= 2
+		
+	nb_inv -= transfer_rate
+	nb_res += transfer_rate
 	$Stock_player.text = _get_player_text(nb_inv)
 	$Stock_ship.text = _get_str_res(nb_res)
 	$Anim_Stock_ship.play("Transfer_to_ship")

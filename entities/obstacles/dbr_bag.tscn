@@ -8,3 +8,8 @@
 [node name="Debris" parent="." instance=ExtResource("1_7uglg")]
 texture = ExtResource("2_iidfy")
 type = 1
+
+[node name="Sprite2D" parent="Debris" index="0"]
+texture = ExtResource("2_iidfy")
+
+[editable path="Debris"]

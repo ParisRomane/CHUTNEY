@@ -9,3 +9,8 @@
 texture = ExtResource("2_kltv4")
 type = 1
 hazard_type = 1
+
+[node name="Sprite2D" parent="Debris" index="0"]
+texture = ExtResource("2_kltv4")
+
+[editable path="Debris"]
