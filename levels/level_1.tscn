@@ -621,7 +621,7 @@ ship = NodePath("../../Ship")
 max_fuel = 50.0
 
 [node name="SmallStation" type="Sprite2D" parent="."]
-position = Vector2(9895, 183)
+position = Vector2(9109, 533)
 texture = ExtResource("13_m0yni")
 
 [node name="BigStation" type="Sprite2D" parent="."]

@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var ship : CharacterBody2D 
 @export var max_fuel : float
 
+var longueur_corde : int
+
 var up : float = 0.0
 var down : float = 0.0
 var left : float = 0.0
@@ -22,12 +24,13 @@ var inventory : Ressource
 var current_fuel : float
 var is_hit : bool = false
 var resist_hazard: Array[bool] = [
-	false, false, false
+	true, false, false, false
 ]
 
 func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
 	current_fuel = max_fuel
+	reset_path(ship.get_node("CollectArea").position)
 
 func gather_inputs() -> void:
 	mouse_pos = get_global_mouse_position()
