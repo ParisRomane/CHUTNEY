@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://baombnwrs37di"]
+[gd_scene load_steps=3 format=3 uid="uid://k38jyrpdhpav"]
 
-[ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="1_vu17q"]
-[ext_resource type="Texture2D" uid="uid://x5iyfuiljde1" path="res://assets/images/textures/dbr_cactus.tres" id="2_sjkvd"]
+[ext_resource type="PackedScene" uid="uid://bp0h7db0kwtdh" path="res://entities/obstacles/debris.tscn" id="1_vu17q"]
+[ext_resource type="Texture2D" path="res://assets/images/textures/dbr_cactus.tres" id="2_sjkvd"]
 
 [node name="Cactus" type="Node2D"]
 
 [node name="Debris" parent="." instance=ExtResource("1_vu17q")]
 texture = ExtResource("2_sjkvd")
 hazard_type = 3
+
+[node name="Sprite2D" parent="Debris" index="0"]
+texture = ExtResource("2_sjkvd")
+
+[editable path="Debris"]

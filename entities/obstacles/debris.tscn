@@ -17,12 +17,14 @@ script = ExtResource("1_1vosw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DMGArea"]
 shape = SubResource("CircleShape2D_caxtr")
-debug_color = Color(0.975525, 0, 0.418754, 0.42)
+debug_color = Color(0.976471, 0, 0.419608, 0.054902)
 
 [node name="CollectArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
 shape = SubResource("CircleShape2D_8q283")
+debug_color = Color(0, 0.6, 0.701961, 0.133333)
 
 [connection signal="body_entered" from="DMGArea" to="." method="_on_dmg_area_body_entered"]
+[connection signal="body_exited" from="DMGArea" to="." method="_on_dmg_area_body_exited"]
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

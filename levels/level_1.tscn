@@ -1,0 +1,47 @@
+[gd_scene load_steps=11 format=3 uid="uid://cnjc3so4cr141"]
+
+[ext_resource type="PackedScene" uid="uid://dh1fqcsplodtv" path="res://entities/character/character.tscn" id="1_h48b7"]
+[ext_resource type="PackedScene" uid="uid://d17c68wa5qg4" path="res://entities/ship/ship.tscn" id="2_iqdum"]
+[ext_resource type="PackedScene" uid="uid://j3rip3s3bacu" path="res://entities/obstacles/Asteroid.tscn" id="3_pklyj"]
+[ext_resource type="PackedScene" uid="uid://up8n2kkat7b8" path="res://entities/obstacles/dbr_bag.tscn" id="4_qss3u"]
+[ext_resource type="PackedScene" uid="uid://baombnwrs37di" path="res://entities/obstacles/dbr_cactus.tscn" id="5_dayfh"]
+[ext_resource type="PackedScene" uid="uid://cd8qoybimdxo4" path="res://entities/obstacles/dbr_bottle.tscn" id="6_c2rs8"]
+[ext_resource type="PackedScene" uid="uid://0xwdfpw0ex55" path="res://entities/obstacles/dbr_can.tscn" id="7_66a6q"]
+[ext_resource type="PackedScene" uid="uid://bwmxepbrqs264" path="res://entities/obstacles/dbr_electric.tscn" id="8_yhxh8"]
+[ext_resource type="PackedScene" uid="uid://bqrc2pmgmf0gb" path="res://entities/obstacles/dbr_nuclear.tscn" id="9_qkhmu"]
+[ext_resource type="PackedScene" uid="uid://d3u4pmlrhet6w" path="res://entities/obstacles/dbr_phone.tscn" id="10_furwf"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." node_paths=PackedStringArray("ship") instance=ExtResource("1_h48b7")]
+ship = NodePath("../Ship")
+
+[node name="Ship" parent="." instance=ExtResource("2_iqdum")]
+position = Vector2(21, -791)
+
+[node name="Asteroid" parent="." instance=ExtResource("3_pklyj")]
+position = Vector2(-2308, 1152)
+
+[node name="Bag" parent="." instance=ExtResource("4_qss3u")]
+position = Vector2(-2374, 160)
+
+[node name="Cactus" parent="." instance=ExtResource("5_dayfh")]
+position = Vector2(-549, 1336)
+
+[node name="Bottle" parent="." instance=ExtResource("6_c2rs8")]
+position = Vector2(-2383, 1794)
+
+[node name="Can" parent="." instance=ExtResource("7_66a6q")]
+position = Vector2(-1232, 1719)
+
+[node name="Electric" parent="." instance=ExtResource("8_yhxh8")]
+position = Vector2(-1282, 1361)
+
+[node name="Nuclear" parent="." instance=ExtResource("9_qkhmu")]
+position = Vector2(-1316, 885)
+
+[node name="Phone" parent="." instance=ExtResource("10_furwf")]
+position = Vector2(-1591, 1086)
+
+[editable path="Can"]
+[editable path="Can/Debris"]

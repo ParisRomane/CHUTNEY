@@ -31,9 +31,10 @@ func _on_collect_area_body_entered(body: Node2D) -> void:
 	if body.has_method("collect"):
 		inventory.add_with_multiplier(body.inventory, _multiplier)
 		body.inventory.reset()
+        body.current_fuel = body.max_fuel
 
 func _load_crafts() -> void:
 	var crafts: Array[Craft] = Craft.from_json("./globals/craft/craft_definition.json")
 	for craft in crafts:
 		_crafts[craft.effect_name][craft.tier] = craft
-	
+        

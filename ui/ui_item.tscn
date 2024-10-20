@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwlc3x1irnld1"]
+
+[ext_resource type="Texture2D" uid="uid://b08y8xrltjotj" path="res://assets/images/icon.svg" id="1_omb5t"]
+[ext_resource type="Texture2D" uid="uid://n0oc16n2jfdd" path="res://assets/images/metal_icon.svg" id="2_yg3hg"]
+
+[node name="UIItem" type="HBoxContainer"]
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_omb5t")
+texture_pressed = ExtResource("2_yg3hg")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Test
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+text = "(1)
+"

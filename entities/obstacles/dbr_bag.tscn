@@ -1,10 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://up8n2kkat7b8"]
 
-[ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="1_7uglg"]
-[ext_resource type="Texture2D" uid="uid://dhcdap4qnsb08" path="res://assets/images/textures/dbr_bag.tres" id="2_iidfy"]
+[ext_resource type="PackedScene" uid="uid://bp0h7db0kwtdh" path="res://entities/obstacles/debris.tscn" id="1_7uglg"]
+[ext_resource type="Texture2D" path="res://assets/images/textures/dbr_bag.tres" id="2_iidfy"]
 
 [node name="Bag" type="Node2D"]
 
 [node name="Debris" parent="." instance=ExtResource("1_7uglg")]
 texture = ExtResource("2_iidfy")
 type = 1
+
+[node name="Sprite2D" parent="Debris" index="0"]
+texture = ExtResource("2_iidfy")
+
+[editable path="Debris"]
