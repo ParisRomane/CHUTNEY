@@ -48,8 +48,8 @@ offset_top = -402.0
 offset_right = 737.0
 offset_bottom = -260.0
 grow_vertical = 0
-type = "organic"
 hud = NodePath("../..")
+type = "organic"
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Liquide" index="0"]
 texture = ExtResource("3_d84xg")
@@ -64,8 +64,8 @@ offset_top = -142.0
 offset_right = 737.0
 offset_bottom = 0.0
 grow_vertical = 0
-type = "electronic"
 hud = NodePath("../..")
+type = "electronic"
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Electronics" index="0"]
 texture = ExtResource("4_e6c3x")
@@ -80,8 +80,8 @@ offset_top = -272.0
 offset_right = 737.0
 offset_bottom = -130.0
 grow_vertical = 0
-type = "scrap"
 hud = NodePath("../..")
+type = "scrap"
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Scraps" index="0"]
 texture = ExtResource("5_5jkpl")

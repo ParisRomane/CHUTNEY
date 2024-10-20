@@ -18,7 +18,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_timeline_ended() -> void :
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-	var test_scene : Node = load("res://levels/level_1.tscn").instantiate()
+	var test_scene : Node = load("res://ui/HUD.tscn").instantiate()
 	self.get_parent().add_child(test_scene)
 	print(ovani)
 	if ovani != null :

@@ -13,3 +13,4 @@ SongMode = 0
 [node name="intro" type="Node"]
 script = ExtResource("1_qcbve")
 QueuedSongs = Array[ExtResource("2_jcixb")]([SubResource("Resource_x57jg")])
+Volume = -10.0

@@ -41,3 +41,4 @@ SongMode = 0
 [node name="ambiance_music_loop" type="Node"]
 script = ExtResource("1_q6hgq")
 QueuedSongs = Array[ExtResource("2_ai1xe")]([SubResource("Resource_h7yr0"), SubResource("Resource_jhipm"), SubResource("Resource_v3qh5"), SubResource("Resource_2dfno"), SubResource("Resource_uc1nl")])
+Volume = -10.0
