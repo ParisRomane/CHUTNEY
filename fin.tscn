@@ -1,0 +1,193 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq4arhf4ksp6n"]
+
+[ext_resource type="Script" path="res://fin.gd" id="1_81ybf"]
+[ext_resource type="Texture2D" uid="uid://ru1uq12ysbmg" path="res://assets/images/background.svg" id="2_p5fda"]
+[ext_resource type="Texture2D" uid="uid://befe7hi4lsqe" path="res://assets/images/terre.svg" id="3_462bq"]
+[ext_resource type="Texture2D" uid="uid://bten8teeawq65" path="res://assets/images/spaceship.svg" id="4_1nbcp"]
+[ext_resource type="Texture2D" uid="uid://cshv5jb3rh0qh" path="res://assets/images/big_station.svg" id="5_ht22g"]
+
+[sub_resource type="Animation" id="Animation_61ak3"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.733333, 2.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -700)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("vaiseau:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.833333, 2.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1266, 584), Vector2(1266, 1284)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("terre:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.833333, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.39735, 1.39735), Vector2(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("terre:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 200)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("vaiseau:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.168529, 0.168529), Vector2(0.25, 0.25)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("station:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.195321, 0.195321), Vector2(0.04, 0.04)]
+}
+
+[sub_resource type="Animation" id="Animation_4n75o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("vaiseau:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1266, 584)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("terre:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.39735, 1.39735)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("terre:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("vaiseau:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.168529, 0.168529)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("station:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.195321, 0.195321)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wahrf"]
+_data = {
+"RESET": SubResource("Animation_4n75o"),
+"new_animation": SubResource("Animation_61ak3")
+}
+
+[node name="fin" type="Node2D"]
+script = ExtResource("1_81ybf")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(1297, 1112)
+scale = Vector2(1.19761, 1.2573)
+texture = ExtResource("2_p5fda")
+
+[node name="terre" type="Sprite2D" parent="."]
+position = Vector2(1230, 2249)
+scale = Vector2(1.39735, 1.39735)
+texture = ExtResource("3_462bq")
+
+[node name="station" type="Sprite2D" parent="."]
+position = Vector2(1558, 242)
+rotation = 0.551524
+scale = Vector2(0.195321, 0.195321)
+texture = ExtResource("5_ht22g")
+
+[node name="vaiseau" type="Sprite2D" parent="."]
+position = Vector2(1266, 584)
+scale = Vector2(0.168529, 0.168529)
+texture = ExtResource("4_1nbcp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wahrf")
+}
