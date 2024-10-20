@@ -1,6 +1,7 @@
 class_name Ship
 extends CharacterBody2D
 
+var craft : Craft
 var inventory : Ressource
 var _multiplier : int = 0
 var _craft_tier: Dictionary = {
@@ -40,3 +41,16 @@ func _load_crafts() -> void:
 	for craft in crafts:
 		_crafts[craft.effect_name][craft.tier] = craft
 		
+
+func _craft(nom_craft: Label, desc_craft:Label, short_craft:Label, button:Button) -> void:
+	var key : String = "cc_set_zipline_length"
+	
+	craft = _crafts[key][_craft_tier[key]]
+	
+	nom_craft.text = craft.name
+	desc_craft.text = craft.description
+	short_craft.text = craft.description_short
+	button.pressed.connect(_launch_craft)
+
+func _launch_craft()-> void:
+	craft.make()

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://entities/ship/ship.gd" id="1_oouaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d726h"]
-radius = 4.78017
+radius = 32.5744
 
 [node name="Ship" type="CharacterBody2D"]
 scale = Vector2(10, 10)
@@ -23,7 +23,7 @@ polygon = PackedVector2Array(21.6, -84, 77.6, -176.8, 130.4, -81.6, 146.4, -91.2
 position = Vector2(-0.1, 66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
-position = Vector2(1.86265e-07, 2.11596e-06)
+position = Vector2(0.2, 0.500002)
 shape = SubResource("CircleShape2D_d726h")
 
 [connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]
