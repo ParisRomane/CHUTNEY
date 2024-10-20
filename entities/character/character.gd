@@ -1,4 +1,4 @@
-class_name Character
+class_name Player
 extends CharacterBody2D
 
 # MAX_SPEED is a constant!!! (since we cannot export constant in GDScript)

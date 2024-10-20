@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://up8n2kkat7b8"]
+[gd_scene load_steps=4 format=3 uid="uid://up8n2kkat7b8"]
 
-[ext_resource type="PackedScene" uid="uid://bp0h7db0kwtdh" path="res://entities/obstacles/debris.tscn" id="1_7uglg"]
-[ext_resource type="Texture2D" path="res://assets/images/textures/dbr_bag.tres" id="2_iidfy"]
+[ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="1_7uglg"]
+[ext_resource type="Script" path="res://entities/obstacles/random_rotation.gd" id="1_us621"]
+[ext_resource type="Texture2D" uid="uid://dhcdap4qnsb08" path="res://assets/images/textures/dbr_bag.tres" id="2_iidfy"]
 
 [node name="Bag" type="Node2D"]
+script = ExtResource("1_us621")
 
 [node name="Debris" parent="." instance=ExtResource("1_7uglg")]
 texture = ExtResource("2_iidfy")
