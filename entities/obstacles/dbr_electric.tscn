@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwmxepbrqs264"]
+
+[ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="1_psrep"]
+[ext_resource type="Texture2D" uid="uid://cs4lxdgcby472" path="res://assets/images/textures/dbr_elec.tres" id="2_50l2h"]
+
+[node name="Electric" type="Node2D"]
+
+[node name="Debris" parent="." instance=ExtResource("1_psrep")]
+texture = ExtResource("2_50l2h")
+type = 2
+hazard_type = 2

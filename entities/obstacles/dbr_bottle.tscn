@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd8qoybimdxo4"]
+
+[ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="1_4x2df"]
+[ext_resource type="Texture2D" uid="uid://twxk18pf7lq6" path="res://assets/images/textures/dbr_bottle.tres" id="2_vfbum"]
+
+[node name="Bottle" type="Node2D"]
+
+[node name="Debris" parent="." instance=ExtResource("1_4x2df")]
+texture = ExtResource("2_vfbum")
