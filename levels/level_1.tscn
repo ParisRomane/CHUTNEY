@@ -430,9 +430,6 @@ position = Vector2(-3738, 5133)
 [node name="Bag24" parent="." instance=ExtResource("4_qss3u")]
 position = Vector2(-3097, 5924)
 
-[node name="Cactus" parent="." instance=ExtResource("5_dayfh")]
-position = Vector2(338, 9975)
-
 [node name="Cactus4" parent="." instance=ExtResource("5_dayfh")]
 position = Vector2(-423, 5914)
 
@@ -479,9 +476,6 @@ position = Vector2(5061, 4887)
 [node name="Bottle3" parent="." instance=ExtResource("6_c2rs8")]
 position = Vector2(13962, 3618)
 
-[node name="Can" parent="." instance=ExtResource("7_66a6q")]
-position = Vector2(-1574, 9987)
-
 [node name="Can2" parent="." instance=ExtResource("7_66a6q")]
 position = Vector2(-833, 7446)
 
@@ -505,9 +499,6 @@ position = Vector2(-3505, 1060)
 
 [node name="Can7" parent="." instance=ExtResource("7_66a6q")]
 position = Vector2(-2258, 1577)
-
-[node name="Electric" parent="." instance=ExtResource("8_yhxh8")]
-position = Vector2(-638, 9946)
 
 [node name="Electric2" parent="." instance=ExtResource("8_yhxh8")]
 position = Vector2(-2060, -211)
@@ -572,9 +563,6 @@ position = Vector2(5063, -744)
 [node name="Electric8" parent="." instance=ExtResource("8_yhxh8")]
 position = Vector2(3410, -1513)
 
-[node name="Nuclear" parent="." instance=ExtResource("9_qkhmu")]
-position = Vector2(-950, 9987)
-
 [node name="Nuclear3" parent="." instance=ExtResource("9_qkhmu")]
 position = Vector2(-3624, 4824)
 
@@ -615,7 +603,7 @@ target = NodePath("../Path2D/Player")
 curve = SubResource("Curve2D_yvr1u")
 script = ExtResource("11_66t7r")
 player = NodePath("Player")
-max_rope_len = 10000.0
+max_rope_len = 4500.0
 
 [node name="Line2D" type="Line2D" parent="Path2D"]
 
