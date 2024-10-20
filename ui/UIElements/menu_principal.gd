@@ -14,7 +14,6 @@ func _button_start() -> void :
 	var intro : Node = load("res://ui/intro.tscn").instantiate()
 	intro.ovani = self.ovani
 	self.get_parent().add_child(intro)
-	self.get_parent().add_child(intro)
 	self.get_parent().remove_child(self)
 	
 func _button_exit() -> void :
@@ -28,4 +27,5 @@ func _process(delta : float) -> void:
 
 func _on_button_credit_pressed() -> void:
 	var credit : Node = load("res://ui/credit.tscn").instantiate()
+	self.get_parent().add_child(credit)
 	self.get_parent().remove_child(self)
