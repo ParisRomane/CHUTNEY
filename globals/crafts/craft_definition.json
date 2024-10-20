@@ -52,7 +52,7 @@
 		"description_short": "Augmente la longueur de la ligne de vie",
 		"description": "Un rouleau de corde sauvé du désastre, une solution de fortune pour ne pas perdre le vaisseau.",
 		"effect": "cc_set_zipline_length",
-		"arg": 200
+		"arg": 7000
 	},
 
 	{
@@ -66,7 +66,7 @@
 		"description_short": "Augmente la longueur de la ligne de vie",
 		"description": "Une corde en acier tressé, permet d'en derouler plus avant de risquer la rupture.",
 		"effect": "cc_set_zipline_length",
-		"arg": 300
+		"arg": 8500
 	},
 
 	{
@@ -80,7 +80,7 @@
 		"description_short": "Augmente la longueur de la ligne de vie",
 		"description": "Une corde en fibre de carbone, la longueur ne devrait plus poser problème. Mais était-ce bien la peine de se donner autant de mal... vous comptez bien rentrer?",
 		"effect": "cc_set_zipline_length",
-		"arg": 600
+		"arg": 10000
 	},
 	
 	{
@@ -108,7 +108,7 @@
 		"description_short": "Augmente votre capacité en carburant",
 		"description": "En augmentant l'épaisseur d'acier de vos réserves de carburant, on peux en comprimer plus à l'intérieur sans risque d'explosion!",
 		"effect": "cc_set_fuel_capacity",
-		"arg": 2000
+		"arg": 1500
 	},
 
 	{
@@ -122,7 +122,7 @@
 		"description_short": "Augmente votre capacité en carburant",
 		"description": "Si un noyau d'atome faisait la taille d'une balle de tenis, ses électrons seraient à 3km de lui... on a encore de la marge pour compresser!",
 		"effect": "cc_set_fuel_capacity",
-		"arg": 3000
+		"arg": 2000
 	},
 	
 	{
@@ -136,7 +136,7 @@
 		"description_short": "Augmente votre vitesse de déplacement",
 		"description": "Ouvrage de référence pour les éboueurs perdus dans l'espace, en attente d'être secourus par l'ISS, et qui n'ont qu'un extincteur pour se deplacer (vendu a 2 exemplaire).",
 		"effect": "cc_set_player_friction",
-		"arg": 50
+		"arg": 1100
 	},
 
 	{
@@ -150,7 +150,7 @@
 		"description_short": "Augmente votre vitesse de déplacement",
 		"description": "En augmentant le diamètre de l'ouverture de l'extincteur, on va beaucoup plus vite! (et sans coût supplémentaire en carburant étrangement).",
 		"effect": "cc_set_player_friction",
-		"arg": 40
+		"arg": 1200
 	},
 
 	{
@@ -164,7 +164,7 @@
 		"description_short": "Augmente votre vitesse de déplacement",
 		"description": "A force de modifier votre fidèle extincteur, vous avez fini par maîtriser les arcanes des lanceurs anti-incendis pour en faire le moyen de locomotion ultime!",
 		"effect": "cc_set_player_friction",
-		"arg": 30
+		"arg": 1300
 	},
 	
 	{
@@ -262,7 +262,7 @@
 		"description_short": "Imunise aux dégats de radiation",
 		"description": "Combinaison à base de plomb qui absorbe les rayonnements radioactifs qui vous tueraient en 2 mois en échange d'un empoisonement au plomb qui vous tuera dans 20 ans, une affaire!",
 		"effect": "cc_set_hazard_protection",
-		"arg": 0
+		"arg": 1
 	},
 
 	{
@@ -276,7 +276,7 @@
 		"description_short": "Immunise aux dégats électrique",
 		"description": "Ajoute un câble le long de votre ligne de vie qui redirige les hautes tensions vers votre vaisseau.",
 		"effect": "cc_set_hazard_protection",
-		"arg": 1
+		"arg": 2
 	},
 
 	{
@@ -290,6 +290,6 @@
 		"description_short": "Imunise aux dégâts des objets tranchants",
 		"description": "Nous y sommes, le pinacle de la technologie humaine! la Combinaison C.A.C.T.U.S. (Combinaison Anti Cactus Tactique Ultra Sécurisé) qui permet de se prémunire des petites coupures superficielles!",
 		"effect": "cc_set_hazard_protection",
-		"arg": 2
+		"arg": 3
 	}
 ]
