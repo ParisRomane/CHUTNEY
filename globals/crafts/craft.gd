@@ -7,6 +7,7 @@ var effect_name: StringName
 var arg: int
 var description_short: String
 var description: String
+var done: bool = false # only relevant for objectives
 
 static var ship: Ship
 static var player: Player
@@ -19,6 +20,17 @@ func _init(name_: String, tier_: int, cost_: Ressource, description_short_: Stri
 	self.description = description_
 	self.effect_name = effect_
 	self.arg = arg_
+	
+static func make_objective(name_: String, cost_: Ressource) -> Craft:
+	return Craft.new(
+		name_, # name
+		0, # tier
+		cost_, # cost
+		"", # description_short
+		"", # description
+		"", # callback_name
+		0 # callback_arg
+	)
 	
 static func from_json(path: String) -> Array[Craft]:
 	var json_as_text: String = FileAccess.get_file_as_string(path)
@@ -76,3 +88,6 @@ func cc_set_ship_view(radius: int) -> void:
 # prevent_hazard
 func cc_set_hazard_protection(kind: int) -> void:
 	player.resist_hazard[kind] = true
+	
+func cc_objective_done(ignored: int) -> void:
+	done = true
