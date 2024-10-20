@@ -610,7 +610,6 @@ max_rope_len = 4500.0
 [node name="Player" parent="Path2D" node_paths=PackedStringArray("ship") instance=ExtResource("1_h48b7")]
 position = Vector2(-2, -1)
 ship = NodePath("../../Ship")
-max_fuel = 50.0
 
 [node name="SmallStation" type="Sprite2D" parent="."]
 position = Vector2(9109, 533)

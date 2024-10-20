@@ -213,6 +213,7 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_2iyhu")
+max_fuel = 500.0
 
 [node name="AnimatedSpriteExtinguisher" type="AnimatedSprite2D" parent="."]
 visible = false
