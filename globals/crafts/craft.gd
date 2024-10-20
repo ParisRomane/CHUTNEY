@@ -39,7 +39,7 @@ static func from_json(path: String) -> Array[Craft]:
 	for craft: Variant in json:
 		var _name: String = craft["name"]
 		var _tier: int = craft["tier"]
-		var _ressource: Dictionary = craft["ressource"]
+		var _ressource: Dictionary = craft["cost"]
 		var _cost: Ressource = Ressource.new(
 			_ressource["organic"],
 			_ressource["scrap"],

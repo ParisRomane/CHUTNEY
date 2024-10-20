@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://pecxmf153qx1"]
 
-[ext_resource type="PackedScene" uid="uid://bwlc3x1irnld1" path="res://ui/ui_item.tscn" id="1_fv2ip"]
+[ext_resource type="Script" path="res://ui/ui_craft.gd" id="1_i3oc6"]
 
 [node name="UICraft" type="Control"]
 layout_mode = 3
@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i3oc6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -16,6 +17,3 @@ offset_left = 393.0
 offset_top = 532.0
 offset_right = 1979.0
 offset_bottom = 1168.0
-
-[node name="HBoxContainer" parent="VBoxContainer" instance=ExtResource("1_fv2ip")]
-layout_mode = 2
