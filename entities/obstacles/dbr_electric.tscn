@@ -9,3 +9,8 @@
 texture = ExtResource("2_50l2h")
 type = 2
 hazard_type = 2
+
+[node name="Sprite2D" parent="Debris" index="0"]
+texture = ExtResource("2_50l2h")
+
+[editable path="Debris"]

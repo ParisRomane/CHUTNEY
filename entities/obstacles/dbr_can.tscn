@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://0xwdfpw0ex55"]
+[gd_scene load_steps=4 format=3 uid="uid://0xwdfpw0ex55"]
 
 [ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="1_hi4sx"]
 [ext_resource type="Texture2D" uid="uid://twxk18pf7lq6" path="res://assets/images/textures/dbr_bottle.tres" id="2_wfe5v"]
+[ext_resource type="Texture2D" uid="uid://bv385cl7olhkw" path="res://assets/images/textures/dbr_can.tres" id="3_7s7ho"]
 
 [node name="Bottle" type="Node2D"]
 
 [node name="Debris" parent="." instance=ExtResource("1_hi4sx")]
 texture = ExtResource("2_wfe5v")
+
+[node name="Sprite2D" parent="Debris" index="0"]
+texture = ExtResource("3_7s7ho")
+
+[editable path="Debris"]
