@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://clnmmtkirxbcn"]
+[gd_scene load_steps=8 format=3 uid="uid://clnmmtkirxbcn"]
 
 [ext_resource type="PackedScene" uid="uid://bo8djmaypib5c" path="res://ui/UIElements/HUD_ressource.tscn" id="1_o1wp2"]
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_vdy44"]
 [ext_resource type="Texture2D" uid="uid://c1yiel4evjwp4" path="res://assets/images/textures/organic_icon.tres" id="3_d84xg"]
-[ext_resource type="PackedScene" uid="uid://bqlr1kccppcuk" path="res://levels/test_scene.tscn" id="3_flco3"]
 [ext_resource type="Texture2D" uid="uid://ddqghu1bj46vn" path="res://assets/images/textures/elec_icon.tres" id="4_e6c3x"]
 [ext_resource type="Texture2D" uid="uid://bqfv13bm5x81b" path="res://assets/images/textures/scraps_icon.tres" id="5_5jkpl"]
+[ext_resource type="Theme" uid="uid://p2wh0irjavap" path="res://assets/theme/cosmic.tres" id="6_v857h"]
+[ext_resource type="PackedScene" uid="uid://cnjc3so4cr141" path="res://levels/level_1.tscn" id="7_53vku"]
 
 [node name="Node" type="Node"]
 
@@ -23,8 +24,8 @@ scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(0, 1440)
 size_flags_vertical = 8
 script = ExtResource("1_vdy44")
-player = NodePath("../../TestScene/Path2D/Player")
-ship = NodePath("../../TestScene/Ship")
+player = NodePath("../../Level1/Path2D/Player")
+ship = NodePath("../../Level1/Ship")
 
 [node name="RessourcesPlacement" type="Control" parent="CanvasLayer/Hud"]
 layout_mode = 1
@@ -41,11 +42,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = 110.0
 offset_top = -402.0
+offset_right = 737.0
 offset_bottom = -260.0
 grow_vertical = 0
-hud = NodePath("../..")
 type = "organic"
+hud = NodePath("../..")
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Liquide" index="0"]
 texture = ExtResource("3_d84xg")
@@ -55,11 +58,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = 110.0
 offset_top = -142.0
+offset_right = 737.0
 offset_bottom = 0.0
 grow_vertical = 0
-hud = NodePath("../..")
 type = "electronic"
+hud = NodePath("../..")
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Electronics" index="0"]
 texture = ExtResource("4_e6c3x")
@@ -69,19 +74,67 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = 110.0
 offset_top = -272.0
+offset_right = 737.0
 offset_bottom = -130.0
 grow_vertical = 0
-hud = NodePath("../..")
 type = "scrap"
+hud = NodePath("../..")
 
 [node name="Icone_Res" parent="CanvasLayer/Hud/RessourcesPlacement/Scraps" index="0"]
 texture = ExtResource("5_5jkpl")
 
-[node name="TestScene" parent="." instance=ExtResource("3_flco3")]
+[node name="Fuel" type="Control" parent="CanvasLayer/Hud/RessourcesPlacement"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -837.0
+offset_right = 795.0
+grow_vertical = 0
+
+[node name="Vide" type="ColorRect" parent="CanvasLayer/Hud/RessourcesPlacement/Fuel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.25
+offset_top = -103.75
+offset_right = 81.25
+offset_bottom = -103.75
+grow_vertical = 0
+scale = Vector2(1, -1)
+color = Color(0.501961, 0.8, 0.866667, 0.376471)
+
+[node name="Plein" type="ColorRect" parent="CanvasLayer/Hud/RessourcesPlacement/Fuel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.25
+offset_top = -103.75
+offset_right = 81.25
+offset_bottom = -103.75
+grow_vertical = 0
+scale = Vector2(1, -1)
+color = Color(0.501961, 0.8, 0.866667, 0.921569)
+
+[node name="Label" type="Label" parent="CanvasLayer/Hud/RessourcesPlacement/Fuel"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 753.25
+offset_right = 167.5
+offset_bottom = 808.25
+theme = ExtResource("6_v857h")
+theme_type_variation = &"Label_HUD"
+theme_override_font_sizes/font_size = 46
+text = "Fuel"
+autowrap_mode = 2
+
+[node name="Level1" parent="." instance=ExtResource("7_53vku")]
 
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Liquide"]
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Electronics"]
 [editable path="CanvasLayer/Hud/RessourcesPlacement/Scraps"]
-[editable path="TestScene"]
-[editable path="TestScene/Cameraman"]
+[editable path="Level1"]

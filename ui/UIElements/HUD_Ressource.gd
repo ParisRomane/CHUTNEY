@@ -1,7 +1,7 @@
 extends Control
 
 @export var hud: HUD
-var player: Character
+var player: Player
 var ship : Ship
 @export_enum("organic", "scrap", "electronic") var type: String
 var nb_res: int
