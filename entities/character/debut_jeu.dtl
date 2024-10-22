@@ -1,6 +1,6 @@
 [style name="truc_style"]
 join vladimir center
-[voice path="sc1ph1.wav" volume="6.0"]
+[voice path="res://assets/audios/doublage/robotified_files/sc1/sc1ph1.wav" volume="6.0"]
 vladimir: Multiples contusions détectées.
 vladimir: Vous vous trouvez actuellement à… 20 mètres de la navette.\
 vladimir\: Câble de sécurité enclenché.
