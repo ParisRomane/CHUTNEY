@@ -125,10 +125,10 @@ tracks/9/path = NodePath("ColorRect:color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_8strp"]
@@ -383,6 +383,6 @@ offset_left = -60.0
 offset_top = -84.0
 offset_right = 2744.0
 offset_bottom = 1628.0
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
