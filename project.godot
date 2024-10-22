@@ -10,8 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Jam Jam"
+config/name="Cosmic_Dustman"
 run/main_scene="res://ui/MenuPrincipal.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Cosmic_Dustman"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/images/icon.svg"
 

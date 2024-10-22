@@ -46,7 +46,7 @@ func _on_collect_area_body_exited(body: Node2D) -> void:
 		body.exit_ship()
 
 func _load_crafts() -> void:
-	var crafts: Array[Craft] = Craft.from_json("./globals/crafts/craft_definition.json")
+	var crafts: Array[Craft] = Craft.from_json("res://globals/crafts/craft_definition.json")
 	for craft in crafts:
 		_crafts[craft.effect_name][craft.tier] = craft
 		
