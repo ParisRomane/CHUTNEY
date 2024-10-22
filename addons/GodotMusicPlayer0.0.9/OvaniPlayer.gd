@@ -1,5 +1,5 @@
 @tool
-@icon("res://OvaniPlugin/OvaniPlayerIcon.png")
+@icon("res://addons/GodotMusicPlayer0.0.9/OvaniPlayerIcon.png")
 class_name OvaniPlayer
 ## The OvaniPlayer will let you easily Manage dynamic music in your game, via [OvaniSong]s.
 ## 
@@ -127,8 +127,10 @@ func _constructPolySoundManager(song : OvaniSong) -> PolySoundManager:
 	if (song != null):
 		if (song.SongMode == OvaniSong.OvaniMode.Intensities):
 			o.Ids.append(_audioStreamPlayback.play_stream(song.Intensity1));
-			o.Ids.append(_audioStreamPlayback.play_stream(song.Intensity2));
-			o.Ids.append(_audioStreamPlayback.play_stream(song.Intensity3));
+			if song.Intensity2: # Check if the 2nd intensity socket isn't empty
+				o.Ids.append(_audioStreamPlayback.play_stream(song.Intensity2));
+			if song.Intensity3: # Check if the 3th intensity socket isn't empty
+				o.Ids.append(_audioStreamPlayback.play_stream(song.Intensity3));
 			o.Intensity = Intensity;
 			o.SongLength = song.Intensity1.get_length();
 		elif (song.SongMode == OvaniSong.OvaniMode.Loop30):
