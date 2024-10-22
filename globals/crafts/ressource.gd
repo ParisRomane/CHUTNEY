@@ -4,10 +4,10 @@ var organic: int = 0
 var scrap: int = 0
 var electronic: int = 0
 
-func _init(organic:int, scrap:int, electronic:int) -> void:
-	self.organic = organic
-	self.scrap = scrap
-	self.electronic = electronic
+func _init(organic_:int, scrap_:int, electronic_:int) -> void:
+	self.organic = organic_
+	self.scrap = scrap_
+	self.electronic = electronic_
 
 func have_at_least(other: Ressource) -> bool:
 	return organic >= other.organic \

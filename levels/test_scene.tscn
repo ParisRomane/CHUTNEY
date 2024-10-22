@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d17c68wa5qg4" path="res://entities/ship/ship.tscn" id="1_60x3n"]
 [ext_resource type="PackedScene" uid="uid://btrtrkv3kx40w" path="res://camera/cameraman.tscn" id="2_17d13"]
 [ext_resource type="PackedScene" uid="uid://bqrc2pmgmf0gb" path="res://entities/obstacles/dbr_nuclear.tscn" id="6_dt4m7"]
-[ext_resource type="PackedScene" uid="uid://dgtuye4ibnfyu" path="res://entities/obstacles/debris.tscn" id="6_wq1c7"]
+[ext_resource type="PackedScene" uid="uid://bp0h7db0kwtdh" path="res://entities/obstacles/debris.tscn" id="6_wq1c7"]
 [ext_resource type="Script" path="res://levels/player_path_following.gd" id="9_ikqji"]
 
 [sub_resource type="Curve2D" id="Curve2D_lja3m"]

@@ -1,17 +1,24 @@
 extends Node
 
-var ovani : Node = null
+var ovani : OvaniPlayer = null
+var intro_music : PackedScene = preload("res://intro_music.tscn")
+var intro_scene : PackedScene = preload("res://ui/intro.tscn")
+var launch_btn : Button
+var quit_btn : Button
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	ovani = load("res://intro_music.tscn").instantiate()
-	self.get_parent().add_child.call_deferred(ovani)
-	$ButtonLaunch.grab_focus()
-	$ButtonLaunch.pressed.connect(self._button_start)
+	ovani = intro_music.instantiate()
+	launch_btn = $ButtonLaunch
+	quit_btn = $ButtonQuitter
 	
-	$ButtonQuitter.pressed.connect(self._button_exit)
+	self.get_parent().add_child.call_deferred(ovani)
+	launch_btn.grab_focus()
+	launch_btn.pressed.connect(self._button_start)
+	quit_btn.pressed.connect(self._button_exit)
 	
 func _button_start() -> void :
-	var intro : Node = load("res://ui/intro.tscn").instantiate()
+	var intro : Node = intro_scene.instantiate()
 	intro.ovani = self.ovani
 	self.get_parent().add_child(intro)
 	self.get_parent().remove_child(self)

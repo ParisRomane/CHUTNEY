@@ -1,16 +1,20 @@
 extends Node2D
 
 var ovani : Node
+var anim_player : AnimationPlayer
+var HUD_scene : PackedScene = preload("res://ui/HUD.tscn")
+var music_scene : PackedScene = preload("res://ambiance_music_loop.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer.play("shake")
-		
+	anim_player = $AnimationPlayer
+	anim_player.play("shake")
+
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	match anim_name :
 		"shake" : 
-			$AnimationPlayer.play("shake_end")
+			anim_player.play("shake_end")
 		"shake_end" :
 			Dialogic.timeline_ended.connect(_on_timeline_ended)
 			Dialogic.start('res://entities/character/debut_jeu.dtl')
@@ -18,11 +22,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_timeline_ended() -> void :
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-	var test_scene : Node = load("res://ui/HUD.tscn").instantiate()
-	self.get_parent().add_child(test_scene)
-	print(ovani)
+	self.get_parent().add_child(HUD_scene.instantiate())
+	
 	if ovani != null :
 		self.get_parent().remove_child(ovani)
-	var music : Node = load("res://ambiance_music_loop.tscn").instantiate()
+	var music : Node = music_scene.instantiate()
 	self.get_parent().add_child.call_deferred(music)
 	self.get_parent().remove_child(self)

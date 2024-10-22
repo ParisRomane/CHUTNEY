@@ -34,7 +34,8 @@ var resist_hazard: Array[bool] = [
 func _ready() -> void:
 	inventory = Ressource.new(0,0,0)
 	current_fuel = max_fuel
-	reset_path(ship.get_node("CollectArea").position)
+	var ship_pos : Vector2 = ship.get_node("CollectArea").position
+	reset_path(ship_pos)
 	bounce_force_store = bounce_force
 
 func gather_inputs() -> void:
@@ -88,20 +89,23 @@ func _physics_process(delta: float) -> void:
 		current_fuel -= 1.0
 
 func get_next_pos() -> Vector2:
-	var size : int = get_parent().get_size()
+	var path : Path2D = get_parent()
+	var size : int = path.get_size()
 	var next : Vector2
+	var line : Line2D = get_parent().get_child(0)
 	
 	if size != 0:
 		next = get_parent().curve.get_point_position(size-1)
 		get_parent().curve.remove_point(size-1)
-		get_parent().get_child(0).remove_point(size-1)
+		line.remove_point(size-1)
 	
 	else:
 		going_back = false
 		can_move = true
 		# Center the player and reset the path origin
-		reset_path(ship.get_node("CollectArea").position)
-		next = ship.get_node("CollectArea").position
+		var ship_pos : Vector2 = ship.get_node("CollectArea").position
+		reset_path(ship_pos)
+		next = ship_pos
 		
 	return next
 
