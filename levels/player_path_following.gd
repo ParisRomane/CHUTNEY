@@ -17,7 +17,8 @@ func _process(delta: float) -> void:
 		if rope_len > max_rope_len:
 			player.rope_end()
 	else:
-		$Line2D.set_point_position(get_size()-1, player.global_position)
+		if get_size() >= 1 :
+			$Line2D.set_point_position(get_size()-1, player.global_position)
 
 func _input(event: InputEvent) -> void :
 	if Input.is_action_pressed("shoot") and player.can_move:
